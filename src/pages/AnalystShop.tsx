@@ -1,9 +1,9 @@
 const AnalystShop = () => {
-    return (
-        <div>
-            <p>Analyst Shop</p>
-        </div>
-    );
-};
+  return (
+    <div>
+      <p>Analyst Shop</p>
+    </div>
+  )
+}
 
-export default AnalystShop;
+export default AnalystShop
