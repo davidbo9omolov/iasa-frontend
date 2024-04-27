@@ -1,5 +1,4 @@
 'use strict';
-
 const expectedTypes = ['feat', 'fix', 'test', 'build', 'refactor', 'docs'];
 
 module.exports = {

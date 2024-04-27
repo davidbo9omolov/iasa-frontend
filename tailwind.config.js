@@ -2,7 +2,26 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#000',
+        secondary: '#FFF',
+        tertiary: '#FFD200',
+        quaternary: '#282828',
+      },
+      textColor: {
+        primary: '#000',
+        secondary: '#FFF',
+        tertiary: '#FFD200',
+        quaternary: '#282828',
+      },
+      borderColor: {
+        primary: '#000',
+        secondary: '#FFF',
+        tertiary: '#FFD200',
+        quaternary: '#282828',
+      },
+    },
   },
   plugins: [],
 }

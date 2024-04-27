@@ -1,0 +1,33 @@
+
+.animationElem1 {
+    transition: all 0.6s
+}
+
+.animationElem2 {
+    top: 50px;
+    z-index: 1;
+    transition: all 0.6s
+}
+
+.animationCircle {
+    transform: translateY(30px);
+    width: 105%;
+    border-radius: 100px;
+    transition: all 0.8s;
+}
+
+.animationWrapper:hover .animationCircle {
+    transform: translateY(-50px);
+    border-radius: 20px;
+    transition: transform 0.8s cubic-bezier(0, .9, 1, 1), border-radius 0.2s cubic-bezier(0, .9, 1, 1);
+}
+
+.animationWrapper:hover .animationElem1 {
+    transform: translateY(-30px);
+    transition: all 0.5s ;
+}
+
+.animationWrapper:hover .animationElem2 {
+    top: 0;
+    transition: all 0.5s ;
+}
