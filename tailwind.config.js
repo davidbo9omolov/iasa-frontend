@@ -20,6 +20,7 @@ export default {
         secondary: '#FFF',
         tertiary: '#FFD200',
         quaternary: '#282828',
+        thin: '#4B4B4B',
       },
     },
   },

@@ -1,8 +1,8 @@
 const AnalystShop = () => {
   return (
-    <div>
+    <section className={'w-[95%]'}>
       <p>Analyst Shop</p>
-    </div>
+    </section>
   )
 }
 

@@ -1,8 +1,8 @@
 import { LinkRoutes } from '@/constants/constants'
 
 import { Routes, Route } from 'react-router-dom'
-import Header from 'components/header/Header.tsx'
-import Footer from 'components/footer/Footer.tsx'
+import { CommonLayout } from '../layouts/commonLayout.tsx'
+import { PageNotFoundLayout } from '../layouts/errorPageLayout.tsx'
 
 import HomePage from 'pages/HomePage.tsx'
 import AnalystShop from 'pages/AnalystShop.tsx'
@@ -12,22 +12,71 @@ import Articles from 'pages/Articles.tsx'
 import ForStudents from 'pages/ForStudents.tsx'
 
 import './App.css'
+import ErrorPage from 'components/errorPage/ErrorPage.tsx'
 
 function App() {
   return (
-    <div className={'min-h-screen'}>
-      <Header />
-      <main>
+    <div className={'min-h-screen relative'}>
+      <main className={'flex justify-center'}>
         <Routes>
-          <Route path={LinkRoutes.Home} element={<HomePage />} />
-          <Route path={LinkRoutes.Applicant} element={<Applicant />} />
-          <Route path={LinkRoutes.ForStudent} element={<ForStudents />} />
-          <Route path={LinkRoutes.Articles} element={<Articles />} />
-          <Route path={LinkRoutes.AnalystShop} element={<AnalystShop />} />
-          <Route path={LinkRoutes.Contacts} element={<Contacts />} />
+          <Route
+            path={LinkRoutes.Home}
+            element={
+              <CommonLayout>
+                <HomePage />
+              </CommonLayout>
+            }
+          />
+          <Route
+            path={LinkRoutes.Applicant}
+            element={
+              <CommonLayout>
+                <Applicant />
+              </CommonLayout>
+            }
+          />
+          <Route
+            path={LinkRoutes.ForStudent}
+            element={
+              <CommonLayout>
+                <ForStudents />
+              </CommonLayout>
+            }
+          />
+          <Route
+            path={LinkRoutes.Articles}
+            element={
+              <CommonLayout>
+                <Articles />
+              </CommonLayout>
+            }
+          />
+          <Route
+            path={LinkRoutes.AnalystShop}
+            element={
+              <CommonLayout>
+                <AnalystShop />
+              </CommonLayout>
+            }
+          />
+          <Route
+            path={LinkRoutes.Contacts}
+            element={
+              <CommonLayout>
+                <Contacts />
+              </CommonLayout>
+            }
+          />
+          <Route
+            path={'*'}
+            element={
+              <PageNotFoundLayout>
+                <ErrorPage />
+              </PageNotFoundLayout>
+            }
+          />
         </Routes>
       </main>
-      <Footer />
     </div>
   )
 }

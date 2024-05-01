@@ -1,8 +1,8 @@
 const Applicant = () => {
   return (
-    <div>
+    <section className={'w-[95%]'}>
       <p>Applicant</p>
-    </div>
+    </section>
   )
 }
 
