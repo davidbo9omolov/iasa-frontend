@@ -10,7 +10,7 @@ import Contacts from 'pages/Contacts.tsx'
 import Applicant from 'pages/Applicant.tsx'
 import Articles from 'pages/Articles.tsx'
 import ForStudents from 'pages/ForStudents.tsx'
-import ErrorPage from 'pages/errorPage/ErrorPage.tsx'
+import ErrorPage from 'pages/ErrorPage.tsx'
 
 import './App.css'
 

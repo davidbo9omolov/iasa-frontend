@@ -1,6 +1,5 @@
 import { routes, socialNetworks } from '@/constants/constants.ts'
 import { Link, NavLink } from 'react-router-dom'
-import { ButtonLink } from 'components/buttonLink/ButtonLink.tsx'
 
 const Footer = () => {
   const date = new Date()
@@ -8,17 +7,17 @@ const Footer = () => {
 
   return (
     <footer className={'h-[20%] min-h-[200px] flex flex-col w-full items-center'}>
-      <div className={'bg-tertiary flex justify-center my-5 w-full'}>
-        <div className={'w-[95%] bg-tertiary flex justify-between'}>
-          <p className={'py-5 w-[66%] text-primary'}>
-            Реалізацією проекту займалася IT-команда Студради ІПСА, яка розробляє програмні продукти для студентства, а
-            також були залучені інформаційний та дизайнерський відділи.
-          </p>
-          <ButtonLink link={'#'} className={'text-primary'}>
-            Детальніше
-          </ButtonLink>
-        </div>
-      </div>
+      {/*<div className={'bg-tertiary flex justify-center my-5 w-full'}>*/}
+      {/*  <div className={'w-[95%] bg-tertiary flex justify-between'}>*/}
+      {/*    <p className={'py-5 w-[66%] text-primary'}>*/}
+      {/*      Реалізацією проекту займалася IT-команда Студради ІПСА, яка розробляє програмні продукти для студентства, а*/}
+      {/*      також були залучені інформаційний та дизайнерський відділи.*/}
+      {/*    </p>*/}
+      {/*    <ButtonLink link={'#'} className={'text-primary'}>*/}
+      {/*      Детальніше*/}
+      {/*    </ButtonLink>*/}
+      {/*  </div>*/}
+      {/*</div>*/}
       <div className={`h-full w-[95%] flex justify-between`}>
         <div className={'flex flex-col h-[80%]'}>
           <Link to={'#'} className={'underline mb-1'}>

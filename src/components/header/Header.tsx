@@ -1,9 +1,10 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { GlobalRoutes, LinkRoutes, routes } from '@/constants/constants'
 
 import styles from './Header.module.css'
-import { ButtonLink } from 'components/buttonLink/ButtonLink.tsx'
 import DropDown from 'components/dropDown/DropDown.tsx'
+import { ButtonLink } from 'components/buttonLink/ButtonLink.tsx'
 
 const Header = () => {
   return (
@@ -13,14 +14,16 @@ const Header = () => {
       </Link>
       <nav>
         <ul className={'flex'}>
-          {routes.map((item) => (
-            <>
-              <DropDown item={item} classDropDown={'top-[40px]'} />
-              <li>
-                <ButtonLink item={item} navLink className={'mx-4'} />
-              </li>
-            </>
-          ))}
+          {routes
+            .filter((item) => item.name != GlobalRoutes.Contacts)
+            .map((item, index) => (
+              <React.Fragment key={index}>
+                <DropDown item={item} classDropDown={'top-[40px]'} />
+                <li>
+                  <ButtonLink item={item} navLink className={'mx-4'} />
+                </li>
+              </React.Fragment>
+            ))}
         </ul>
       </nav>
       <Link
