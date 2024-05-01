@@ -2,15 +2,17 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { GlobalRoutes, LinkRoutes, routes } from '@/constants/constants'
 
-import styles from './Header.module.css'
+import Logo from '@/assets/logo.tsx'
 import DropDown from 'components/dropDown/DropDown.tsx'
 import { ButtonLink } from 'components/buttonLink/ButtonLink.tsx'
+
+import styles from './Header.module.css'
 
 const Header = () => {
   return (
     <header className={'flex items-center justify-between py-3'}>
       <Link to={'/'} className={'text-xl my-2 ml-3'}>
-        Logo
+        <Logo />
       </Link>
       <nav>
         <ul className={'flex'}>

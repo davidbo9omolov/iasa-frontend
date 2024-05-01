@@ -62,7 +62,7 @@ export const socialNetworks = [
     link: 'https://www.instagram.com/',
   },
   {
-    name: 'TiKTok',
+    name: 'TikTok',
     link: 'https://www.tiktok.com/',
   },
   {
