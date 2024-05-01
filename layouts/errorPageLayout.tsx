@@ -8,7 +8,7 @@ export function PageNotFoundLayout({ children }: PageNotFoundLayoutProps) {
   return (
     <div className={'w-full'}>
       <Header />
-      {children}
+      <main className={'flex justify-center min-h-[80vh]'}>{children}</main>
     </div>
   )
 }

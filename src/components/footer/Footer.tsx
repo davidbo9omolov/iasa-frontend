@@ -7,7 +7,7 @@ const Footer = () => {
   const year = date.getFullYear()
 
   return (
-    <footer className={'h-[20%] min-h-[200px] flex flex-col w-full items-center absolute bottom-0 left-0'}>
+    <footer className={'h-[20%] min-h-[200px] flex flex-col w-full items-center'}>
       <div className={'bg-tertiary flex justify-center my-5 w-full'}>
         <div className={'w-[95%] bg-tertiary flex justify-between'}>
           <p className={'py-5 w-[66%] text-primary'}>
@@ -50,7 +50,7 @@ const Footer = () => {
         </div>
       </div>
       <div className={'border-t-[1px] border-thin flex justify-center py-5 w-[95%] mt-4'}>
-        <p className={'w-full text-center '}>&copy; IASA Student Council {year}</p>
+        <p className={'w-full text-center text-gray'}>&copy; IASA Student Council {year}</p>
       </div>
     </footer>
   )

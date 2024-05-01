@@ -14,6 +14,9 @@ export default {
         secondary: '#FFF',
         tertiary: '#FFD200',
         quaternary: '#282828',
+
+        //   text-gray
+        gray: '#C6C6C6',
       },
       borderColor: {
         primary: '#000',
