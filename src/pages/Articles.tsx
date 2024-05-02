@@ -1,9 +1,5 @@
 const Articles = () => {
-  return (
-    <section className={'w-[95%]'}>
-      <p>Articles</p>
-    </section>
-  )
+  return <div className={'w-[95%]'}></div>
 }
 
 export default Articles

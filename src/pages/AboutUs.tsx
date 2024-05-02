@@ -1,9 +1,5 @@
 const AboutUs = () => {
-  return (
-    <div>
-      <p>About us</p>
-    </div>
-  )
+  return <div></div>
 }
 
 export default AboutUs

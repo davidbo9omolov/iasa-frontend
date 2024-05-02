@@ -1,9 +1,5 @@
 const AnalystShop = () => {
-  return (
-    <section className={'w-[95%]'}>
-      <p>Analyst Shop</p>
-    </section>
-  )
+  return <div className={'w-[95%]'}></div>
 }
 
 export default AnalystShop

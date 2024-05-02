@@ -1,8 +1,8 @@
 const ForStudents = () => {
   return (
-    <section className={'w-[95%]'}>
-      <p>ForStudents</p>
-    </section>
+    <div className={'w-[95%]'}>
+      <div></div>
+    </div>
   )
 }
 

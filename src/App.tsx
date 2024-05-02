@@ -5,14 +5,17 @@ import { CommonLayout } from '../layouts/commonLayout.tsx'
 import { PageNotFoundLayout } from '../layouts/errorPageLayout.tsx'
 
 import HomePage from 'pages/HomePage.tsx'
-import AnalystShop from 'pages/AnalystShop.tsx'
-import Contacts from 'pages/Contacts.tsx'
-import Applicant from 'pages/Applicant.tsx'
-import Articles from 'pages/Articles.tsx'
-import ForStudents from 'pages/ForStudents.tsx'
+// import AnalystShop from 'pages/AnalystShop.tsx'
+// import Contacts from 'pages/Contacts.tsx'
+// import Applicant from 'pages/Applicant.tsx'
+// import Articles from 'pages/Articles.tsx'
+// import ForStudents from 'pages/ForStudents.tsx'
 import ErrorPage from 'pages/ErrorPage.tsx'
 
+import SadEmoji from '@/assets/sadEmoji.tsx'
+
 import './App.css'
+import TechnicalProblems from '@/assets/technicalProblems.tsx'
 
 function App() {
   return (
@@ -29,48 +32,77 @@ function App() {
         <Route
           path={LinkRoutes.Applicant}
           element={
-            <CommonLayout>
-              <Applicant />
-            </CommonLayout>
+            <PageNotFoundLayout>
+              <ErrorPage
+                icon={<TechnicalProblems />}
+                errorMessage={'Сторінка знаходиться в розробці.'}
+                errorType={'Проводяться технічні роботи'}
+              />
+              {/*<Applicant />*/}
+            </PageNotFoundLayout>
           }
         />
         <Route
           path={LinkRoutes.ForStudent}
           element={
-            <CommonLayout>
-              <ForStudents />
-            </CommonLayout>
+            <PageNotFoundLayout>
+              <ErrorPage
+                icon={<TechnicalProblems />}
+                errorMessage={'Сторінка знаходиться в розробці.'}
+                errorType={'Проводяться технічні роботи'}
+              />
+              {/*<ForStudents />*/}
+            </PageNotFoundLayout>
           }
         />
         <Route
           path={LinkRoutes.Articles}
           element={
-            <CommonLayout>
-              <Articles />
-            </CommonLayout>
+            <PageNotFoundLayout>
+              <ErrorPage
+                icon={<TechnicalProblems />}
+                errorMessage={'Сторінка знаходиться в розробці.'}
+                errorType={'Проводяться технічні роботи'}
+              />
+              {/*<Articles />*/}
+            </PageNotFoundLayout>
           }
         />
         <Route
           path={LinkRoutes.AnalystShop}
           element={
-            <CommonLayout>
-              <AnalystShop />
-            </CommonLayout>
+            <PageNotFoundLayout>
+              <ErrorPage
+                icon={<TechnicalProblems />}
+                errorMessage={'Сторінка знаходиться в розробці.'}
+                errorType={'Проводяться технічні роботи'}
+              />
+              {/*<AnalystShop />*/}
+            </PageNotFoundLayout>
           }
         />
         <Route
           path={LinkRoutes.Contacts}
           element={
-            <CommonLayout>
-              <Contacts />
-            </CommonLayout>
+            <PageNotFoundLayout>
+              <ErrorPage
+                icon={<TechnicalProblems />}
+                errorMessage={'Сторінка знаходиться в розробці.'}
+                errorType={'Проводяться технічні роботи'}
+              />
+              {/*<Contacts />*/}
+            </PageNotFoundLayout>
           }
         />
         <Route
           path={'*'}
           element={
             <PageNotFoundLayout>
-              <ErrorPage />
+              <ErrorPage
+                icon={<SadEmoji />}
+                errorMessage={'Сторінки, яку ви шукаєте, не існує.'}
+                errorType={'Помилка 404'}
+              />
             </PageNotFoundLayout>
           }
         />

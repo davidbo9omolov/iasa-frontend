@@ -1,9 +1,5 @@
 const Contacts = () => {
-  return (
-    <section className={'w-[95%]'}>
-      <p>Contacts</p>
-    </section>
-  )
+  return <div className={'w-[95%]'}></div>
 }
 
 export default Contacts

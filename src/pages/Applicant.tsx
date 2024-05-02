@@ -1,9 +1,5 @@
 const Applicant = () => {
-  return (
-    <section className={'w-[95%]'}>
-      <p>Applicant</p>
-    </section>
-  )
+  return <div className={'w-[95%]'}></div>
 }
 
 export default Applicant
