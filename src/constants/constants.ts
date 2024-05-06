@@ -4,6 +4,7 @@ export enum GlobalRoutes {
   ForStudent = 'ForStudent',
   Articles = 'Articles',
   Contacts = 'Contacts',
+  test = 'test',
 }
 
 export enum LinkRoutes {
