@@ -6,7 +6,7 @@ const Footer = () => {
   const year = date.getFullYear()
 
   return (
-    <footer className={'h-[20%] min-h-[200px] flex flex-col w-full items-center'}>
+    <footer className={'h-[20%] min-h-[200px] flex flex-col w-full items-center bg-quaternary py-3'}>
       {/*<div className={'bg-tertiary flex justify-center my-5 w-full'}>*/}
       {/*  <div className={'w-[95%] bg-tertiary flex justify-between'}>*/}
       {/*    <p className={'py-5 w-[66%] text-primary'}>*/}

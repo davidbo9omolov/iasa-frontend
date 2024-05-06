@@ -1,9 +1,9 @@
 export enum GlobalRoutes {
-  AnalystShop = 'Analyst shop',
-  Applicant = 'Для абітурієнтів',
-  ForStudent = 'Для студента',
-  Articles = 'Статті',
-  Contacts = 'Контакти',
+  AnalystShop = 'AnalystShop',
+  Applicant = 'Applicant',
+  ForStudent = 'ForStudent',
+  Articles = 'Articles',
+  Contacts = 'Contacts',
 }
 
 export enum LinkRoutes {
@@ -130,7 +130,7 @@ export const sliderCardsInformation = [
   {
     title: 'Тікток',
     image: '#',
-    description: 'Веде тікток Студради, де дає можливість розвиватись і в освітньому, і в розважальному напрямках.',
+    description: "Об'єднує ІПСАшників одягом, наліпками й іншою продукцією з унікальним дизайном.",
     path: '/#',
   },
 ]

@@ -2,7 +2,7 @@ import React from 'react'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import Slider from 'react-slick'
-import { IoMdArrowDropright, IoMdArrowDropleft } from 'react-icons/io'
+import { IoArrowBack, IoArrowForward } from 'react-icons/io5'
 
 type SliderProps = {
   children: React.ReactNode
@@ -14,16 +14,12 @@ type ArrowsProps = {
 
 function Arrows({ arrows }: ArrowsProps) {
   return (
-    <div
-      className={
-        'bg-tertiary w-[70px] h-[70px] rounded-full flex items-center justify-evenly absolute left-[29%] z-20 translate-y-[-100px]'
-      }
-    >
+    <div className={' h-[80px] w-[100px]  flex items-center justify-evenly z-20'}>
       <button className={' h-full w-[30%]'} onClick={() => arrows?.current?.slickPrev()}>
-        <IoMdArrowDropleft className={'text-primary'} />
+        <IoArrowBack className={'text-secondary  w-full h-full duration-300 hover:opacity-50 '} />
       </button>
       <button className={'h-full w-[30%]'} onClick={() => arrows?.current?.slickNext()}>
-        <IoMdArrowDropright className={'text-primary'} />
+        <IoArrowForward className={'text-secondary w-full h-full duration-300  hover:opacity-50'} />
       </button>
     </div>
   )
@@ -44,7 +40,10 @@ const CustomSlider = ({ children, className }: SliderProps) => {
 
   return (
     <>
-      <Arrows arrows={arrows} />
+      <div className={'w-[95%] flex justify-between relative items-center mb-6 translate-x-[35px]'}>
+        <p className={'text-4xl font-medium w-[fit]'}>Відділи Студради</p>
+        <Arrows arrows={arrows} />
+      </div>
       <Slider ref={arrows} {...settings}>
         {children}
       </Slider>

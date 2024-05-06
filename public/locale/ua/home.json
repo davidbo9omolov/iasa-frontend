@@ -1,0 +1,9 @@
+{
+  "routes": {
+    "applicant": "Для абітурієнтів",
+    "forStudent": "Для студентів",
+    "analystShop": "Аналітичний магазин",
+    "articles": "Статті",
+    "contacts": "Контакти"
+  }
+}

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { GlobalRoutes, LinkRoutes, routes } from '@/constants/constants'
+import { routes, GlobalRoutes, LinkRoutes } from '@/constants/constants.ts'
+import { useTranslation } from 'react-i18next'
 
 import Logo from '@/assets/logo.tsx'
 import DropDown from 'components/dropDown/DropDown.tsx'
@@ -9,6 +10,13 @@ import { ButtonLink } from 'components/buttonLink/ButtonLink.tsx'
 import styles from './Header.module.css'
 
 const Header = () => {
+  const { t } = useTranslation('common', { keyPrefix: 'home' })
+
+  const translatedRoutes = routes.map((item) => ({
+    ...item,
+    name: t(`routes.${item.name.toLowerCase()}`),
+  }))
+
   return (
     <header className={'flex items-center justify-between py-3'}>
       <Link to={'/'} className={'text-xl my-2 ml-3'}>
@@ -16,7 +24,7 @@ const Header = () => {
       </Link>
       <nav>
         <ul className={'flex'}>
-          {routes
+          {translatedRoutes
             .filter((item) => item.name != GlobalRoutes.Contacts)
             .map((item, index) => (
               <React.Fragment key={index}>
