@@ -4,15 +4,27 @@ export enum GlobalRoutes {
   ForStudent = 'ForStudent',
   Articles = 'Articles',
   Contacts = 'Contacts',
+  AboutUs = 'AboutUs',
+}
+
+export enum ReactRoutes {
+  Home = '/:lng/home',
+  AnalystShop = '/:lng/analyst-shop',
+  Applicant = '/:lng/applicant',
+  ForStudent = '/:lng/for-student',
+  Articles = '/:lng/articles',
+  Contacts = '/:lng/contacts',
+  AboutUs = '/:lng/about-us',
 }
 
 export enum LinkRoutes {
-  Home = '/',
+  Home = '/home',
   AnalystShop = '/analyst-shop',
   Applicant = '/applicant',
   ForStudent = '/for-student',
   Articles = '/articles',
   Contacts = '/contacts',
+  AboutUs = '/about-us',
 }
 
 export const routes = [
@@ -21,15 +33,15 @@ export const routes = [
     path: LinkRoutes.Applicant,
     dropdown: [
       {
-        name: 'Вступ',
+        name: 'Entry',
         path: '/entry',
       },
       {
-        name: 'Заходи',
+        name: 'Activities',
         path: '/activities',
       },
       {
-        name: 'Ресури',
+        name: 'Resources',
         path: '/resources',
       },
     ],
@@ -50,24 +62,40 @@ export const routes = [
     name: GlobalRoutes.Articles,
     path: LinkRoutes.Articles,
   },
+  {
+    name: GlobalRoutes.AboutUs,
+    path: LinkRoutes.AboutUs,
+  },
 ]
+export const translations = {
+  dropdown: [
+    {
+      name: 'ua',
+      path: '/ua',
+    },
+    {
+      name: 'en',
+      path: '/en',
+    },
+  ],
+}
 
 export const socialNetworks = [
   {
     name: 'Facebook',
-    link: 'https://www.facebook.com/',
+    path: 'https://www.facebook.com/',
   },
   {
     name: 'Instagram',
-    link: 'https://www.instagram.com/',
+    path: 'https://www.instagram.com/',
   },
   {
     name: 'TikTok',
-    link: 'https://www.tiktok.com/',
+    path: 'https://www.tiktok.com/',
   },
   {
     name: 'Youtube',
-    link: 'https://www.youtube.com/',
+    path: 'https://www.youtube.com/',
   },
 ]
 

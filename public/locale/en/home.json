@@ -1,0 +1,18 @@
+{
+  "routes": {
+    "applicant": "For applicants",
+    "forStudent": "For students",
+    "analystShop": "Analyst Shop",
+    "articles": "Articles",
+    "contacts": "Contacts",
+    "aboutUs": "About us"
+  },
+  "dropdown": {
+    "entry": "Apply",
+    "activities": "Activities",
+    "resources": "Resources",
+
+    "en": "EN",
+    "ua": "UA"
+  }
+}

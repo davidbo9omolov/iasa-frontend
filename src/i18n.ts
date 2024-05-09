@@ -1,18 +1,21 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
-import Backend from 'i18next-http-backend'
 import LanguageDetector from 'i18next-browser-languagedetector'
 
+import resources from '../public/locale'
+
 i18n
-  .use(Backend)
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: 'en',
+    lng: window.location.pathname.split('/')[1] || 'ua',
+    fallbackLng: 'ua',
     debug: true,
     interpolation: {
       escapeValue: false,
     },
+    resources,
+    ns: ['home'],
   })
 
 export default i18n

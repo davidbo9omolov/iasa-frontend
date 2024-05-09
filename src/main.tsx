@@ -5,7 +5,6 @@ import { store } from '@/store/store'
 import App from './App.tsx'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
-
 import './i18n.ts'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

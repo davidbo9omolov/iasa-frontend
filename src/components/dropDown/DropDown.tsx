@@ -1,21 +1,20 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { RouterItems } from 'types/router.ts'
 
 type DropDownProps = {
-  item: {
-    name: string
-    path: string
-    dropdown?: {
-      name: string
-      path: string
-    }[]
-  }
+  item: RouterItems
   classButton?: string
   classDropDown?: string
+  onClick?: (name: string) => void
 }
 
-const DropDown = ({ item, classButton, classDropDown }: DropDownProps) => {
+const DropDown = ({ item, classButton, classDropDown, onClick }: DropDownProps) => {
   const [isOpen, setIsOpen] = useState(false)
+  const { t, i18n } = useTranslation('home')
+  const translatedText = (itemElem: { name: string; path: string }) =>
+    t(`dropdown.${itemElem.name.charAt(0).toLowerCase() + itemElem.name.slice(1)}`)
 
   if (item.dropdown) {
     return (
@@ -25,15 +24,27 @@ const DropDown = ({ item, classButton, classDropDown }: DropDownProps) => {
         </button>
         {item.dropdown && isOpen && (
           <div className={`bg-quaternary absolute flex flex-col w-full rounded ${classDropDown}`}>
-            {item.dropdown.map((itemElem, index) => (
-              <Link
-                key={index}
-                to={item.path + itemElem.path}
-                className={`mx-4 py-1 ${item.dropdown && index !== item.dropdown.length - 1 ? 'border-thin border-b-[1px]' : ''}`}
-              >
-                {itemElem.name}
-              </Link>
-            ))}
+            {item.dropdown
+              ? item.dropdown.map((itemElem, index) =>
+                  onClick ? (
+                    <button
+                      key={index}
+                      onClick={() => onClick(itemElem.name)}
+                      className={`mx-4 py-1 hover:text-tertiary ${item.dropdown && index !== item.dropdown.length - 1 ? 'border-thin border-b-[1px]' : ''}`}
+                    >
+                      {translatedText(itemElem)}
+                    </button>
+                  ) : (
+                    <Link
+                      key={index}
+                      to={`/${i18n.language}${item?.path + itemElem?.path}`}
+                      className={`mx-4 py-1 hover:text-tertiary ${item.dropdown && index !== item.dropdown.length - 1 ? 'border-thin border-b-[1px]' : ''}`}
+                    >
+                      {translatedText(itemElem)}
+                    </Link>
+                  ),
+                )
+              : null}
           </div>
         )}
       </div>

@@ -1,9 +1,0 @@
-{
-  "routes": {
-    "applicant": "For applicants",
-    "student": "For students",
-    "analystShop": "Analyst Shop",
-    "articles": "Articles",
-    "contacts": "Contacts"
-  }
-}

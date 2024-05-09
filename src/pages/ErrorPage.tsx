@@ -1,5 +1,5 @@
 import React from 'react'
-import { ButtonLink } from 'components/buttonLink/ButtonLink.tsx'
+import { CustomLink } from 'components/customLink/CustomLink.tsx'
 
 type ErrorPageProps = {
   icon: React.ReactNode
@@ -16,9 +16,9 @@ const ErrorPage = ({ icon, errorType, errorMessage }: ErrorPageProps) => {
       </div>
       <p className={'text-secondary mt-5 text-xl font-bold'}>{errorType && errorType}</p>
       <p className={' my-5 text-gray'}>{errorMessage && errorMessage}</p>
-      <ButtonLink link={'/'} className={'bg-tertiary w-fit rounded-full my-5 px-3 py-1 text-primary'}>
+      <CustomLink link={'/'} className={'bg-tertiary w-fit rounded-full my-5 px-3 py-1 text-primary'}>
         На головну
-      </ButtonLink>
+      </CustomLink>
     </div>
   )
 }

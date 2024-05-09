@@ -4,6 +4,15 @@
     "forStudent": "Для студентів",
     "analystShop": "Аналітичний магазин",
     "articles": "Статті",
-    "contacts": "Контакти"
+    "contacts": "Контакти",
+    "aboutUs": "Про нас"
+  },
+  "dropdown": {
+   "entry": "Вступ",
+    "activities": "Заходи",
+    "resources": "Ресурси",
+
+    "en": "EN",
+    "ua": "UA"
   }
 }

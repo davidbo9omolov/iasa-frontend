@@ -1,28 +1,25 @@
-import { LinkRoutes } from '@/constants/constants'
+import { ReactRoutes, LinkRoutes } from '@/constants/constants'
 
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import { CommonLayout } from '../layouts/commonLayout.tsx'
 import { PageNotFoundLayout } from '../layouts/errorPageLayout.tsx'
 
 import HomePage from 'pages/HomePage.tsx'
-// import AnalystShop from 'pages/AnalystShop.tsx'
-// import Contacts from 'pages/Contacts.tsx'
-// import Applicant from 'pages/Applicant.tsx'
-// import Articles from 'pages/Articles.tsx'
-// import ForStudents from 'pages/ForStudents.tsx'
 import ErrorPage from 'pages/ErrorPage.tsx'
-
 import SadEmoji from '@/assets/sadEmoji.tsx'
 
 import './App.css'
 import TechnicalProblems from '@/assets/technicalProblems.tsx'
+import { useTranslation } from 'react-i18next'
 
 function App() {
+  const { i18n } = useTranslation()
   return (
     <div className={'min-h-screen relative'}>
       <Routes>
+        <Route path="/" element={<Navigate to={`/${i18n.language}${LinkRoutes.Home}`} />} />
         <Route
-          path={LinkRoutes.Home}
+          path={ReactRoutes.Home}
           element={
             <CommonLayout>
               <HomePage />
@@ -30,7 +27,7 @@ function App() {
           }
         />
         <Route
-          path={LinkRoutes.Applicant}
+          path={ReactRoutes.Applicant}
           element={
             <PageNotFoundLayout>
               <ErrorPage
@@ -43,7 +40,7 @@ function App() {
           }
         />
         <Route
-          path={LinkRoutes.ForStudent}
+          path={ReactRoutes.ForStudent}
           element={
             <PageNotFoundLayout>
               <ErrorPage
@@ -56,7 +53,7 @@ function App() {
           }
         />
         <Route
-          path={LinkRoutes.Articles}
+          path={ReactRoutes.Articles}
           element={
             <PageNotFoundLayout>
               <ErrorPage
@@ -69,7 +66,7 @@ function App() {
           }
         />
         <Route
-          path={LinkRoutes.AnalystShop}
+          path={ReactRoutes.AnalystShop}
           element={
             <PageNotFoundLayout>
               <ErrorPage
@@ -82,7 +79,20 @@ function App() {
           }
         />
         <Route
-          path={LinkRoutes.Contacts}
+          path={ReactRoutes.Contacts}
+          element={
+            <PageNotFoundLayout>
+              <ErrorPage
+                icon={<TechnicalProblems />}
+                errorMessage={'Сторінка знаходиться в розробці.'}
+                errorType={'Проводяться технічні роботи'}
+              />
+              {/*<Contacts />*/}
+            </PageNotFoundLayout>
+          }
+        />
+        <Route
+          path={ReactRoutes.AboutUs}
           element={
             <PageNotFoundLayout>
               <ErrorPage

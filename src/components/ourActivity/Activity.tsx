@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { socialNetworks } from '@/constants/constants.ts'
-import { ButtonLink } from 'components/buttonLink/ButtonLink.tsx'
+import { CustomLink } from 'components/customLink/CustomLink.tsx'
 
 import Iphone from '@/assets/iphoneScreen.png'
 import IphoneCamera from '@/assets/iphoneCamera.png'
@@ -74,8 +74,8 @@ const Activity = () => {
             покращення навчання та створення умов, щоб було зручно здобувати знання. Також ми добре розуміємося на
             створенні якісного відпочинку й проведення часу з користю
           </p>
-          {socialNetworks.map((network) => (
-            <Link to={network.link} className={'underline mr-5'}>
+          {socialNetworks.map((network, index) => (
+            <Link key={index} to={network.path} className={'underline mr-5'}>
               {network.name}
             </Link>
           ))}
@@ -99,9 +99,9 @@ const Activity = () => {
             Сайт стане в нагоді не тільки ІПСАшникам, а й абітурієнтам, котрі ще думають про вступ до нашого інституту.
           </p>
           <p className={'text-2xl font-bold mb-4'}>Ще більше фото тут</p>
-          <ButtonLink link={'#'} className={'bg-tertiary w-fit rounded-full px-3 py-1 text-primary'}>
+          <CustomLink link={'#'} className={'bg-tertiary w-fit rounded-full px-3 py-1 text-primary'}>
             Дивитися
-          </ButtonLink>
+          </CustomLink>
         </div>
       </div>
     </section>
