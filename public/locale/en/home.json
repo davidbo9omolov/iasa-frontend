@@ -14,5 +14,14 @@
 
     "en": "EN",
     "ua": "UA"
+  },
+  "ourActivity": {
+    "title": "Activities of the Student Council.",
+    "description": "It is the protection of rights and informing students, solving administrative issues. Our efforts are aimed at improving education and creating conditions for convenient knowledge acquisition. Also, we are adept at organizing quality leisure activities and spending time meaningfully.",
+
+    "animatedDescriptionOne": "The website is designed to inform students about the activities of the IPSA Student Council, introduce our team, facilitate the search for necessary information for applicants, and draw attention to all online resources and web products of IPSA.",
+    "animatedDescriptionTwo": "The website will be useful not only for IPSA students but also for prospective students who are still considering applying to our institute",
+    "more": "More photos here.",
+    "check": "Check out"
   }
 }
