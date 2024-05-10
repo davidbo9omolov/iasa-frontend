@@ -4,7 +4,7 @@ import Department from 'components/department/Department.tsx'
 
 const HomePage = () => {
   return (
-    <div className={'w-full'}>
+    <div className={'w-full relative'}>
       <Intro />
       <Activity />
       <Department />

@@ -23,7 +23,7 @@ const Activity = () => {
       blocks.forEach((block, index) => {
         const scrollPercentage = (window.scrollY / (section.offsetHeight - window.innerHeight)) * 100
         let opacity = 0
-        const quantyOfElements = blocks.length * 10
+        const quantyOfElements = blocks.length * 15
 
         if (index === 0 && scrollPercentage < quantyOfElements) {
           opacity = 1
@@ -42,7 +42,7 @@ const Activity = () => {
       textBlocks.forEach((textBlock, index) => {
         const scrollPercentage = (window.scrollY / (section.offsetHeight - window.innerHeight)) * 100
         let opacity = 0
-        const quantyOfElements = textBlocks.length * 15
+        const quantyOfElements = textBlocks.length * 35
 
         if (index === 0 && scrollPercentage < quantyOfElements) {
           opacity = 1
