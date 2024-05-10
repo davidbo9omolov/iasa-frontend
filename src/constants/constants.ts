@@ -1,3 +1,5 @@
+import { languageCheck } from '@/i18n.ts'
+
 export enum GlobalRoutes {
   AnalystShop = 'AnalystShop',
   Applicant = 'Applicant',
@@ -7,14 +9,17 @@ export enum GlobalRoutes {
   AboutUs = 'AboutUs',
 }
 
-export enum ReactRoutes {
-  Home = '/:lng/home',
-  AnalystShop = '/:lng/analyst-shop',
-  Applicant = '/:lng/applicant',
-  ForStudent = '/:lng/for-student',
-  Articles = '/:lng/articles',
-  Contacts = '/:lng/contacts',
-  AboutUs = '/:lng/about-us',
+export const ReactRoutes = {
+  Home: `/${languageCheck}/home`,
+  AnalystShop: `/${languageCheck}/analyst-shop`,
+  Applicant: `/${languageCheck}/applicant`,
+  ForStudent: `/${languageCheck}/for-student`,
+  Articles: `/${languageCheck}/articles`,
+  Contacts: `/${languageCheck}/contacts`,
+  AboutUs: `/${languageCheck}/about-us`,
+  Entry: `/${languageCheck}/applicant/entry`,
+  Activities: `/${languageCheck}/applicant/activities`,
+  Resources: `/${languageCheck}/applicant/resources`,
 }
 
 export enum LinkRoutes {

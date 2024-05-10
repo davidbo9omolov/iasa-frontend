@@ -105,6 +105,46 @@ function App() {
           }
         />
         <Route
+          path={ReactRoutes.Entry}
+          element={
+            <PageNotFoundLayout>
+              <ErrorPage
+                icon={<TechnicalProblems />}
+                errorMessage={'Сторінка знаходиться в розробці.'}
+                errorType={'Проводяться технічні роботи'}
+              />
+              {/*<Contacts />*/}
+            </PageNotFoundLayout>
+          }
+        />
+        <Route
+          path={ReactRoutes.Activities}
+          element={
+            <PageNotFoundLayout>
+              <ErrorPage
+                icon={<TechnicalProblems />}
+                errorMessage={'Сторінка знаходиться в розробці.'}
+                errorType={'Проводяться технічні роботи'}
+              />
+              {/*<Contacts />*/}
+            </PageNotFoundLayout>
+          }
+        />
+        <Route
+          path={ReactRoutes.Resources}
+          element={
+            <PageNotFoundLayout>
+              <ErrorPage
+                icon={<TechnicalProblems />}
+                errorMessage={'Сторінка знаходиться в розробці.'}
+                errorType={'Проводяться технічні роботи'}
+              />
+              {/*<Contacts />*/}
+            </PageNotFoundLayout>
+          }
+        />
+
+        <Route
           path={'*'}
           element={
             <PageNotFoundLayout>

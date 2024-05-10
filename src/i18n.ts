@@ -4,8 +4,8 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 
 import resources from '../public/locale'
 
-const languages = ['ua', 'en']
-const languageCheck = languages.includes(window.location.pathname.split('/')[1])
+export const languages = ['ua', 'en']
+export const languageCheck = languages.includes(window.location.pathname.split('/')[1])
   ? window.location.pathname.split('/')[1]
   : 'ua'
 

@@ -18,7 +18,7 @@ const Header = () => {
   }))
 
   const onChangingLanguage = (lang: string) => {
-    window.location.href = `/${lang}${window.location.pathname.slice(3)}`
+    window.location.pathname = `/${lang}/${window.location.pathname.split('/')[2]}`
   }
 
   return (
