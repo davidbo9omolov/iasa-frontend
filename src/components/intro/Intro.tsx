@@ -53,7 +53,7 @@ const Intro = () => {
 
   return (
     <section
-      className={`min-h-[500px] flex justify-center z-20 mb-16 duration-700 ${fullScreen ? 'translate-y-[-90px] fixed  w-full h-full' : ''}`}
+      className={`min-h-[500px] flex justify-center mb-16 duration-700 ${fullScreen ? 'translate-y-[-90px] fixed  w-full h-full z-20' : ''}`}
     >
       <div
         ref={customBlockRef}
@@ -69,11 +69,11 @@ const Intro = () => {
         >
           <source src={video} type={'video/mp4'} />
         </video>
-        <div className={'absolute z-10 top-0 bg-blackGradient w-full h-full'}></div>
+        <div className={'absolute top-0 bg-blackGradient w-full h-full'}></div>
         <div
           style={{ perspective: '1000', backfaceVisibility: 'hidden', left: cursorPosition.x, top: cursorPosition.y }}
           className={
-            'cursor-transition absolute flex justify-center items-center  translate-x-[-50%] translate-y-[-50%]  z-20 select-none min-w-[80px] min-h-[80px] w-[7vw] h-[7vw]'
+            'cursor-transition absolute flex justify-center items-center  translate-x-[-50%] translate-y-[-50%]  select-none min-w-[80px] min-h-[80px] w-[7vw] h-[7vw]'
           }
         >
           <span className={'bg-cursor absolute w-full h-full rounded-full '}></span>
