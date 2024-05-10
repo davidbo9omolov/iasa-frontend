@@ -30,7 +30,7 @@ const Footer = () => {
         </div>
         <div className={'flex flex-col h-[80%]'}>
           {socialNetworks.map((item, index) => (
-            <Link key={index} to={item.path} className={'underline mb-1'}>
+            <Link target={'_blank'} key={index} to={item.path} className={'underline mb-1'}>
               {item.name}
             </Link>
           ))}

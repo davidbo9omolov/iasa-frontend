@@ -4,11 +4,13 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 
 import resources from '../public/locale'
 
+const languages = ['ua', 'en']
+const languageCheck = (languages.includes(navigator.language) ? navigator.language : 'ua').split('-')[0]
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    lng: window.location.pathname.split('/')[1] || 'ua',
+    lng: languageCheck,
     fallbackLng: 'ua',
     debug: true,
     interpolation: {

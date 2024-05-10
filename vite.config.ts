@@ -22,4 +22,7 @@ export default defineConfig({
       types: `${path.resolve(__dirname, './src/types')}`,
     },
   },
+  optimizeDeps: {
+    exclude: ['js-big-decimal']
+  }
 })

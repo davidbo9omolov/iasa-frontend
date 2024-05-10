@@ -1,14 +1,80 @@
 import { useRef, useEffect, useState } from 'react'
 import { IoClose } from 'react-icons/io5'
-import video from '@/assets/sample-5s.mp4'
+// import video1 from '@/assets/sample-5s.mp4'
+import videoFull1 from '@/assets/full_mp4.mp4'
+import videoFull2 from '@/assets/full_webM.webm'
+
+import videoShort1 from '@/assets/short_mp4.mp4'
+import videoShort2 from '@/assets/short_webM.webm'
 import { useTranslation } from 'react-i18next'
+import useMouse from '@react-hook/mouse-position'
+import { motion } from 'framer-motion'
 
 const Intro = () => {
   const { t } = useTranslation('home')
   const [fullScreen, setFullScreen] = useState(false)
   const [close, setClose] = useState(false)
-  const [cursorPosition, setCursorPosition] = useState({ x: window.innerWidth - 600, y: window.innerHeight - 500 })
+
+  const [cursorText, setCursorText] = useState('')
+  const [cursorVariant, setCursorVariant] = useState('default')
   const customBlockRef = useRef<HTMLDivElement | null>(null)
+  const mouse = useMouse(customBlockRef, {
+    enterDelay: 100,
+    leaveDelay: 0,
+  })
+
+  let mouseXPosition = 0
+  let mouseYPosition = 0
+
+  if (mouse.x !== null && mouse.x !== undefined) {
+    mouseXPosition = mouse.clientX || 0
+  }
+
+  if (mouse.y !== null && mouse.y !== undefined) {
+    mouseYPosition = mouse.clientY || 0
+  }
+
+  const variants = {
+    default: {
+      scale: 0,
+      height: 10,
+      width: 10,
+      background: '#FFF',
+      fontSize: '16px',
+      x: mouseXPosition,
+      y: mouseYPosition,
+      transition: {
+        type: 'spring',
+        mass: 0.6,
+      },
+    },
+    project: {
+      scale: 1,
+      background: '#000',
+      color: '#FFF',
+      height: '7vw',
+      width: '7vw',
+      fontSize: '18px',
+      x: mouseXPosition - 50,
+      y: mouseYPosition - 50,
+    },
+  }
+
+  function projectEnter() {
+    setCursorText(t('intro.play'))
+    setCursorVariant('project')
+  }
+
+  function projectLeave() {
+    setCursorText('')
+    setCursorVariant('default')
+  }
+
+  const spring = {
+    type: 'spring',
+    stiffness: 500,
+    damping: 30,
+  }
 
   const onClick = () => {
     setFullScreen(!fullScreen)
@@ -21,68 +87,53 @@ const Intro = () => {
     } else {
       document.body.style.overflow = 'auto'
     }
+    console.log(fullScreen)
   }, [fullScreen])
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (customBlockRef.current) {
-        const { left, top, width, height } = customBlockRef.current.getBoundingClientRect()
-        const x = e.clientX - left
-        const y = e.clientY - top
-        if (x >= 0 && x <= width && y >= 0 && y <= height) {
-          setCursorPosition({ x, y })
-        }
-      }
-    }
-
-    const handleMouseLeave = () => {
-      setCursorPosition({ x: window.innerWidth - 600, y: window.innerHeight - 500 })
-    }
-
-    const currentBlockRef = customBlockRef.current
-    if (currentBlockRef) {
-      currentBlockRef.addEventListener('mousemove', handleMouseMove)
-      currentBlockRef.addEventListener('mouseleave', handleMouseLeave)
-
-      return () => {
-        currentBlockRef.removeEventListener('mousemove', handleMouseMove)
-        currentBlockRef.removeEventListener('mouseleave', handleMouseLeave)
-      }
-    }
-  }, [])
 
   return (
     <section
-      className={`min-h-[500px] flex justify-center mb-16 duration-700 ${fullScreen ? 'translate-y-[-90px] fixed  w-full h-full z-20' : ''}`}
+      ref={customBlockRef}
+      className={`min-h-[500px] flex justify-center mb-16 cursor-none relative duration-700 ${fullScreen ? 'translate-y-[-90px] fixed  w-full h-full z-20' : ''}`}
     >
-      <div
-        ref={customBlockRef}
-        className={`${fullScreen ? 'w-[100%] h-[100vh]' : 'w-[95%] h-[85vh]'} duration-500 relative`}
-        onClick={onClick}
+      <motion.div
+        variants={variants}
+        animate={cursorVariant}
+        transition={spring}
+        className={`fixed left-0 top-0 flex justify-center items-center pointer-events-none z-20 select-none rounded-full`}
       >
-        <video
-          id="screen"
-          autoPlay
-          muted
-          loop
-          className={`object-cover ${fullScreen ? '' : 'rounded-3xl'}  duration-500 h-full w-full`}
-        >
-          <source src={video} type={'video/mp4'} />
-        </video>
+        {close ? <IoClose className={'h-[30%] w-[30%] absolute'} /> : <span className="p-2 text-sm">{cursorText}</span>}
+      </motion.div>
+      <div
+        className={`${fullScreen ? 'w-[100%] h-[100vh]' : 'w-[95%] h-[85vh]'} relative`}
+        onClick={onClick}
+        onMouseEnter={projectEnter}
+        onMouseLeave={projectLeave}
+      >
+        {fullScreen ? (
+          <video
+            id="screen"
+            autoPlay
+            muted
+            loop
+            className={`object-cover ${fullScreen ? '' : 'rounded-3xl'}  duration-500 h-full w-full`}
+          >
+            <source src={videoFull1} type={'video/mp4'} />
+            <source src={videoFull2} type={'video/webM'} />
+          </video>
+        ) : (
+          <video
+            id="screen"
+            autoPlay
+            muted
+            loop
+            className={`object-cover ${fullScreen ? '' : 'rounded-3xl'}  duration-500 h-full w-full`}
+          >
+            <source src={videoShort1} type={'video/mp4'} />
+            <source src={videoShort2} type={'video/webM'} />
+          </video>
+        )}
+
         <div className={'absolute top-0 bg-blackGradient w-full h-full'}></div>
-        <div
-          style={{ perspective: '1000', backfaceVisibility: 'hidden', left: cursorPosition.x, top: cursorPosition.y }}
-          className={
-            'cursor-transition absolute flex justify-center items-center  translate-x-[-50%] translate-y-[-50%]  select-none min-w-[80px] min-h-[80px] w-[7vw] h-[7vw]'
-          }
-        >
-          <span className={'bg-cursor absolute w-full h-full rounded-full '}></span>
-          {close ? (
-            <IoClose className={'h-[50%] w-[50%] absolute'} />
-          ) : (
-            <p className={' absolute text-secondary'}> {t('intro.play')}</p>
-          )}
-        </div>
       </div>
     </section>
   )

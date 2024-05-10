@@ -51,7 +51,7 @@ const Header = () => {
             />
           </label>
           <Link
-            to={`/${i18n.language}/${LinkRoutes.Contacts}`}
+            to={`/${i18n.language}${LinkRoutes.Contacts}`}
             className={`rounded-full relative overflow-hidden ${styles.animationWrapper}`}
           >
             <div className={'border-[1px] border-tertiary px-3 py-2 rounded-full'}>

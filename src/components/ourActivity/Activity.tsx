@@ -71,7 +71,7 @@ const Activity = () => {
           <p className={'text-4xl font-bold mb-4'}>{t('ourActivity.title')}</p>
           <p className={'my-6 text-gray'}>{t('ourActivity.description')}</p>
           {socialNetworks.map((network, index) => (
-            <Link key={index} to={network.path} className={'underline mr-5'}>
+            <Link target={'_blank'} key={index} to={network.path} className={'underline mr-5'}>
               {network.name}
             </Link>
           ))}
