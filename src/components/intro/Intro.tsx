@@ -1,14 +1,11 @@
 import { useRef, useEffect, useState } from 'react'
 import { IoClose } from 'react-icons/io5'
-// import video1 from '@/assets/sample-5s.mp4'
+import VideoComponent from 'components/video-component/VideoComponent.tsx'
 import videoFull1 from '@/assets/full_mp4.mp4'
-import videoFull2 from '@/assets/full_webM.webm'
-
 import videoShort1 from '@/assets/short_mp4.mp4'
-import videoShort2 from '@/assets/short_webM.webm'
 import { useTranslation } from 'react-i18next'
 import useMouse from '@react-hook/mouse-position'
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 
 const Intro = () => {
   const { t } = useTranslation('home')
@@ -17,52 +14,73 @@ const Intro = () => {
 
   const [cursorText, setCursorText] = useState('')
   const [cursorVariant, setCursorVariant] = useState('default')
+  const [lastMouseX, setLastMouseX] = useState(window.innerWidth / 2)
+  const [lastMouseY, setLastMouseY] = useState(window.innerHeight / 2)
   const customBlockRef = useRef<HTMLDivElement | null>(null)
   const mouse = useMouse(customBlockRef, {
     enterDelay: 100,
-    leaveDelay: 0,
+    leaveDelay: 100,
   })
 
-  let mouseXPosition = 0
-  let mouseYPosition = 0
+  useEffect(() => {
+    if (mouse.x !== null && mouse.x !== undefined) {
+      setLastMouseX(mouse.clientX || 0)
+    }
+    if (mouse.y !== null && mouse.y !== undefined) {
+      setLastMouseY(mouse.clientY || 0)
+    }
+  }, [mouse])
 
-  if (mouse.x !== null && mouse.x !== undefined) {
-    mouseXPosition = mouse.clientX || 0
-  }
+  useEffect(() => {
+    const handleScroll = () => {
+      if (customBlockRef.current) {
+        const blockRect = customBlockRef.current.getBoundingClientRect()
+        if (blockRect.top < window.innerHeight / 2 && blockRect.bottom > window.innerHeight / 2) {
+          setCursorText(t('intro.play'))
+          setCursorVariant('screen')
+        } else {
+          setCursorText('')
+          setCursorVariant('default')
+        }
+      }
+    }
 
-  if (mouse.y !== null && mouse.y !== undefined) {
-    mouseYPosition = mouse.clientY || 0
-  }
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
-  const variants = {
+  const variants: Variants = {
     default: {
       scale: 0,
       height: 10,
       width: 10,
       background: '#FFF',
       fontSize: '16px',
-      x: mouseXPosition,
-      y: mouseYPosition,
+      x: lastMouseX,
+      y: lastMouseY,
       transition: {
         type: 'spring',
-        mass: 0.6,
+        mass: 0.4,
       },
     },
-    project: {
+    screen: {
       scale: 1,
-      background: '#000',
+      background: 'rgba(25, 25, 25, .4)',
+      backdropFilter: 'blur(10px)',
+      backfaceVisibility: 'hidden',
       color: '#FFF',
       height: '7vw',
       width: '7vw',
-      fontSize: '18px',
-      x: mouseXPosition - 50,
-      y: mouseYPosition - 50,
+      x: lastMouseX - 50,
+      y: lastMouseY - 50,
     },
   }
 
   function projectEnter() {
     setCursorText(t('intro.play'))
-    setCursorVariant('project')
+    setCursorVariant('screen')
   }
 
   function projectLeave() {
@@ -72,8 +90,8 @@ const Intro = () => {
 
   const spring = {
     type: 'spring',
-    stiffness: 500,
-    damping: 30,
+    stiffness: 1600,
+    damping: 44,
   }
 
   const onClick = () => {
@@ -87,7 +105,6 @@ const Intro = () => {
     } else {
       document.body.style.overflow = 'auto'
     }
-    console.log(fullScreen)
   }, [fullScreen])
 
   return (
@@ -101,37 +118,15 @@ const Intro = () => {
         transition={spring}
         className={`fixed left-0 top-0 flex justify-center items-center pointer-events-none z-20 select-none rounded-full`}
       >
-        {close ? <IoClose className={'h-[30%] w-[30%] absolute'} /> : <span className="p-2 text-sm">{cursorText}</span>}
+        {close ? <IoClose className={'h-[30%] w-[30%] absolute'} /> : <span className="p-2 text-md">{cursorText}</span>}
       </motion.div>
       <div
-        className={`${fullScreen ? 'w-[100%] h-[100vh]' : 'w-[95%] h-[85vh]'} relative`}
+        className={`${fullScreen ? 'w-[100%] h-[100vh]' : 'w-[95%] h-[85vh]'} relative z-10`}
         onClick={onClick}
         onMouseEnter={projectEnter}
         onMouseLeave={projectLeave}
       >
-        {fullScreen ? (
-          <video
-            id="screen"
-            autoPlay
-            muted
-            loop
-            className={`object-cover ${fullScreen ? '' : 'rounded-3xl'}  duration-500 h-full w-full`}
-          >
-            <source src={videoFull1} type={'video/mp4'} />
-            <source src={videoFull2} type={'video/webM'} />
-          </video>
-        ) : (
-          <video
-            id="screen"
-            autoPlay
-            muted
-            loop
-            className={`object-cover ${fullScreen ? '' : 'rounded-3xl'}  duration-500 h-full w-full`}
-          >
-            <source src={videoShort1} type={'video/mp4'} />
-            <source src={videoShort2} type={'video/webM'} />
-          </video>
-        )}
+        <VideoComponent src={fullScreen ? videoFull1 : videoShort1} />
 
         <div className={'absolute top-0 bg-blackGradient w-full h-full'}></div>
       </div>

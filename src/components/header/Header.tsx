@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { routes, translations, LinkRoutes } from '@/constants/constants.ts'
 import { useTranslation } from 'react-i18next'
 
@@ -50,20 +50,30 @@ const Header = () => {
               onClick={onChangingLanguage}
             />
           </label>
-          <Link
+          <NavLink
             to={`/${i18n.language}${LinkRoutes.Contacts}`}
-            className={`rounded-full relative overflow-hidden ${styles.animationWrapper}`}
+            className={({ isActive }) =>
+              isActive
+                ? 'text-primary bg-secondary rounded-full relative overflow-hidden'
+                : `rounded-full relative overflow-hidden ${styles.animationWrapper}`
+            }
           >
-            <div className={'border-[1px] border-tertiary px-3 py-2 rounded-full'}>
-              <div className={'relative h-fit overflow-hidden'}>
-                <p className={`${styles.animationElem1} text-tertiary`}>{t('routes.contacts')}</p>
-                <p className={`${styles.animationElem2} absolute text-primary`}>{t('routes.contacts')}</p>
-              </div>
-            </div>
-            <span
-              className={`left-[-2px] bg-secondary h-[100px] flex items-center justify-center absolute ${styles.animationCircle}`}
-            ></span>
-          </Link>
+            {({ isActive }) => (
+              <>
+                <div className={'border-[1px] border-tertiary px-3 py-2 rounded-full'}>
+                  <div className={'relative h-fit overflow-hidden'}>
+                    <p className={`${styles.animationElem1} ${isActive ? 'text-primary' : 'text-tertiary'}`}>
+                      {t('routes.contacts')}
+                    </p>
+                    <p className={`${styles.animationElem2} absolute text-primary`}>{t('routes.contacts')}</p>
+                  </div>
+                </div>
+                <span
+                  className={`left-[-2px] bg-secondary h-[100px] flex items-center justify-center absolute ${styles.animationCircle}`}
+                ></span>
+              </>
+            )}
+          </NavLink>
         </div>
       </div>
     </header>
