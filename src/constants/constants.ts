@@ -167,3 +167,45 @@ export const sliderCardsInformation = [
     path: '/#',
   },
 ]
+
+export const whatDoWeDoInformation = [
+  {
+    title: 'Interests',
+    description: 'InterestsDescription',
+  },
+  {
+    title: 'Abiturients',
+    description: 'AbiturientsDescription',
+  },
+  {
+    title: 'Events',
+    description: 'EventsDescription',
+  },
+  {
+    title: 'Inform',
+    description: 'InformDescription',
+  },
+]
+
+export const teamCardsInformation = [
+  {
+    name: 'Name',
+    surname: 'Surname',
+    position: 'Position',
+  },
+  {
+    name: 'Name',
+    surname: 'Surname',
+    position: 'Position',
+  },
+  {
+    name: 'Name',
+    surname: 'Surname',
+    position: 'Position',
+  },
+  {
+    name: 'Name',
+    surname: 'Surname',
+    position: 'Position',
+  },
+]

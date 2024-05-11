@@ -73,6 +73,8 @@ const Intro = () => {
       color: '#FFF',
       height: '7vw',
       width: '7vw',
+      maxWidth: '160px',
+      maxHeight: '160px',
       x: lastMouseX - 50,
       y: lastMouseY - 50,
     },

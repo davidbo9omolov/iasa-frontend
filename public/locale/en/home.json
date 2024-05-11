@@ -26,5 +26,18 @@
     "animatedDescriptionTwo": "The website will be useful not only for IPSA students but also for prospective students who are still considering applying to our institute",
     "more": "More photos here.",
     "check": "Check out"
+  },
+  "whatDoWeDo": {
+    "title": "What do we do",
+
+    "interests": "Representation of Student Interests",
+    "interestsDescription": "The Student Council acts as a mediator between students and the administration with the teaching staff. We gather feedback from education seekers regarding the quality of education and fairness of assessment, process them, and communicate current issues to the university community.",
+    "abiturients": "Assistance to Applicants",
+    "abiturientsDescription": "We actively assist applicants in choosing their specialization and maintain communication with them throughout the entire admission campaign. On our resources, you can find numerous interesting articles on topics related to future learning aspects.",
+    "events": "Organization of Events",
+    "eventsDescription": "The activities of the Student Council are not limited to the educational process: we also make the leisure of education seekers more enjoyable and interesting. It is our responsibility to organize events of various directions: introductory to attract applicants, educational to improve knowledge levels and enhance practical skills, and, of course, entertaining for students with any preferences.",
+    "inform": "Informing about Events and Activities",
+    "informDescription":"We deliver relevant information to the student community so that its members are always aware of events happening within their alma mater's walls. In addition, the Student Council creates entertaining media and textual content, as well as highlights employment opportunities."
   }
+
 }

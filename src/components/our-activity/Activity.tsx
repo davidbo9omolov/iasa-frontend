@@ -66,7 +66,7 @@ const Activity = () => {
 
   return (
     <section ref={sectionRef} className={'min-h-[3000px] flex justify-center  relative  visible'}>
-      <div className={'w-[95%] flex justify-between items-center sticky top-[10%] visible h-fit'}>
+      <div className={'w-[95%] flex justify-between items-center sticky top-[20%] visible h-fit'}>
         <div className={'w-1/3 mt-5'}>
           <p className={'text-4xl font-bold mb-4'}>{t('ourActivity.title')}</p>
           <p className={'my-6 text-gray'}>{t('ourActivity.description')}</p>
@@ -76,8 +76,8 @@ const Activity = () => {
             </Link>
           ))}
         </div>
-        <div className={'w-fit'}>
-          <div className={'rounded w-full h-[550px] flex justify-center items-center relative'}>
+        <div className={'w-fit min-w-[220px]'}>
+          <div className={'rounded w-full h-[50vh] min-h-[450px] flex justify-center items-center relative'}>
             <img src={Iphone} alt={'iphone'} className={'h-[100%]'} />
             <img src={IphoneCamera} alt={'iphoneCamera'} className={'absolute z-10 top-[20px] w-1/4'} />
             <div className={'bg-red-800 w-[90%] h-[95%] rounded-3xl absolute scroll-opacity-iphone'}></div>

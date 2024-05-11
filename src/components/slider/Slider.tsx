@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import Slider from 'react-slick'
@@ -26,17 +26,40 @@ function Arrows({ arrows }: ArrowsProps) {
 }
 
 const CustomSlider = ({ children, className }: SliderProps) => {
-  const arrows = React.useRef(null)
+  const arrows = useRef(null)
+  const [quantityOfSlides, setQuantityOfSlides] = useState(3)
 
   const settings = {
     dots: false,
     arrows: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: quantityOfSlides,
     slidesToScroll: 1,
     className: className,
   }
+
+  useEffect(() => {
+    const breakpoints = [
+      { width: 1900, slides: 6 },
+      { width: 1700, slides: 5 },
+      { width: 1500, slides: 4 },
+      { width: 1024, slides: 3 },
+      { width: 768, slides: 2 },
+      { width: 0, slides: 1 },
+    ]
+
+    function handleResize() {
+      const { slides } = breakpoints.find((bp) => window.innerWidth > bp.width) || breakpoints[breakpoints.length - 1]
+      setQuantityOfSlides(slides)
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   return (
     <>

@@ -12,7 +12,8 @@ export default {
         cursor:'rgba(25, 25, 25, .4)'
       },
       backgroundImage:{
-        blackGradient:'linear-gradient(0deg, rgba(0,0,0,0.737154236694678) 0%, rgba(255,255,255,0) 100%)',
+        blackGradient:'linear-gradient(0deg, rgba(0,0,0,0.9514399509803921) 0%, rgba(255,255,255,0) 100%)',
+        sliderCardGradient:'linear-gradient(90deg, rgba(251,146,60,1) 0%, rgba(247,68,0,1) 100%)'
       },
       textColor: {
         primary: '#000',
