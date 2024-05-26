@@ -66,7 +66,7 @@ const Activity = () => {
 
   return (
     <section ref={sectionRef} className={'min-h-[3000px] flex justify-center  relative  visible'}>
-      <div className={'w-[95%] flex justify-between items-center sticky top-[20%] visible h-fit'}>
+      <div className={'w-[95%] flex justify-between items-center sticky top-[15%] visible h-fit'}>
         <div className={'w-1/3 mt-5'}>
           <p className={'text-4xl font-bold mb-4'}>{t('ourActivity.title')}</p>
           <p className={'my-6 text-gray'}>{t('ourActivity.description')}</p>
