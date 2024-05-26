@@ -8,6 +8,8 @@ export default {
         secondary: '#FFF',
         tertiary: '#FFD200',
         quaternary: '#282828',
+        quaternaryDark: '#1A1A1A',
+        transparentBlack: 'rgba(0, 0, 0, 0.45)',
 
         cursor:'rgba(25, 25, 25, .4)'
       },
@@ -33,6 +35,14 @@ export default {
       },
       transitionTimingFunction:{
         'cursor-transition':'cubic-bezier(.215,.61,.355,1)'
+      },
+      theme: {
+        screens: {
+          sm: '640px',
+          md: '768px',
+          lg: '1024px',
+          xl: '1280px',
+        },
       }
     },
   },

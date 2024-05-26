@@ -1,4 +1,9 @@
 import { languageCheck } from '@/i18n.ts'
+import { FaInstagram } from 'react-icons/fa'
+import { FaLinkedinIn } from 'react-icons/fa'
+import { FaFacebookF } from 'react-icons/fa'
+import { FaTiktok } from 'react-icons/fa'
+import { FaYoutube } from 'react-icons/fa'
 
 export enum GlobalRoutes {
   AnalystShop = 'AnalystShop',
@@ -36,6 +41,7 @@ export const routes = [
   {
     name: GlobalRoutes.Applicant,
     path: LinkRoutes.Applicant,
+    withArrow: false,
     dropdown: [
       {
         name: 'Entry',
@@ -54,22 +60,27 @@ export const routes = [
   {
     name: GlobalRoutes.ForStudent,
     path: LinkRoutes.ForStudent,
-  },
-  {
-    name: GlobalRoutes.Contacts,
-    path: LinkRoutes.Contacts,
-  },
-  {
-    name: GlobalRoutes.AnalystShop,
-    path: LinkRoutes.AnalystShop,
+    withArrow: true,
   },
   {
     name: GlobalRoutes.Articles,
     path: LinkRoutes.Articles,
+    withArrow: true,
+  },
+  {
+    name: GlobalRoutes.AnalystShop,
+    path: LinkRoutes.AnalystShop,
+    withArrow: true,
   },
   {
     name: GlobalRoutes.AboutUs,
     path: LinkRoutes.AboutUs,
+    withArrow: false,
+  },
+  {
+    name: GlobalRoutes.Contacts,
+    path: LinkRoutes.Contacts,
+    withArrow: false,
   },
 ]
 export const translations = {
@@ -87,19 +98,28 @@ export const translations = {
 
 export const socialNetworks = [
   {
-    name: 'Facebook',
-    path: 'https://www.facebook.com/',
-  },
-  {
     name: 'Instagram',
+    icon: FaInstagram,
     path: 'https://www.instagram.com/',
   },
   {
+    name: 'Linkedin',
+    icon: FaLinkedinIn,
+    path: 'https://www.linkedin.com/',
+  },
+  {
+    name: 'Facebook',
+    icon: FaFacebookF,
+    path: 'https://www.facebook.com/',
+  },
+  {
     name: 'TikTok',
+    icon: FaTiktok,
     path: 'https://www.tiktok.com/',
   },
   {
     name: 'Youtube',
+    icon: FaYoutube,
     path: 'https://www.youtube.com/',
   },
 ]

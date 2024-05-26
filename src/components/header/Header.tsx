@@ -8,6 +8,7 @@ import DropDown from 'components/dropDown/DropDown.tsx'
 import { CustomLink } from 'components/customLink/CustomLink.tsx'
 
 import styles from './Header.module.css'
+import BurgerMenu from 'components/burgerMenu/BurgerMenu.tsx'
 
 const Header = () => {
   const { t, i18n } = useTranslation('home')
@@ -24,16 +25,16 @@ const Header = () => {
   return (
     <header className={'flex justify-center py-3 h-[90px]'}>
       <div className={'flex items-center justify-between w-[95%] my-2'}>
-        <CustomLink className={'text-xl '} withArrow={false} link={LinkRoutes.Home}>
+        <CustomLink className={'text-xl z-50'} withArrow={false} link={LinkRoutes.Home}>
           <Logo />
         </CustomLink>
         <nav>
-          <ul className={'flex'}>
+          <ul className={'hidden lg:flex'}>
             {translatedRoutes
               .filter((item) => item.name != t('routes.contacts'))
               .map((item, index) => (
                 <React.Fragment key={index}>
-                  <DropDown item={item} classDropDown={'top-[40px]'} />
+                  <DropDown item={item} classButton={'mx-4'} classDropDown={'top-[40px]'} />
                   <li>
                     <CustomLink item={item} navLink className={'mx-4'} />
                   </li>
@@ -42,7 +43,7 @@ const Header = () => {
           </ul>
         </nav>
         <div className={'flex items-center'}>
-          <label className={'relative mr-6 group'}>
+          <label className={'relative mr-8 group z-50'}>
             <p className={'absolute group-hover:text-tertiary uppercase'}>{i18n.language}</p>
             <DropDown
               item={translations}
@@ -54,14 +55,14 @@ const Header = () => {
             to={`/${i18n.language}${LinkRoutes.Contacts}`}
             className={({ isActive }) =>
               isActive
-                ? 'text-primary bg-secondary rounded-full relative overflow-hidden'
+                ? ' text-primary bg-secondary rounded-full relative overflow-hidden'
                 : `rounded-full relative overflow-hidden ${styles.animationWrapper}`
             }
           >
             {({ isActive }) => (
               <>
-                <div className={'border-[1px] border-tertiary px-3 py-2 rounded-full'}>
-                  <div className={'relative h-fit overflow-hidden'}>
+                <div className={'border-[1px] border-tertiary px-3 py-2 rounded-full  hidden lg:flex'}>
+                  <div className={'relative h-fit overflow-hidden '}>
                     <p className={`${styles.animationElem1} ${isActive ? 'text-primary' : 'text-tertiary'}`}>
                       {t('routes.contacts')}
                     </p>
@@ -74,6 +75,7 @@ const Header = () => {
               </>
             )}
           </NavLink>
+          <BurgerMenu translatedRoutes={translatedRoutes} />
         </div>
       </div>
     </header>

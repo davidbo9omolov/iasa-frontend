@@ -19,7 +19,7 @@ const DropDown = ({ item, classButton, classDropDown, onClick }: DropDownProps) 
   if (item.dropdown) {
     return (
       <div className={'relative'}>
-        <button className={`mx-4 ${classButton}`} onClick={() => setIsOpen(!isOpen)}>
+        <button className={classButton} onClick={() => setIsOpen(!isOpen)}>
           {item.name}
         </button>
         {item.dropdown && isOpen && (

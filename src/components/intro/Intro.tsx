@@ -112,7 +112,7 @@ const Intro = () => {
   return (
     <section
       ref={customBlockRef}
-      className={`min-h-[500px] flex justify-center mb-16 cursor-none relative duration-700 ${fullScreen ? 'translate-y-[-90px] fixed  w-full h-full z-20' : ''}`}
+      className={`min-h-[500px] flex justify-center mb-16 cursor-none  duration-700 ${fullScreen ? 'translate-y-[-90px] fixed  w-full h-full z-20' : 'relative'}`}
     >
       <motion.div
         variants={variants}

@@ -5,4 +5,5 @@ export type RouterItems = {
     name: string
     path: string
   }[]
+  withArrow?: boolean
 }

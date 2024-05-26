@@ -1,10 +1,19 @@
 import { routes, socialNetworks } from '@/constants/constants.ts'
 import { Link } from 'react-router-dom'
 import { CustomLink } from 'components/customLink/CustomLink.tsx'
+import { useTranslation } from 'react-i18next'
+import React from 'react'
+import DropDown from 'components/dropDown/DropDown.tsx'
 
 const Footer = () => {
   const date = new Date()
   const year = date.getFullYear()
+  const { t } = useTranslation('home')
+
+  const translatedRoutes = routes.map((item) => ({
+    ...item,
+    name: t(`routes.${item.name.charAt(0).toLowerCase() + item.name.slice(1)}`),
+  }))
 
   return (
     <footer className={'h-[20%] min-h-[200px] flex flex-col w-full items-center bg-quaternary py-3'}>
@@ -21,19 +30,22 @@ const Footer = () => {
           </Link>
         </div>
         <div className={'flex flex-col h-[80%]'}>
-          {routes.map((item, index) => (
-            <CustomLink key={index} item={item} className={'mb-1'} navLink withArrow={false} />
+          {translatedRoutes.map((item, index) => (
+            <React.Fragment key={index}>
+              <DropDown item={item} classButton={'mb-1'} classDropDown={'top-0 left-[150px] bg-quaternaryDark'} />
+              <CustomLink item={item} navLink className={'mb-1'} />
+            </React.Fragment>
           ))}
         </div>
-        <div className={'flex flex-col h-[80%]'}>
+        <div className={'flex flex-col w-[40%] h-[80%] items-end'}>
           <p>Follow us</p>
-        </div>
-        <div className={'flex flex-col h-[80%]'}>
-          {socialNetworks.map((item, index) => (
-            <Link target={'_blank'} key={index} to={item.path} className={'underline mb-1'}>
-              {item.name}
-            </Link>
-          ))}
+          <div className={'flex'}>
+            {socialNetworks.map((item, index) => (
+              <Link target={'_blank'} key={index} to={item.path} className={'ml-3'}>
+                <item.icon className={'w-[24px] h-[24px]'} />
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
       <div className={'border-t-[1px] border-thin flex justify-center py-5 w-[95%] mt-4'}>

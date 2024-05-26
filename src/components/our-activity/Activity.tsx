@@ -70,16 +70,18 @@ const Activity = () => {
         <div className={'w-1/3 mt-5'}>
           <p className={'text-4xl font-bold mb-4'}>{t('ourActivity.title')}</p>
           <p className={'my-6 text-gray'}>{t('ourActivity.description')}</p>
-          {socialNetworks.map((network, index) => (
-            <Link target={'_blank'} key={index} to={network.path} className={'underline mr-5'}>
-              {network.name}
-            </Link>
-          ))}
+          <div className={'flex'}>
+            {socialNetworks.map((network, index) => (
+              <Link target={'_blank'} key={index} to={network.path} className={'flex mr-5'}>
+                <network.icon className={'w-[24px] h-[24px]'} />
+              </Link>
+            ))}
+          </div>
         </div>
-        <div className={'w-fit min-w-[220px]'}>
-          <div className={'rounded w-full h-[50vh] min-h-[450px] flex justify-center items-center relative'}>
-            <img src={Iphone} alt={'iphone'} className={'h-[100%]'} />
-            <img src={IphoneCamera} alt={'iphoneCamera'} className={'absolute z-10 top-[20px] w-1/4'} />
+        <div className={'w-fit min-w-[300px]'}>
+          <div className={'rounded w-full h-[50vh] min-h-[615px] flex justify-center items-center relative'}>
+            <img src={Iphone} alt={'iphone'} className={'h-[100%]'} loading="lazy" />
+            <img src={IphoneCamera} alt={'iphoneCamera'} className={'absolute z-10 top-[20px] w-1/4'} loading="lazy" />
             <div className={'bg-red-800 w-[90%] h-[95%] rounded-3xl absolute scroll-opacity-iphone'}></div>
             <div className={'bg-green-500 w-[90%] h-[95%] rounded-3xl absolute scroll-opacity-iphone'}></div>
             <div className={'bg-blue-500 w-[90%] h-[95%] rounded-3xl absolute scroll-opacity-iphone'}></div>
@@ -91,7 +93,7 @@ const Activity = () => {
             {t('ourActivity.animatedDescriptionTwo')}
           </p>
           <p className={'text-2xl font-bold mb-4'}> {t('ourActivity.more')}</p>
-          <CustomLink link={'#'} className={'bg-tertiary w-fit rounded-full px-3 py-1 text-primary'}>
+          <CustomLink link={'#'} className={'bg-tertiary w-fit rounded-full px-3 py-1 text-primary'} withArrow>
             {t('ourActivity.check')}
           </CustomLink>
         </div>

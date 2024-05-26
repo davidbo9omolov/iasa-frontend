@@ -42,6 +42,7 @@
   "ourTeam": {
     "title": "Our Team",
     "description": "The work of Studrada would be impossible without proactive and determined individuals who make a significant contribution to our student body every day.",
-    "more": "Learn more about us"
+    "more": "Learn more about us",
+    "goBack": "Go back"
   }
 }

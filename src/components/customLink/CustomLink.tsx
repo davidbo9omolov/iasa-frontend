@@ -2,21 +2,16 @@ import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { GoArrowUpRight } from 'react-icons/go'
 import { useTranslation } from 'react-i18next'
+import { RouterItems } from 'types/router.ts'
 
-type ButtonLinkProps = {
-  item?: {
-    name: string
-    path: string
-    dropdown?: {
-      name: string
-      path: string
-    }[]
-  }
+export type ButtonLinkProps = {
+  item?: RouterItems
   navLink?: boolean
   children?: React.ReactNode
   link?: string
   className?: string
   withArrow?: boolean
+  onClick?: () => void
 }
 export const CustomLink = ({
   item,
@@ -24,7 +19,8 @@ export const CustomLink = ({
   children,
   link = '/',
   className = 'text-secondary',
-  withArrow = true,
+  withArrow = false,
+  onClick,
 }: ButtonLinkProps) => {
   const { i18n } = useTranslation()
 
@@ -32,15 +28,23 @@ export const CustomLink = ({
     if (navLink) {
       return (
         <>
-          <NavLink to={`/${i18n.language}${item?.path || link}`} className={` flex items-center ${className}`}>
+          <NavLink
+            to={`/${i18n.language}${item?.path || link}`}
+            className={` flex items-center ${className}`}
+            onClick={onClick}
+          >
             {item?.name || children}
-            {withArrow && <GoArrowUpRight className={'min-h-[20px] min-w-[20px] ml-0.5'} />}
+            {item?.withArrow && <GoArrowUpRight className={'min-h-[20px] min-w-[20px] ml-0.5'} />}
           </NavLink>
         </>
       )
     } else {
       return (
-        <Link to={`/${i18n.language}${item?.path || link}`} className={` flex items-center ${className}`}>
+        <Link
+          to={`/${i18n.language}${item?.path || link}`}
+          className={` flex items-center ${className}`}
+          onClick={onClick}
+        >
           {item?.name || children}
           {withArrow && <GoArrowUpRight className={'min-h-[20px] min-w-[20px] ml-0.5'} />}
         </Link>
