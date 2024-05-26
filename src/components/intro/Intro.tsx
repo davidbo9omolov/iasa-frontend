@@ -75,6 +75,8 @@ const Intro = () => {
       width: '7vw',
       maxWidth: '160px',
       maxHeight: '160px',
+      minWidth: '95px',
+      minHeight: '95px',
       x: lastMouseX - 50,
       y: lastMouseY - 50,
     },
