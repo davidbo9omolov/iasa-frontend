@@ -124,7 +124,9 @@ const Intro = () => {
     if (midiumScreenResolution && fullScreen && video?.requestFullscreen) {
       video.requestFullscreen()
     } else {
-      document?.exitFullscreen()
+      if (document?.fullscreenElement) {
+        document.exitFullscreen()
+      }
     }
   }, [midiumScreenResolution, fullScreen])
 
