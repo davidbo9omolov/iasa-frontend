@@ -121,10 +121,10 @@ const Intro = () => {
 
   useEffect(() => {
     const video = document.getElementById('screen')
-    if (fullScreen && video?.requestFullscreen) {
+    if (midiumScreenResolution && fullScreen && video?.requestFullscreen) {
       video.requestFullscreen()
     } else {
-      document.exitFullscreen()
+      document?.exitFullscreen()
     }
   }, [midiumScreenResolution, fullScreen])
 
