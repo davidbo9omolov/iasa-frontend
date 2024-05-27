@@ -123,9 +123,13 @@ const Intro = () => {
     const video = document.getElementById('screen')
     if (midiumScreenResolution && fullScreen && video?.requestFullscreen) {
       video.requestFullscreen()
-    } else {
-      if (document?.fullscreenElement) {
-        document.exitFullscreen()
+
+      if (video) {
+        video.addEventListener('fullscreenchange', () => {
+          if (!document.fullscreenElement) {
+            setFullScreen(false)
+          }
+        })
       }
     }
   }, [midiumScreenResolution, fullScreen])
