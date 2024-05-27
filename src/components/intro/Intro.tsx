@@ -119,10 +119,19 @@ const Intro = () => {
     }
   }, [fullScreen])
 
+  useEffect(() => {
+    const video = document.getElementById('screen')
+    if (fullScreen && video?.requestFullscreen) {
+      video.requestFullscreen()
+    } else {
+      document.exitFullscreen()
+    }
+  }, [midiumScreenResolution, fullScreen])
+
   return (
     <section
       ref={customBlockRef}
-      className={`min-h-[500px] flex justify-center mb-16 cursor-none  duration-700 ${fullScreen ? 'translate-y-[-90px] fixed  w-full h-full z-20' : 'relative'}`}
+      className={`min-h-[500px] flex justify-center mb-16 cursor-none  duration-700 z-50 ${fullScreen && !midiumScreenResolution ? 'translate-y-[-90px] fixed  w-full h-full' : 'relative'}`}
     >
       <motion.div
         variants={variants}
