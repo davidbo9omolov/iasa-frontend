@@ -17,6 +17,8 @@ const Intro = () => {
   const [lastMouseX, setLastMouseX] = useState(window.innerWidth / 2)
   const [lastMouseY, setLastMouseY] = useState(window.innerHeight / 2)
   const customBlockRef = useRef<HTMLDivElement | null>(null)
+
+  const midiumScreenResolution = window.innerWidth < 1024
   const mouse = useMouse(customBlockRef, {
     enterDelay: 100,
     leaveDelay: 100,
@@ -39,8 +41,10 @@ const Intro = () => {
           setCursorText(t('intro.play'))
           setCursorVariant('screen')
         } else {
-          setCursorText('')
-          setCursorVariant('default')
+          if (!midiumScreenResolution) {
+            setCursorText('')
+            setCursorVariant('default')
+          }
         }
       }
     }
@@ -49,7 +53,7 @@ const Intro = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [])
+  }, [customBlockRef, t, midiumScreenResolution])
 
   const variants: Variants = {
     default: {
@@ -83,13 +87,17 @@ const Intro = () => {
   }
 
   function projectEnter() {
-    setCursorText(t('intro.play'))
-    setCursorVariant('screen')
+    if (!midiumScreenResolution) {
+      setCursorText(t('intro.play'))
+      setCursorVariant('screen')
+    }
   }
 
   function projectLeave() {
-    setCursorText('')
-    setCursorVariant('default')
+    if (!midiumScreenResolution) {
+      setCursorText('')
+      setCursorVariant('default')
+    }
   }
 
   const spring = {
@@ -120,18 +128,24 @@ const Intro = () => {
         variants={variants}
         animate={cursorVariant}
         transition={spring}
-        className={`fixed left-0 top-0 flex justify-center items-center pointer-events-none z-20 select-none rounded-full`}
+        className={`hidden lg:fixed lg:left-0 lg:top-0 lg:flex lg:justify-center lg:items-center lg:pointer-events-none lg:z-20 lg:select-none lg:rounded-full`}
       >
-        {close ? <IoClose className={'h-[30%] w-[30%] absolute'} /> : <span className="p-2 text-md">{cursorText}</span>}
+        {close ? (
+          <IoClose className={' h-[30%] w-[30%] absolute'} />
+        ) : (
+          <span className="p-2 text-md">{cursorText}</span>
+        )}
       </motion.div>
       <div
-        className={`${fullScreen ? 'w-[100%] h-[100vh]' : 'w-[95%] h-[85vh]'} relative z-10`}
+        className={`${fullScreen ? 'w-[100%] h-[100vh]' : 'w-[95%] h-[85vh]'} relative z-10 flex justify-center items-center`}
         onClick={onClick}
         onMouseEnter={projectEnter}
         onMouseLeave={projectLeave}
       >
         <VideoComponent src={fullScreen ? videoFull1 : videoShort1} />
-
+        <div className={'absolute  z-20 mt-48 backdrop-blur-[10px] bg-cursor p-3 px-5 rounded-full lg:hidden'}>
+          <span className="text-md">{cursorText}</span>
+        </div>
         <div className={'absolute top-0 bg-blackGradient w-full h-full'}></div>
       </div>
     </section>

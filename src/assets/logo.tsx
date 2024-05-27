@@ -1,6 +1,11 @@
 const Logo = () => {
   return (
-    <svg width="56" height="57" viewBox="0 0 56 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      viewBox="0 0 56 57"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={'sm:w-[42px] h-[43px] lg:w-[56px] lg:h-[57px]'}
+    >
       <path
         fill-rule="evenodd"
         clip-rule="evenodd"
