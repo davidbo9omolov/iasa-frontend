@@ -66,11 +66,13 @@ const Activity = () => {
 
   return (
     <section ref={sectionRef} className={'min-h-[3000px] flex justify-center  relative  visible'}>
-      <div className={'flex-col lg:flex-row w-[95%] flex justify-between items-center sticky top-[15%] visible h-fit'}>
-        <div className={'w-full lg:w-1/3 mt-5'}>
-          <p className={'sm:text-2xl lg:text-4xl font-bold mb-4'}>{t('ourActivity.title')}</p>
-          <p className={'sm:text-sm my-6 text-gray'}>{t('ourActivity.description')}</p>
-          <div className={'flex'}>
+      <div
+        className={'flex-col lg:flex-row w-[95%] flex  justify-between items-center sticky top-0 visible h-screen py-8'}
+      >
+        <div className={'w-full lg:w-1/3 mt-5 xs:mt-3'}>
+          <p className={'text-xl lg:text-4xl font-bold mb-4'}>{t('ourActivity.title')}</p>
+          <p className={'text-xs my-6 text-gray lg:text-md'}>{t('ourActivity.description')}</p>
+          <div className={'flex w-full justify-evenly lg:w-auto md:justify-normal'}>
             {socialNetworks.map((network, index) => (
               <Link target={'_blank'} key={index} to={network.path} className={'flex mr-5'}>
                 <network.icon className={'w-[24px] h-[24px]'} />
@@ -78,8 +80,12 @@ const Activity = () => {
             ))}
           </div>
         </div>
-        <div className={'w-fit min-w-[300px]'}>
-          <div className={'rounded w-full h-[50vh] min-h-[615px] flex justify-center items-center relative'}>
+        <div className={'w-fit min-w-[80px] my-7 xs:rotate-90 rotate-0'}>
+          <div
+            className={
+              ' rounded w-full h-[40vh] md:h-[40vw] min-h-[260px] max-h-[650px] flex justify-center items-center relative'
+            }
+          >
             <img src={Iphone} alt={'iphone'} className={'h-[100%]'} loading="lazy" />
             <img src={IphoneCamera} alt={'iphoneCamera'} className={'absolute z-10 top-[20px] w-1/4'} loading="lazy" />
             <div className={'bg-red-800 w-[90%] h-[95%] rounded-3xl absolute scroll-opacity-iphone'}></div>
@@ -87,12 +93,22 @@ const Activity = () => {
             <div className={'bg-blue-500 w-[90%] h-[95%] rounded-3xl absolute scroll-opacity-iphone'}></div>
           </div>
         </div>
-        <div className={'w-1/4 mt-5 relative'}>
-          <p className={'my-3 text-gray  scroll-opacity-text'}>{t('ourActivity.animatedDescriptionOne')}</p>
-          <p className={'my-3 text-gray absolute scroll-opacity-text top-0'}>
+        <div className={'w-full lg:w-1/4 xs:mt-0 mt-5 relative flex flex-col xs:-translate-y-[25px]'}>
+          <p
+            className={
+              'my-3 text-gray xs:text-xs sm:text-sm md:text-md scroll-opacity-text h-[50px] md:h-auto  xs:-translate-y-[25px]'
+            }
+          >
+            {t('ourActivity.animatedDescriptionOne')}
+          </p>
+          <p
+            className={
+              'xs:text-xs sm:text-sm lg:text-md my-3 text-gray absolute scroll-opacity-text top-0 md:text-md  xs:-translate-y-[25px]'
+            }
+          >
             {t('ourActivity.animatedDescriptionTwo')}
           </p>
-          <p className={'text-2xl font-bold mb-4'}> {t('ourActivity.more')}</p>
+          <p className={'text-2xl font-bold mb-4 xs:mb-2'}> {t('ourActivity.more')}</p>
           <CustomLink link={'#'} className={'bg-tertiary w-fit rounded-full px-3 py-1 text-primary'} withArrow>
             {t('ourActivity.check')}
           </CustomLink>

@@ -36,14 +36,16 @@ export default {
       transitionTimingFunction:{
         'cursor-transition':'cubic-bezier(.215,.61,.355,1)'
       },
-      theme: {
+
+
         screens: {
-          sm: '640px',
-          md: '768px',
-          lg: '1024px',
-          xl: '1280px',
+          'xs': {'max': '376px'},
+          'sm': {'max': '640px'},
+          'md': {'min': '768px',},
+          'lg': {'min': '1024px'},
+          'xl': {'min': '1280px'},
+          '2xl': {'min': '1536px'},
         },
-      }
     },
   },
   plugins: [],

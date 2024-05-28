@@ -137,7 +137,7 @@ const Intro = () => {
   return (
     <section
       ref={customBlockRef}
-      className={`min-h-[500px] flex justify-center mb-16 cursor-none  duration-700 z-50 ${fullScreen && !midiumScreenResolution ? 'translate-y-[-90px] fixed  w-full h-full' : 'relative'}`}
+      className={`min-h-[500px] flex justify-center mb-16 cursor-none  duration-700 z-50 ${fullScreen && !midiumScreenResolution ? 'translate-y-[-90px] fixed  w-full h-full' : ''}`}
     >
       <motion.div
         variants={variants}
@@ -163,6 +163,7 @@ const Intro = () => {
         </div>
         <div className={'absolute top-0 bg-blackGradient w-full h-full'}></div>
       </div>
+      {fullScreen && <div className={'absolute  top-0  w-full h-full bg-primary'}></div>}
     </section>
   )
 }
