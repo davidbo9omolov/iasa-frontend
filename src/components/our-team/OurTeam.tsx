@@ -21,22 +21,27 @@ const OurTeam = () => {
         onClick={() => setIsOpen(!isOpen)}
       ></div>
 
-      <section className={' min-h-[250px] flex justify-center mb-48 '}>
-        <div className={'w-[95%] flex justify-between'}>
-          <div className={'w-[30%]'}>
+      <section className={' min-h-[250px] flex justify-center mb-48'}>
+        <div
+          className={'overflow-hidden w-[95%] flex justify-center items-center lg:justify-between flex-col lg:flex-row'}
+        >
+          <div className={'mb-10 w-full lg:w-[30%] lg:mb-0'}>
             <p className={'text-4xl font-bold '}>{t('ourTeam.title')}</p>
             <p className={'my-6'}>{t('ourTeam.description')}</p>
-            <CustomLink className={'bg-tertiary text-primary w-fit rounded-full p-2'}>
+            <CustomLink className={'bg-tertiary text-primary w-fit rounded-full p-2 hidden lg:flex'}>
               <p className={'text-primary'}>{t('ourTeam.more')}</p>
             </CustomLink>
           </div>
-          <div className={'flex flex-wrap w-[60%] h-fit justify-start'}>
+          <div className={'flex flex-wrap w-full lg:w-[60%] h-fit justify-start'}>
             {teamCardsInformation.map((item, index) => (
               <TeamCards key={index} item={item} onMoreInfo={onMoreInfo} />
             ))}
           </div>
+          <CustomLink className={'bg-tertiary text-primary w-fit rounded-full p-2 lg:hidden'}>
+            <p className={'text-primary'}>{t('ourTeam.more')}</p>
+          </CustomLink>
           <div
-            className={`absolute bottom-[15vh]  h-[70vh] w-[35vw] max-h-[700px] right-[7vh] bg-quaternary rounded-2xl duration-500 z-50 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+            className={`absolute  h-[70vh] w-[80%] lg:w-[35vw] lg:bottom-[15vh] lg:right-[7vh]  max-h-[600px]  bg-quaternary rounded-2xl duration-500 z-50 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
           >
             <div className={`flex flex-col p-7 h-full`}>
               <div className={'w-full h-[60%] bg-secondary rounded-2xl'}></div>

@@ -63,7 +63,7 @@ const CustomSlider = ({ children, className }: SliderProps) => {
 
   return (
     <>
-      <div className={'w-[95%] flex justify-between relative items-center mb-6 translate-x-[35px]'}>
+      <div className={'w-[95%] flex justify-between relative items-center mb-6 lg:translate-x-[35px]'}>
         <p className={'text-4xl font-medium w-[fit]'}>Відділи Студради</p>
         <Arrows arrows={arrows} />
       </div>
