@@ -15,7 +15,7 @@ const TeamCards: React.FC<TeamCardProps> = ({ item, onMoreInfo }) => {
   return (
     <>
       <button
-        className={'h-fit w-[350px] bg-quaternary rounded-lg flex p-3 mr-[30px] mb-[30px]'}
+        className={'h-fit w-[350px] bg-quaternary rounded-lg flex p-3 md:mr-[30px] mb-[30px]'}
         onClick={() => onMoreInfo(item)}
       >
         <div className={'mr-3'}>

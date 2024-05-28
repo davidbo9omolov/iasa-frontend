@@ -23,7 +23,9 @@ const OurTeam = () => {
 
       <section className={' min-h-[250px] flex justify-center mb-48'}>
         <div
-          className={'overflow-hidden w-[95%] flex justify-center items-center lg:justify-between flex-col lg:flex-row'}
+          className={
+            'overflow-hidden w-[95%] flex justify-center md:items-center lg:justify-between flex-col lg:flex-row'
+          }
         >
           <div className={'mb-10 w-full lg:w-[30%] lg:mb-0'}>
             <p className={'text-4xl font-bold '}>{t('ourTeam.title')}</p>
@@ -32,7 +34,7 @@ const OurTeam = () => {
               <p className={'text-primary'}>{t('ourTeam.more')}</p>
             </CustomLink>
           </div>
-          <div className={'flex flex-wrap w-full lg:w-[60%] h-fit justify-start'}>
+          <div className={'flex flex-wrap justify-center w-full lg:w-[60%] h-fit md:justify-start'}>
             {teamCardsInformation.map((item, index) => (
               <TeamCards key={index} item={item} onMoreInfo={onMoreInfo} />
             ))}

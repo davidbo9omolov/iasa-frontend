@@ -17,29 +17,31 @@ const Footer = () => {
 
   return (
     <footer className={'h-[20%] min-h-[200px] flex flex-col w-full items-center bg-quaternary py-3'}>
-      <div className={`h-full w-[95%] flex justify-between`}>
-        <div className={'flex flex-col h-[80%]'}>
-          <Link to={'#'} className={'underline mb-1'}>
-            iasa@mail.com
-          </Link>
-          <Link to={'#'} className={' mb-1'}>
-            IASA support bot
-          </Link>
-          <Link to={'#'} className={' mb-1'}>
-            IASA suggestion bot
-          </Link>
+      <div className={`h-full w-[95%] flex justify-between flex-col md:flex-row`}>
+        <div className={'flex justify-between w-full md:w-1/2'}>
+          <div className={'flex flex-col h-[80%]'}>
+            <Link to={'#'} className={'underline mb-1'}>
+              iasa@mail.com
+            </Link>
+            <Link to={'#'} className={' mb-1'}>
+              IASA support bot
+            </Link>
+            <Link to={'#'} className={' mb-1'}>
+              IASA suggestion bot
+            </Link>
+          </div>
+          <div className={'flex flex-col h-[80%]'}>
+            {translatedRoutes.map((item, index) => (
+              <React.Fragment key={index}>
+                <DropDown item={item} classButton={'mb-1'} classDropDown={'top-0 left-[150px] bg-quaternaryDark'} />
+                <CustomLink item={item} navLink className={'mb-1'} />
+              </React.Fragment>
+            ))}
+          </div>
         </div>
-        <div className={'flex flex-col h-[80%]'}>
-          {translatedRoutes.map((item, index) => (
-            <React.Fragment key={index}>
-              <DropDown item={item} classButton={'mb-1'} classDropDown={'top-0 left-[150px] bg-quaternaryDark'} />
-              <CustomLink item={item} navLink className={'mb-1'} />
-            </React.Fragment>
-          ))}
-        </div>
-        <div className={'flex flex-col w-[40%] h-[80%] items-end'}>
-          <p>Follow us</p>
-          <div className={'flex'}>
+        <div className={'flex flex-col w-full md:w-[20%] h-[80%] mt-5 md:mt-0'}>
+          <p className={'my-2 md:m-0'}>Follow us</p>
+          <div className={'flex w-full justify-evenly md:justify-center'}>
             {socialNetworks.map((item, index) => (
               <Link target={'_blank'} key={index} to={item.path} className={'ml-3'}>
                 <item.icon className={'w-[24px] h-[24px]'} />

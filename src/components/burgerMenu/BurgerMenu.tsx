@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { CustomLink } from 'components/customLink/CustomLink.tsx'
 import { RouterItems } from 'types/router.ts'
+import MobileDropDown from 'components/mobileDropDown/MobileDropDown.tsx'
 
 type BurgerMenuProps = {
   translatedRoutes: {
@@ -47,7 +48,10 @@ const BurgerMenu = ({ translatedRoutes }: BurgerMenuProps) => {
       >
         <div className={'flex flex-col justify-start w-[95%] mt-20'}>
           {translatedRoutes.map((item: RouterItems, index: number) => (
-            <CustomLink key={index} item={item} navLink className={'my-7 text-2xl w-fit'} onClick={handleClick} />
+            <>
+              <MobileDropDown item={item} selected={item.name} className={'my-7 text-2xl '} onClick={handleClick} />
+              <CustomLink key={index} item={item} navLink className={'my-7 text-2xl w-fit'} onClick={handleClick} />
+            </>
           ))}
         </div>
       </div>

@@ -192,18 +192,38 @@ export const whatDoWeDoInformation = [
   {
     title: 'Interests',
     description: 'InterestsDescription',
+    dropdown: [
+      {
+        description: 'InterestsDescription',
+      },
+    ],
   },
   {
     title: 'Abiturients',
     description: 'AbiturientsDescription',
+    dropdown: [
+      {
+        description: 'AbiturientsDescription',
+      },
+    ],
   },
   {
     title: 'Events',
     description: 'EventsDescription',
+    dropdown: [
+      {
+        description: 'EventsDescription',
+      },
+    ],
   },
   {
     title: 'Inform',
     description: 'InformDescription',
+    dropdown: [
+      {
+        description: 'InformDescription',
+      },
+    ],
   },
 ]
 
