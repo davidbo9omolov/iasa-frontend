@@ -24,26 +24,30 @@ const OurTeam = () => {
       <section className={' min-h-[250px] flex justify-center mb-48'}>
         <div
           className={
-            'overflow-hidden w-[95%] flex justify-center md:items-center lg:justify-between flex-col lg:flex-row'
+            'relative w-[95%] flex items-center justify-center md:items-center lg:justify-between flex-col lg:flex-row'
           }
         >
-          <div className={'mb-10 w-full lg:w-[30%] lg:mb-0'}>
+          <div className={'mb-10 w-full lg:w-[40%] lg:mb-0'}>
             <p className={'text-4xl font-bold '}>{t('ourTeam.title')}</p>
             <p className={'my-6'}>{t('ourTeam.description')}</p>
             <CustomLink className={'bg-tertiary text-primary w-fit rounded-full p-2 hidden lg:flex'}>
               <p className={'text-primary'}>{t('ourTeam.more')}</p>
             </CustomLink>
           </div>
-          <div className={'flex flex-wrap justify-center w-full lg:w-[60%] h-fit md:justify-start'}>
-            {teamCardsInformation.map((item, index) => (
-              <TeamCards key={index} item={item} onMoreInfo={onMoreInfo} />
-            ))}
+          <div className={'w-full lg:w-[60%] flex justify-center lg:justify-start'}>
+            <div className={'grid grid-cols-2 gap-[20px] justify-items-between w-[700px]  h-fit sm:grid-cols-1'}>
+              {teamCardsInformation.map((item, index) => (
+                <TeamCards key={index} item={item} onMoreInfo={onMoreInfo} />
+              ))}
+            </div>
           </div>
-          <CustomLink className={'bg-tertiary text-primary w-fit rounded-full p-2 lg:hidden'}>
+          <CustomLink
+            className={'absolute bottom-[-80px] left-0 bg-tertiary text-primary w-fit rounded-full p-2 lg:hidden'}
+          >
             <p className={'text-primary'}>{t('ourTeam.more')}</p>
           </CustomLink>
           <div
-            className={`absolute  h-[70vh] w-[80%] lg:w-[35vw] lg:bottom-[15vh] lg:right-[7vh]  max-h-[600px]  bg-quaternary rounded-2xl duration-500 z-50 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+            className={`absolute  h-[70vh] w-[80%] lg:w-[35vw] lg:bottom-[15vh] lg:right-[7vh]  sm:max-h-[500px]  bg-quaternary rounded-2xl duration-500 z-50 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
           >
             <div className={`flex flex-col p-7 h-full`}>
               <div className={'w-full h-[60%] bg-secondary rounded-2xl'}></div>

@@ -71,7 +71,7 @@ const Activity = () => {
       >
         <div className={'w-full lg:w-1/3 mt-5 xs:mt-3'}>
           <p className={'text-xl lg:text-4xl font-bold mb-4'}>{t('ourActivity.title')}</p>
-          <p className={'text-xs my-6 text-gray lg:text-md'}>{t('ourActivity.description')}</p>
+          <p className={'sm:text-xs my-6 text-gray md:text-md'}>{t('ourActivity.description')}</p>
           <div className={'flex w-full justify-evenly lg:w-auto md:justify-normal'}>
             {socialNetworks.map((network, index) => (
               <Link target={'_blank'} key={index} to={network.path} className={'flex mr-5'}>
@@ -83,7 +83,7 @@ const Activity = () => {
         <div className={'w-fit min-w-[80px] my-7 xs:rotate-90 rotate-0'}>
           <div
             className={
-              ' rounded w-full h-[40vh] md:h-[40vw] min-h-[260px] max-h-[650px] flex justify-center items-center relative'
+              ' rounded w-full h-[40vh] md:h-[40vw] min-h-[260px] max-h-[650px] min-w-[50px] flex justify-center items-center relative'
             }
           >
             <img src={Iphone} alt={'iphone'} className={'h-[100%]'} loading="lazy" />

@@ -40,11 +40,11 @@ export default {
 
         screens: {
           'xs': {'max': '376px'},
-          'sm': {'max': '640px'},
-          'md': {'min': '768px',},
-          'lg': {'min': '1024px'},
-          'xl': {'min': '1280px'},
-          '2xl': {'min': '1536px'},
+          'sm': {'max': '550px'},
+          'md': {'min': '850px',},
+          'lg': {'min': '1250px'},
+          'xl': {'min': '1440px'},
+          '2xl': {'min': '1700px'},
         },
     },
   },
