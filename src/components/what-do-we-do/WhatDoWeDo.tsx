@@ -36,6 +36,7 @@ const WhatDoWeDo = () => {
                     delay: index * 0.2,
                   },
                 }}
+                viewport={{ once: true }}
               >
                 <p className={'text-2xl font-bold mb-4 w-full md:w-[30%]'}>{item.title}</p>
                 <p className={'text-gray w-full md:w-[60%]'}>{item.description}</p>
