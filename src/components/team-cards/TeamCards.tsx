@@ -25,9 +25,10 @@ const TeamCards: React.FC<TeamCardProps> = ({ item, onMoreInfo }) => {
         whileInView={{
           scale: 1,
           transition: {
-            delay: 0.2,
+            delay: 0.5,
           },
         }}
+        viewport={{ once: true }}
       >
         <div className={'mr-3'}>
           <img src={'https://via.placeholder.com/75'} alt={'team'} className={'rounded-full'} />
