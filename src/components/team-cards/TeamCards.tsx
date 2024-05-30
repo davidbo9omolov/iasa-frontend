@@ -28,7 +28,6 @@ const TeamCards: React.FC<TeamCardProps> = ({ item, onMoreInfo }) => {
             delay: 0.5,
           },
         }}
-        viewport={{ once: true }}
       >
         <div className={'mr-3'}>
           <img src={'https://via.placeholder.com/75'} alt={'team'} className={'rounded-full'} />
