@@ -22,11 +22,11 @@ type ArrowsProps = {
 
 function Arrows({ arrows }: ArrowsProps) {
   return (
-    <div className={'flex h-[80px] w-[300px] absolute  md:hidden items-center justify-between z-10'}>
-      <button className={'h-[50px] w-[50px]'} onClick={() => arrows?.current?.slickPrev()}>
+    <div className={'flex h-[80px] w-full absolute  md:hidden items-center justify-between '}>
+      <button className={'h-[50px] w-[50px] -translate-x-[100%]'} onClick={() => arrows?.current?.slickPrev()}>
         <IoIosArrowBack className={'text-secondary  w-full h-full duration-300 hover:opacity-50 '} />
       </button>
-      <button className={'h-[50px] w-[50px]'} onClick={() => arrows?.current?.slickNext()}>
+      <button className={'h-[50px] w-[50px] translate-x-[100%]'} onClick={() => arrows?.current?.slickNext()}>
         <IoIosArrowForward className={'text-secondary w-full h-full duration-300  hover:opacity-50'} />
       </button>
     </div>
@@ -139,13 +139,18 @@ const Activity = () => {
               </div>
             </div>
 
-            <Slider ref={arrows} className={'md:hidden  w-[94%] h-full  absolute '} {...settings}>
+            <Slider ref={arrows} className={'md:hidden  w-[85%] h-full  absolute '} {...settings}>
               {activityImages.map((elem, index) => (
-                <div key={index} className={'h-[370px]  max-w-[175px] relative !flex justify-center items-center'}>
+                <div
+                  key={index}
+                  className={
+                    'h-[40vh] md:h-[40vw] min-h-[270px] max-h-[370px]  max-w-[175px] relative !flex justify-center items-center'
+                  }
+                >
                   <img
                     src={elem.image}
                     alt={'iphone'}
-                    className={'h-[90%] w-[90%] object-center absolute'}
+                    className={'h-[90%] w-[85%] object-center absolute'}
                     loading="lazy"
                   />
                 </div>
