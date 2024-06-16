@@ -12,15 +12,19 @@ export type ButtonLinkProps = {
   className?: string
   withArrow?: boolean
   onClick?: () => void
+  blankLink?: string
+  target?: '_blank' | '_self' | '_parent' | '_top'
 }
 export const CustomLink = ({
   item,
   navLink,
   children,
   link = '/',
+  blankLink = '/',
   className = 'text-secondary',
   withArrow = false,
   onClick,
+  ...rest
 }: ButtonLinkProps) => {
   const { i18n } = useTranslation()
 
@@ -29,9 +33,10 @@ export const CustomLink = ({
       return (
         <>
           <NavLink
-            to={`/${i18n.language}${item?.path || link}`}
+            to={blankLink || `/${i18n.language}${item?.path || link}`}
             className={` flex items-center ${className}`}
             onClick={onClick}
+            {...rest}
           >
             {item?.name || children}
             {item?.withArrow && <GoArrowUpRight className={'min-h-[20px] min-w-[20px] ml-0.5'} />}
@@ -41,9 +46,10 @@ export const CustomLink = ({
     } else {
       return (
         <Link
-          to={`/${i18n.language}${item?.path || link}`}
+          to={blankLink || `/${i18n.language}${item?.path || link}`}
           className={` flex items-center ${className}`}
           onClick={onClick}
+          {...rest}
         >
           {item?.name || children}
           {withArrow && <GoArrowUpRight className={'min-h-[20px] min-w-[20px] ml-0.5'} />}

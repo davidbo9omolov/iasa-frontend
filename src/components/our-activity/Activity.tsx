@@ -1,8 +1,10 @@
 import { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
-import { socialNetworks } from '@/constants/constants.ts'
+import { activityImages, socialNetworks } from '@/constants/constants.ts'
 import { CustomLink } from 'components/customLink/CustomLink.tsx'
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// import Slider from 'react-slick'
 
 import Iphone from '@/assets/iphoneScreen.png'
 import IphoneCamera from '@/assets/iphoneCamera.png'
@@ -23,13 +25,14 @@ const Activity = () => {
       blocks.forEach((block, index) => {
         const scrollPercentage = (window.scrollY / (section.offsetHeight - window.innerHeight)) * 100
         let opacity = 0
-        const quantyOfElements = blocks.length * 15
+        const quantyOfElements = blocks.length
+        const opacitySmothness = 80 / quantyOfElements
 
         if (index === 0 && scrollPercentage < quantyOfElements) {
           opacity = 1
         } else {
           if (index * quantyOfElements <= scrollPercentage && scrollPercentage < (index + 1) * quantyOfElements) {
-            opacity = (scrollPercentage % quantyOfElements) / quantyOfElements
+            opacity = opacitySmothness - (scrollPercentage % quantyOfElements) / quantyOfElements
           } else if (index === blocks.length - 1 && scrollPercentage > quantyOfElements * blocks.length) {
             opacity = 1
           }
@@ -65,7 +68,10 @@ const Activity = () => {
   }, [])
 
   return (
-    <section ref={sectionRef} className={'min-h-[3000px] flex justify-center  relative  visible'}>
+    <section
+      ref={sectionRef}
+      className={` md:min-h-[${activityImages.length * 1000}px] flex justify-center  relative  visible`}
+    >
       <div
         className={'flex-col lg:flex-row w-[95%] flex  justify-between items-center sticky top-0 visible h-screen py-8'}
       >
@@ -88,9 +94,22 @@ const Activity = () => {
           >
             <img src={Iphone} alt={'iphone'} className={'h-[100%]'} loading="lazy" />
             <img src={IphoneCamera} alt={'iphoneCamera'} className={'absolute z-10 top-[20px] w-1/4'} loading="lazy" />
-            <div className={'bg-red-800 w-[90%] h-[95%] rounded-3xl absolute scroll-opacity-iphone'}></div>
-            <div className={'bg-green-500 w-[90%] h-[95%] rounded-3xl absolute scroll-opacity-iphone'}></div>
-            <div className={'bg-blue-500 w-[90%] h-[95%] rounded-3xl absolute scroll-opacity-iphone'}></div>
+            {/*<Slider className={'md:hidden flex w-full h-full'}>*/}
+            {/*  <div className={'bg-red-800 w-[90%] h-[95%] rounded-3xl absolute scroll-opacity-iphone'}></div>*/}
+            {/*  <div className={'bg-green-500 w-[90%] h-[95%] rounded-3xl absolute scroll-opacity-iphone'}></div>*/}
+            {/*  <div className={'bg-blue-500 w-[90%] h-[95%] rounded-3xl absolute scroll-opacity-iphone'}></div>*/}
+            {/*</Slider>*/}
+
+            {activityImages.map((elem, index) => (
+              <div key={index} className={' w-[90%] h-[95%] absolute scroll-opacity-iphone hidden md:block '}>
+                <img
+                  src={elem.image}
+                  alt={'iphone'}
+                  className={'h-full w-full object-center rounded-3xl'}
+                  loading="lazy"
+                />
+              </div>
+            ))}
           </div>
         </div>
         <div className={'w-full lg:w-1/4 xs:mt-0 mt-5 relative flex flex-col xs:-translate-y-[25px]'}>
@@ -109,7 +128,14 @@ const Activity = () => {
             {t('ourActivity.animatedDescriptionTwo')}
           </p>
           <p className={'text-2xl font-bold mb-4 xs:mb-2'}> {t('ourActivity.more')}</p>
-          <CustomLink link={'#'} className={'bg-tertiary w-fit rounded-full px-3 py-1 text-primary'} withArrow>
+          <CustomLink
+            target="_blank"
+            blankLink={
+              'https://photos.google.com/share/AF1QipO2LHqQ0OCVl-lgAKyhbInBu90PDb1EPiWqEpY8SYZ9roz1T-0lnqS_Ha9IubgzNQ?key=WXNpYWJ4RGxmOFRoODluQUp6NXpLZkZtRnFvdHl3'
+            }
+            className={'bg-tertiary w-fit rounded-full px-3 py-1 text-primary'}
+            withArrow
+          >
             {t('ourActivity.check')}
           </CustomLink>
         </div>

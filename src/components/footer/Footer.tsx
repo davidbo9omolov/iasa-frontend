@@ -20,13 +20,19 @@ const Footer = () => {
       <div className={`h-full w-[95%] flex justify-between flex-col md:flex-row`}>
         <div className={'flex justify-between w-full md:w-1/2'}>
           <div className={'flex flex-col h-[80%]'}>
-            <Link to={'#'} className={'underline mb-1'}>
-              iasa@mail.com
+            <Link
+              target={'_blank'}
+              to={
+                'https://mail.google.com/mail/u/0/#inbox?compose=CllgCJqbzqzTlWkqrvvVzTmvWXDwnTMvtSQjkhbwQzvgbJtgXrNrshRWwHLPkzcXSGbJsHTRHSB'
+              }
+              className={'underline mb-1'}
+            >
+              studrada@gmail.com
             </Link>
-            <Link to={'#'} className={' mb-1'}>
+            <Link to={'https://t.me/iasa_stud_support_bot'} className={' mb-1'} target={'_blank'}>
               IASA support bot
             </Link>
-            <Link to={'#'} className={' mb-1'}>
+            <Link to={'https://t.me/IASAsuggestionBot'} className={' mb-1'} target={'_blank'}>
               IASA suggestion bot
             </Link>
           </div>

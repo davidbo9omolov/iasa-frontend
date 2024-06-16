@@ -5,6 +5,18 @@ import { FaFacebookF } from 'react-icons/fa'
 import { FaTiktok } from 'react-icons/fa'
 import { FaYoutube } from 'react-icons/fa'
 
+import {
+  IMG_IASA_1,
+  IMG_IASA_2,
+  IMG_IASA_3,
+  IMG_IASA_4,
+  IMG_IASA_5,
+  IMG_IASA_6,
+  IMG_IASA_7,
+  IMG_IASA_8,
+  IMG_IASA_9,
+} from '@/assets'
+
 export enum GlobalRoutes {
   AnalystShop = 'AnalystShop',
   Applicant = 'Applicant',
@@ -100,27 +112,27 @@ export const socialNetworks = [
   {
     name: 'Instagram',
     icon: FaInstagram,
-    path: 'https://www.instagram.com/',
+    path: ' https://www.instagram.com/studrada_iasa/',
   },
   {
     name: 'Linkedin',
     icon: FaLinkedinIn,
-    path: 'https://www.linkedin.com/',
+    path: 'https://www.linkedin.com/company/iasa-sc',
   },
   {
     name: 'Facebook',
     icon: FaFacebookF,
-    path: 'https://www.facebook.com/',
+    path: 'https://www.facebook.com/studrada.iasa',
   },
   {
     name: 'TikTok',
     icon: FaTiktok,
-    path: 'https://www.tiktok.com/',
+    path: 'https://www.tiktok.com/@iasa.sc',
   },
   {
     name: 'Youtube',
     icon: FaYoutube,
-    path: 'https://www.youtube.com/',
+    path: 'https://www.youtube.com/@IASAChannel',
   },
 ]
 
@@ -247,5 +259,35 @@ export const teamCardsInformation = [
     name: 'Name',
     surname: 'Surname',
     position: 'Position',
+  },
+]
+
+export const activityImages = [
+  {
+    image: IMG_IASA_1,
+  },
+  {
+    image: IMG_IASA_2,
+  },
+  {
+    image: IMG_IASA_3,
+  },
+  {
+    image: IMG_IASA_4,
+  },
+  {
+    image: IMG_IASA_5,
+  },
+  {
+    image: IMG_IASA_6,
+  },
+  {
+    image: IMG_IASA_7,
+  },
+  {
+    image: IMG_IASA_8,
+  },
+  {
+    image: IMG_IASA_9,
   },
 ]
