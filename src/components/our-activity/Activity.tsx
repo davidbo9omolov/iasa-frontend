@@ -1,16 +1,41 @@
-import { useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { activityImages, socialNetworks } from '@/constants/constants.ts'
 import { CustomLink } from 'components/customLink/CustomLink.tsx'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// import Slider from 'react-slick'
+// @ts-expect-error
+import Slider from 'react-slick'
 
 import Iphone from '@/assets/iphoneScreen.png'
 import IphoneCamera from '@/assets/iphoneCamera.png'
+import LogoInstaType from '@/assets/logoInstaType.tsx'
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
+import ThreeDots from '@/assets/threeDots.tsx'
+import ReplyInsta from '@/assets/replyInsta.tsx'
+import LikeInsta from '@/assets/likeInsta.tsx'
+import SendMessageInsta from '@/assets/sendMessageInsta.tsx'
+
+type ArrowsProps = {
+  arrows: React.MutableRefObject<Slider | null>
+}
+
+function Arrows({ arrows }: ArrowsProps) {
+  return (
+    <div className={'flex h-[80px] w-[650px] absolute  md:hidden items-center justify-evenly'}>
+      <button className={'h-[50px] w-[50px]'} onClick={() => arrows?.current?.slickPrev()}>
+        <IoIosArrowBack className={'text-secondary  w-full h-full duration-300 hover:opacity-50 '} />
+      </button>
+      <button className={'h-[50px] w-[50px]'} onClick={() => arrows?.current?.slickNext()}>
+        <IoIosArrowForward className={'text-secondary w-full h-full duration-300  hover:opacity-50'} />
+      </button>
+    </div>
+  )
+}
 
 const Activity = () => {
   const sectionRef = useRef<HTMLDivElement>(null)
+  const arrows = useRef(null)
   const { t } = useTranslation('home')
 
   useEffect(() => {
@@ -26,13 +51,12 @@ const Activity = () => {
         const scrollPercentage = (window.scrollY / (section.offsetHeight - window.innerHeight)) * 100
         let opacity = 0
         const quantyOfElements = blocks.length
-        const opacitySmothness = 80 / quantyOfElements
 
         if (index === 0 && scrollPercentage < quantyOfElements) {
           opacity = 1
         } else {
           if (index * quantyOfElements <= scrollPercentage && scrollPercentage < (index + 1) * quantyOfElements) {
-            opacity = opacitySmothness - (scrollPercentage % quantyOfElements) / quantyOfElements
+            opacity = (scrollPercentage % quantyOfElements) / quantyOfElements
           } else if (index === blocks.length - 1 && scrollPercentage > quantyOfElements * blocks.length) {
             opacity = 1
           }
@@ -67,13 +91,18 @@ const Activity = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const settings = {
+    dots: true,
+    arrows: false,
+    infinite: true,
+  }
+
   return (
-    <section
-      ref={sectionRef}
-      className={` md:min-h-[${activityImages.length * 1000}px] flex justify-center  relative  visible`}
-    >
+    <section ref={sectionRef} className={` md:min-h-[9000px] flex justify-center  relative  visible`}>
       <div
-        className={'flex-col lg:flex-row w-[95%] flex  justify-between items-center sticky top-0 visible h-screen py-8'}
+        className={
+          'flex-col lg:flex-row w-[95%] flex  justify-between items-center md:sticky top-0 visible h-screen py-8'
+        }
       >
         <div className={'w-full lg:w-1/3 mt-5 xs:mt-3'}>
           <p className={'text-xl lg:text-4xl font-bold mb-4'}>{t('ourActivity.title')}</p>
@@ -86,19 +115,46 @@ const Activity = () => {
             ))}
           </div>
         </div>
-        <div className={'w-fit min-w-[80px] my-7 xs:rotate-90 rotate-0'}>
+        <div className={'w-fit min-w-[80px] my-7 '}>
           <div
             className={
-              ' rounded w-full h-[40vh] md:h-[40vw] min-h-[260px] max-h-[650px] min-w-[50px] flex justify-center items-center relative'
+              ' rounded w-full h-[40vh] md:h-[40vw] min-h-[260px] max-h-[650px] min-w-[50px] flex justify-center items-center relative select-none'
             }
           >
-            <img src={Iphone} alt={'iphone'} className={'h-[100%]'} loading="lazy" />
+            <img src={Iphone} alt={'iphone'} className={'h-full'} loading="lazy" />
             <img src={IphoneCamera} alt={'iphoneCamera'} className={'absolute z-10 top-[20px] w-1/4'} loading="lazy" />
-            {/*<Slider className={'md:hidden flex w-full h-full'}>*/}
-            {/*  <div className={'bg-red-800 w-[90%] h-[95%] rounded-3xl absolute scroll-opacity-iphone'}></div>*/}
-            {/*  <div className={'bg-green-500 w-[90%] h-[95%] rounded-3xl absolute scroll-opacity-iphone'}></div>*/}
-            {/*  <div className={'bg-blue-500 w-[90%] h-[95%] rounded-3xl absolute scroll-opacity-iphone'}></div>*/}
-            {/*</Slider>*/}
+            <Arrows arrows={arrows} />
+
+            <div className={'absolute top-[40px] flex md:hidden z-20 items-center justify-between w-[80%] '}>
+              <div className={'flex items-center '}>
+                <LogoInstaType />
+                <p className={'text-xs ml-1'}>studrada_iasa...</p>
+              </div>
+              <ThreeDots />
+            </div>
+            <div className={'absolute bottom-[20px] z-20  flex md:hidden justify-between items-center w-[80%]'}>
+              <ReplyInsta />
+              <div className={'flex items-center'}>
+                <LikeInsta />
+                <SendMessageInsta />
+              </div>
+            </div>
+
+            <Slider ref={arrows} className={'md:hidden  w-[94%] h-full  absolute '} {...settings}>
+              {activityImages.map((elem, index) => (
+                <div
+                  key={index}
+                  className={' h-full min-h-[370px] max-w-[175px] relative !flex justify-center items-center'}
+                >
+                  <img
+                    src={elem.image}
+                    alt={'iphone'}
+                    className={'h-[90%] w-[90%] object-center absolute'}
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </Slider>
 
             {activityImages.map((elem, index) => (
               <div key={index} className={' w-[90%] h-[95%] absolute scroll-opacity-iphone hidden md:block '}>

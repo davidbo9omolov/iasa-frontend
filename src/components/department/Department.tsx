@@ -1,4 +1,4 @@
-import SliderInform from '../slider/SliderInform.tsx'
+import SliderInform from '@/components/slider/SliderInform.tsx'
 import { sliderCardsInformation } from '@/constants/constants.ts'
 import SliderCard from 'components/slider-card/SliderCard.tsx'
 

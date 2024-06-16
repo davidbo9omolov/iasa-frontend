@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import Slider from 'react-slick'
-import { IoArrowBack, IoArrowForward } from 'react-icons/io5'
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 
 type SliderProps = {
   children: React.ReactNode
@@ -16,10 +16,10 @@ function Arrows({ arrows }: ArrowsProps) {
   return (
     <div className={' h-[80px] w-[100px]  flex items-center justify-evenly z-20'}>
       <button className={' h-full w-[30%]'} onClick={() => arrows?.current?.slickPrev()}>
-        <IoArrowBack className={'text-secondary  w-full h-full duration-300 hover:opacity-50 '} />
+        <IoIosArrowBack className={'text-secondary  w-full h-full duration-300 hover:opacity-50 '} />
       </button>
       <button className={'h-full w-[30%]'} onClick={() => arrows?.current?.slickNext()}>
-        <IoArrowForward className={'text-secondary w-full h-full duration-300  hover:opacity-50'} />
+        <IoIosArrowForward className={'text-secondary w-full h-full duration-300  hover:opacity-50'} />
       </button>
     </div>
   )
