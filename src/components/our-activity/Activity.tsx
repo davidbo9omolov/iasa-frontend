@@ -118,7 +118,7 @@ const Activity = () => {
         <div className={'w-fit min-w-[80px] my-7 '}>
           <div
             className={
-              ' rounded w-full h-[40vh] md:h-[40vw] min-h-[260px] max-h-[650px] min-w-[50px] flex justify-center items-center relative select-none'
+              ' rounded w-full h-[40vh] md:h-[40vw] min-w-[170px] min-h-[260px] max-h-[650px]  flex justify-center items-center relative select-none'
             }
           >
             <img src={Iphone} alt={'iphone'} className={'h-full'} loading="lazy" />
