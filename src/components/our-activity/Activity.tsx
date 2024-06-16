@@ -22,7 +22,7 @@ type ArrowsProps = {
 
 function Arrows({ arrows }: ArrowsProps) {
   return (
-    <div className={'flex h-[80px] w-[650px] absolute  md:hidden items-center justify-evenly'}>
+    <div className={'flex h-[80px] w-[300px] absolute  md:hidden items-center justify-between z-10'}>
       <button className={'h-[50px] w-[50px]'} onClick={() => arrows?.current?.slickPrev()}>
         <IoIosArrowBack className={'text-secondary  w-full h-full duration-300 hover:opacity-50 '} />
       </button>
@@ -115,7 +115,7 @@ const Activity = () => {
             ))}
           </div>
         </div>
-        <div className={'w-fit min-w-[80px] my-7 '}>
+        <div className={'w-fit my-7 '}>
           <div
             className={
               ' rounded w-full h-[40vh] md:h-[40vw] min-w-[170px] min-h-[260px] max-h-[650px]  flex justify-center items-center relative select-none'
@@ -124,7 +124,6 @@ const Activity = () => {
             <img src={Iphone} alt={'iphone'} className={'h-full'} loading="lazy" />
             <img src={IphoneCamera} alt={'iphoneCamera'} className={'absolute z-10 top-[20px] w-1/4'} loading="lazy" />
             <Arrows arrows={arrows} />
-
             <div className={'absolute top-[40px] flex md:hidden z-20 items-center justify-between w-[80%] '}>
               <div className={'flex items-center '}>
                 <LogoInstaType />
@@ -142,10 +141,7 @@ const Activity = () => {
 
             <Slider ref={arrows} className={'md:hidden  w-[94%] h-full  absolute '} {...settings}>
               {activityImages.map((elem, index) => (
-                <div
-                  key={index}
-                  className={' h-full min-h-[370px] max-w-[175px] relative !flex justify-center items-center'}
-                >
+                <div key={index} className={'h-[370px]  max-w-[175px] relative !flex justify-center items-center'}>
                   <img
                     src={elem.image}
                     alt={'iphone'}
