@@ -15,7 +15,7 @@ export type ButtonLinkProps = {
   blankLink?: string
   target?: '_blank' | '_self' | '_parent' | '_top'
 }
-export const CustomLink = ({
+const CustomLink = ({
   item,
   navLink,
   children,
@@ -58,3 +58,5 @@ export const CustomLink = ({
     }
   }
 }
+
+export default CustomLink

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { activityImages, socialNetworks } from '@/constants/constants.ts'
-import { CustomLink } from 'components/customLink/CustomLink.tsx'
+import CustomLink from 'components/customLink/CustomLink.tsx'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import Slider from 'react-slick'
@@ -101,12 +101,12 @@ const Activity = () => {
     <section ref={sectionRef} className={` md:min-h-[9000px] flex justify-center  relative  visible`}>
       <div
         className={
-          'flex-col lg:flex-row w-[95%] flex  justify-between items-center md:sticky top-0 visible h-screen py-8'
+          'flex-col lg:flex-row w-[95%] flex  justify-between items-center md:sticky top-0 visible h-screen md:py-6'
         }
       >
         <div className={'w-full lg:w-1/3 mt-5 xs:mt-3'}>
-          <p className={'text-xl lg:text-4xl font-bold mb-4'}>{t('ourActivity.title')}</p>
-          <p className={'sm:text-xs my-6 text-gray md:text-md'}>{t('ourActivity.description')}</p>
+          <p className={'text-2xl lg:text-4xl font-bold mb-4'}>{t('ourActivity.title')}</p>
+          <p className={'text-sm my-6 text-gray md:text-md'}>{t('ourActivity.description')}</p>
           <div className={'flex w-full justify-evenly lg:w-auto md:justify-normal'}>
             {socialNetworks.map((network, index) => (
               <Link target={'_blank'} key={index} to={network.path} className={'flex mr-5'}>
@@ -115,7 +115,7 @@ const Activity = () => {
             ))}
           </div>
         </div>
-        <div className={'w-fit my-7 '}>
+        <div className={'w-fit lg:my-7 '}>
           <div
             className={
               ' rounded w-full h-[40vh] md:h-[40vw] min-w-[170px] min-h-[260px] max-h-[650px]  flex justify-center items-center relative select-none'
@@ -139,7 +139,7 @@ const Activity = () => {
               </div>
             </div>
 
-            <Slider ref={arrows} className={'md:hidden  w-[85%] h-full  absolute '} {...settings}>
+            <Slider ref={arrows} className={'md:hidden xs:w-[70%] sm:w-[90%] h-full  absolute '} {...settings}>
               {activityImages.map((elem, index) => (
                 <div
                   key={index}
@@ -150,7 +150,7 @@ const Activity = () => {
                   <img
                     src={elem.image}
                     alt={'iphone'}
-                    className={'h-[90%] w-[85%] object-center absolute'}
+                    className={'h-[92%] w-[70%] sm:w-full object-center absolute'}
                     loading="lazy"
                   />
                 </div>
@@ -169,28 +169,28 @@ const Activity = () => {
             ))}
           </div>
         </div>
-        <div className={'w-full lg:w-1/4 xs:mt-0 mt-5 relative flex flex-col xs:-translate-y-[25px]'}>
+        <div className={'w-full lg:w-1/4 xs:mt-0 mt-5 relative flex flex-col md:-translate-y-[25px]'}>
           <p
             className={
-              'my-3 text-gray xs:text-xs sm:text-sm md:text-md scroll-opacity-text h-[50px] md:h-auto  xs:-translate-y-[25px]'
+              'my-3 text-gray text-sm md:text-md scroll-opacity-text h-[50px] md:h-auto  md:-translate-y-[25px]'
             }
           >
             {t('ourActivity.animatedDescriptionOne')}
           </p>
           <p
             className={
-              'xs:text-xs sm:text-sm lg:text-md my-3 text-gray absolute scroll-opacity-text top-0 md:text-md  xs:-translate-y-[25px]'
+              'text-sm  lg:text-md my-3 text-gray absolute scroll-opacity-text top-0 md:text-md  md:-translate-y-[25px]'
             }
           >
             {t('ourActivity.animatedDescriptionTwo')}
           </p>
-          <p className={'text-2xl font-bold mb-4 xs:mb-2'}> {t('ourActivity.more')}</p>
+          <p className={'hidden md:block text-2xl font-bold my-4 xs:my-2'}> {t('ourActivity.more')}</p>
           <CustomLink
             target="_blank"
             blankLink={
               'https://photos.google.com/share/AF1QipO2LHqQ0OCVl-lgAKyhbInBu90PDb1EPiWqEpY8SYZ9roz1T-0lnqS_Ha9IubgzNQ?key=WXNpYWJ4RGxmOFRoODluQUp6NXpLZkZtRnFvdHl3'
             }
-            className={'bg-tertiary w-fit rounded-full px-3 py-1 text-primary'}
+            className={'mt-4 md:mt-0 bg-tertiary w-fit rounded-full px-3 py-1 text-primary'}
             withArrow
           >
             {t('ourActivity.check')}

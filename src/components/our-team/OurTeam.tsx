@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { teamCardsInformation } from '@/constants/constants.ts'
 import TeamCards, { TeamMember } from '@/components/team-cards/TeamCards.tsx'
-import { CustomLink } from 'components/customLink/CustomLink.tsx'
+import CustomLink from 'components/customLink/CustomLink.tsx'
 
 const OurTeam = () => {
   const { t } = useTranslation('home')
@@ -28,8 +28,8 @@ const OurTeam = () => {
           }
         >
           <div className={'mb-10 w-full lg:w-[40%] lg:mb-0'}>
-            <p className={'text-4xl font-bold '}>{t('ourTeam.title')}</p>
-            <p className={'my-6'}>{t('ourTeam.description')}</p>
+            <p className={'text-2xl lg:text-4xl font-bold '}>{t('ourTeam.title')}</p>
+            <p className={'text-sm md:text-md my-6'}>{t('ourTeam.description')}</p>
             <CustomLink className={'bg-tertiary text-primary w-fit rounded-full p-2 hidden lg:flex'}>
               <p className={'text-primary'}>{t('ourTeam.more')}</p>
             </CustomLink>

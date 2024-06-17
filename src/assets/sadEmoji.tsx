@@ -12,8 +12,8 @@ const SadEmoji = () => {
       <path
         d="M95.7882 72.3803C92.1072 59.5431 78.7166 52.1205 65.8794 55.8015C53.0423 59.4825 45.6198 72.8732 49.3008 85.7104"
         stroke="white"
-        stroke-width="9.33024"
-        stroke-linecap="round"
+        strokeWidth="9.33024"
+        strokeLinecap="round"
       />
       <ellipse
         cx="103.009"

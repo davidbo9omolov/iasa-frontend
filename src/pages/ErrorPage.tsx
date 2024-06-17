@@ -1,5 +1,5 @@
 import React from 'react'
-import { CustomLink } from 'components/customLink/CustomLink.tsx'
+import CustomLink from 'components/customLink/CustomLink.tsx'
 import { LinkRoutes } from '@/constants/constants.ts'
 
 type ErrorPageProps = {

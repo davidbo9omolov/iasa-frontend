@@ -1,6 +1,6 @@
 import { routes, socialNetworks } from '@/constants/constants.ts'
 import { Link } from 'react-router-dom'
-import { CustomLink } from 'components/customLink/CustomLink.tsx'
+import CustomLink from 'components/customLink/CustomLink.tsx'
 import { useTranslation } from 'react-i18next'
 import React from 'react'
 import DropDown from 'components/dropDown/DropDown.tsx'

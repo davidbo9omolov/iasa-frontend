@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { whatDoWeDoInformationProps } from 'types/whatDoWeDoInformation.ts'
 import { RouterItems } from 'types/router.ts'
 import { useTranslation } from 'react-i18next'
@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 import { IoIosArrowDown } from 'react-icons/io'
 
-type MobileDropDownProps = {
+export type MobileDropDownProps = {
   children?: React.ReactNode
   item?: RouterItems | whatDoWeDoInformationProps
   selected: string | undefined
@@ -41,7 +41,9 @@ const MobileDropDown = ({ children, item, className, selected, dropClassName, on
                     {item.name}
                   </Link>
                 ) : (
-                  <p onClick={onClick}>{item.description}</p>
+                  <p className={'text-sm md:text-md'} onClick={onClick}>
+                    {item.description}
+                  </p>
                 )}
               </div>
             ))}

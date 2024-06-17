@@ -4,9 +4,9 @@ import SliderCard from 'components/slider-card/SliderCard.tsx'
 
 const Department = () => {
   return (
-    <section className={'h-[500px] flex flex-col w-[100%] my-48 overflow-hidden '}>
-      <div className={'h-full flex flex-col justify-center'}>
-        <SliderInform className={'lg:translate-x-[35px] overflow-hidden'}>
+    <section className={'h-[500px] flex flex-col w-[100%] my-16 md:my-48 overflow-hidden items-center '}>
+      <div className={'h-full w-[95%] flex flex-col justify-center'}>
+        <SliderInform className={'md:translate-x-[35px] overflow-hidden flex justify-center md:block'}>
           {sliderCardsInformation.map((data, index) => (
             <SliderCard key={index} data={data} />
           ))}
