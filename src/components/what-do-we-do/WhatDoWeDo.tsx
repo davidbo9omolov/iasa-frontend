@@ -39,7 +39,7 @@ const WhatDoWeDo = () => {
                 viewport={{ once: true }}
               >
                 <p className={'sm:text-xl text-2xl font-bold mb-4 w-full md:w-[30%]'}>{item.title}</p>
-                <p className={'text-xs md:text-md text-gray w-full md:w-[60%]'}>{item.description}</p>
+                <p className={'sm:text-sm md:text-md text-gray w-full md:w-[60%]'}>{item.description}</p>
               </motion.div>
             </React.Fragment>
           ))}

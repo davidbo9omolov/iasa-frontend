@@ -106,7 +106,7 @@ const Activity = () => {
       >
         <div className={'w-full lg:w-1/3 mt-5 xs:mt-3'}>
           <p className={'text-2xl lg:text-4xl font-bold mb-4'}>{t('ourActivity.title')}</p>
-          <p className={'text-sm my-6 text-gray md:text-md'}>{t('ourActivity.description')}</p>
+          <p className={'sm:text-sm my-6 text-gray md:text-md'}>{t('ourActivity.description')}</p>
           <div className={'flex w-full justify-evenly lg:w-auto md:justify-normal'}>
             {socialNetworks.map((network, index) => (
               <Link target={'_blank'} key={index} to={network.path} className={'flex mr-5'}>
@@ -167,14 +167,14 @@ const Activity = () => {
         <div className={'w-full lg:w-1/4 xs:mt-0 mt-5 relative flex flex-col md:-translate-y-[25px]'}>
           <p
             className={
-              'my-3 text-gray text-sm md:text-md scroll-opacity-text h-[50px] md:h-auto  md:-translate-y-[25px]'
+              'my-3 text-gray sm:text-sm md:text-md scroll-opacity-text h-[50px] md:h-auto  md:-translate-y-[25px]'
             }
           >
             {t('ourActivity.animatedDescriptionOne')}
           </p>
           <p
             className={
-              'text-sm  lg:text-md my-3 text-gray absolute scroll-opacity-text top-0 md:text-md  md:-translate-y-[25px]'
+              'sm:text-sm  lg:text-md my-3 text-gray absolute scroll-opacity-text top-0 md:text-md  md:-translate-y-[25px]'
             }
           >
             {t('ourActivity.animatedDescriptionTwo')}
