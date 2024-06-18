@@ -115,10 +115,10 @@ const Activity = () => {
             ))}
           </div>
         </div>
-        <div className={'w-fit lg:my-7 '}>
+        <div className={'w-fit my-5 '}>
           <div
             className={
-              ' rounded w-full h-[40vh] md:h-[40vw] min-w-[170px] min-h-[260px] max-h-[650px]  flex justify-center items-center relative select-none'
+              ' rounded w-full h-[40vh] md:h-[40vw] min-w-[150px] min-h-[360px] max-h-[650px]  flex justify-center items-center relative select-none'
             }
           >
             <img src={Iphone} alt={'iphone'} className={'h-full'} loading="lazy" />
@@ -139,18 +139,13 @@ const Activity = () => {
               </div>
             </div>
 
-            <Slider ref={arrows} className={'md:hidden xs:w-[70%] sm:w-[90%] h-full  absolute '} {...settings}>
+            <Slider ref={arrows} className={'md:hidden w-[90%] h-full  absolute '} {...settings}>
               {activityImages.map((elem, index) => (
-                <div
-                  key={index}
-                  className={
-                    'h-[40vh] md:h-[40vw] min-h-[270px] max-h-[370px]  max-w-[175px] relative !flex justify-center items-center'
-                  }
-                >
+                <div key={index} className={'w-[150px] h-[360px] relative !flex justify-center items-center'}>
                   <img
                     src={elem.image}
                     alt={'iphone'}
-                    className={'h-[92%] w-[70%] sm:w-full object-center absolute'}
+                    className={'h-[92%] w-full  object-center absolute'}
                     loading="lazy"
                   />
                 </div>
