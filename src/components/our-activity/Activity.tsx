@@ -115,7 +115,7 @@ const Activity = () => {
             ))}
           </div>
         </div>
-        <div className={'w-fit my-5 '}>
+        <div className={'w-fit my-5 md:my-9 '}>
           <div
             className={
               ' rounded w-full h-[40vh] md:h-[40vw] min-w-[150px] min-h-[360px] max-h-[650px]  flex justify-center items-center relative select-none'
