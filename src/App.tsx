@@ -30,11 +30,7 @@ function App() {
           path={ReactRoutes.Applicant}
           element={
             <PageNotFoundLayout>
-              <ErrorPage
-                icon={<TechnicalProblems />}
-                errorMessage={'Сторінка знаходиться в розробці.'}
-                errorType={'Проводяться технічні роботи'}
-              />
+              <ErrorPage icon={<TechnicalProblems />} errorCode={'500'} />
               {/*<Applicant />*/}
             </PageNotFoundLayout>
           }
@@ -43,11 +39,7 @@ function App() {
           path={ReactRoutes.ForStudent}
           element={
             <PageNotFoundLayout>
-              <ErrorPage
-                icon={<TechnicalProblems />}
-                errorMessage={'Сторінка знаходиться в розробці.'}
-                errorType={'Проводяться технічні роботи'}
-              />
+              <ErrorPage icon={<TechnicalProblems />} errorCode={'500'} />
               {/*<ForStudents />*/}
             </PageNotFoundLayout>
           }
@@ -56,11 +48,7 @@ function App() {
           path={ReactRoutes.Articles}
           element={
             <PageNotFoundLayout>
-              <ErrorPage
-                icon={<TechnicalProblems />}
-                errorMessage={'Сторінка знаходиться в розробці.'}
-                errorType={'Проводяться технічні роботи'}
-              />
+              <ErrorPage icon={<TechnicalProblems />} errorCode={'500'} />
               {/*<Articles />*/}
             </PageNotFoundLayout>
           }
@@ -69,11 +57,7 @@ function App() {
           path={ReactRoutes.AnalystShop}
           element={
             <PageNotFoundLayout>
-              <ErrorPage
-                icon={<TechnicalProblems />}
-                errorMessage={'Сторінка знаходиться в розробці.'}
-                errorType={'Проводяться технічні роботи'}
-              />
+              <ErrorPage icon={<TechnicalProblems />} errorCode={'500'} />
               {/*<AnalystShop />*/}
             </PageNotFoundLayout>
           }
@@ -82,11 +66,7 @@ function App() {
           path={ReactRoutes.Contacts}
           element={
             <PageNotFoundLayout>
-              <ErrorPage
-                icon={<TechnicalProblems />}
-                errorMessage={'Сторінка знаходиться в розробці.'}
-                errorType={'Проводяться технічні роботи'}
-              />
+              <ErrorPage icon={<TechnicalProblems />} errorCode={'500'} />
               {/*<Contacts />*/}
             </PageNotFoundLayout>
           }
@@ -95,11 +75,7 @@ function App() {
           path={ReactRoutes.AboutUs}
           element={
             <PageNotFoundLayout>
-              <ErrorPage
-                icon={<TechnicalProblems />}
-                errorMessage={'Сторінка знаходиться в розробці.'}
-                errorType={'Проводяться технічні роботи'}
-              />
+              <ErrorPage icon={<TechnicalProblems />} errorCode={'500'} />
               {/*<Contacts />*/}
             </PageNotFoundLayout>
           }
@@ -108,11 +84,7 @@ function App() {
           path={ReactRoutes.Entry}
           element={
             <PageNotFoundLayout>
-              <ErrorPage
-                icon={<TechnicalProblems />}
-                errorMessage={'Сторінка знаходиться в розробці.'}
-                errorType={'Проводяться технічні роботи'}
-              />
+              <ErrorPage icon={<TechnicalProblems />} errorCode={'500'} />
               {/*<Contacts />*/}
             </PageNotFoundLayout>
           }
@@ -121,11 +93,7 @@ function App() {
           path={ReactRoutes.Activities}
           element={
             <PageNotFoundLayout>
-              <ErrorPage
-                icon={<TechnicalProblems />}
-                errorMessage={'Сторінка знаходиться в розробці.'}
-                errorType={'Проводяться технічні роботи'}
-              />
+              <ErrorPage icon={<TechnicalProblems />} errorCode={'500'} />
               {/*<Contacts />*/}
             </PageNotFoundLayout>
           }
@@ -134,11 +102,7 @@ function App() {
           path={ReactRoutes.Resources}
           element={
             <PageNotFoundLayout>
-              <ErrorPage
-                icon={<TechnicalProblems />}
-                errorMessage={'Сторінка знаходиться в розробці.'}
-                errorType={'Проводяться технічні роботи'}
-              />
+              <ErrorPage icon={<TechnicalProblems />} errorCode={'500'} />
               {/*<Contacts />*/}
             </PageNotFoundLayout>
           }
@@ -148,11 +112,7 @@ function App() {
           path={'*'}
           element={
             <PageNotFoundLayout>
-              <ErrorPage
-                icon={<SadEmoji />}
-                errorMessage={'Сторінки, яку ви шукаєте, не існує.'}
-                errorType={'Помилка 404'}
-              />
+              <ErrorPage icon={<SadEmoji />} errorCode={'404'} />
             </PageNotFoundLayout>
           }
         />

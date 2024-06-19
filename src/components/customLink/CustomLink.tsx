@@ -20,24 +20,22 @@ const CustomLink = ({
   navLink,
   children,
   link = '/',
-  blankLink = '/',
+  blankLink,
   className = 'text-secondary',
   withArrow = false,
   onClick,
   ...rest
 }: ButtonLinkProps) => {
   const { i18n } = useTranslation()
+  const computedLink = blankLink ? blankLink : `/${i18n.language}${item?.path || link}`
+  console.log('blankLink:', blankLink)
+  console.log('Computed Link:', computedLink)
 
   if (!item?.dropdown) {
     if (navLink) {
       return (
         <>
-          <NavLink
-            to={blankLink || `/${i18n.language}${item?.path || link}`}
-            className={` flex items-center ${className}`}
-            onClick={onClick}
-            {...rest}
-          >
+          <NavLink to={computedLink} className={` flex items-center ${className}`} onClick={onClick} {...rest}>
             {item?.name || children}
             {item?.withArrow && <GoArrowUpRight className={'min-h-[20px] min-w-[20px] ml-0.5'} />}
           </NavLink>

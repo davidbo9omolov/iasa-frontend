@@ -1,0 +1,14 @@
+{
+  "error-404": {
+    "ops": "Oops",
+    "title": "Error 404",
+    "message": "The page you are looking for does not exist.",
+    "goBack": "Go to Home"
+  },
+  "error-500": {
+    "ops": "Oops",
+    "title": "Technical Work in Progress",
+    "message": "The page is under development.",
+    "goBack": "Go to Home"
+  }
+}

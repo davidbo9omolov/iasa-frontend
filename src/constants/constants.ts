@@ -112,7 +112,7 @@ export const socialNetworks = [
   {
     name: 'Instagram',
     icon: FaInstagram,
-    path: ' https://www.instagram.com/studrada_iasa/',
+    path: 'https://www.instagram.com/studrada_iasa',
   },
   {
     name: 'Linkedin',
