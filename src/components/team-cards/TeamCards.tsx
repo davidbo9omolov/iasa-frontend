@@ -17,17 +17,21 @@ const TeamCards: React.FC<TeamCardProps> = ({ item, onMoreInfo }) => {
   return (
     <>
       <motion.div
-        className={'h-fit w-full bg-quaternary items-center rounded-lg flex p-3'}
+        className={'h-fit w-full bg-quaternary items-center rounded-lg flex p-3 cursor-pointer'}
         onClick={() => onMoreInfo(item)}
         initial={{
           scale: 0,
         }}
         whileInView={{
           scale: 1,
+        }}
+        whileHover={{
+          scale: 1.05,
           transition: {
-            delay: 0.5,
+            delay: 0,
           },
         }}
+        whileTap={{ scale: 0.95 }}
         viewport={{ once: true }}
       >
         <div className={'mr-3'}>
