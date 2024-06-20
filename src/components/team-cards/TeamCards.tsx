@@ -27,9 +27,6 @@ const TeamCards: React.FC<TeamCardProps> = ({ item, onMoreInfo }) => {
         }}
         whileHover={{
           scale: 1.05,
-          transition: {
-            delay: 0,
-          },
         }}
         whileTap={{ scale: 0.95 }}
         viewport={{ once: true }}
