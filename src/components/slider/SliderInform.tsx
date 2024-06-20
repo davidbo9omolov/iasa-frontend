@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef } from 'react'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import Slider from 'react-slick'
@@ -27,39 +27,50 @@ function Arrows({ arrows }: ArrowsProps) {
 
 const SliderInform = ({ children, className }: SliderProps) => {
   const arrows = useRef(null)
-  const [quantityOfSlides, setQuantityOfSlides] = useState(3)
 
   const settings = {
     dots: false,
     arrows: false,
     infinite: true,
     speed: 500,
-    slidesToShow: quantityOfSlides,
+    slidesToShow: 5,
     slidesToScroll: 1,
     className: className,
+    responsive: [
+      {
+        breakpoint: 1900,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 1500,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 1100,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          className: 'justify-center flex',
+        },
+      },
+    ],
   }
-
-  useEffect(() => {
-    const breakpoints = [
-      { width: 1900, slides: 6 },
-      { width: 1700, slides: 5 },
-      { width: 1500, slides: 4 },
-      { width: 1024, slides: 3 },
-      { width: 768, slides: 2 },
-      { width: 0, slides: 1 },
-    ]
-
-    function handleResize() {
-      const { slides } = breakpoints.find((bp) => window.innerWidth > bp.width) || breakpoints[breakpoints.length - 1]
-      setQuantityOfSlides(slides)
-    }
-
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
 
   return (
     <>

@@ -27,3 +27,8 @@ body {
   background-color: var(--color-primary);
   color: var(--color-secondary);
 }
+
+.slick-track .slick-slide{
+  display: flex;
+  justify-content: center;
+}

@@ -21,7 +21,7 @@ const OurTeam = () => {
         onClick={() => setIsOpen(!isOpen)}
       ></div>
 
-      <section className={' min-h-[250px] flex justify-center mb-48'}>
+      <section className={' min-h-[250px] flex justify-center mb-36'}>
         <div
           className={
             'relative w-[95%] flex items-center justify-center md:items-center lg:justify-between flex-col lg:flex-row'
@@ -47,7 +47,7 @@ const OurTeam = () => {
             <p className={'text-primary'}>{t('ourTeam.more')}</p>
           </CustomLink>
           <div
-            className={`absolute  h-[75vh] w-[90%] lg:w-[35vw] lg:bottom-[15vh] lg:right-[7vh]   bg-quaternary rounded-2xl duration-500 z-50 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+            className={`absolute h-[75vh] w-[90%] lg:w-[35vw] lg:bottom-[15vh] lg:right-[7vh]   bg-quaternary rounded-2xl duration-500 z-50 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
           >
             <div className={`flex flex-col p-7 h-full`}>
               <div className={'w-full h-[60%] bg-secondary rounded-2xl'}></div>
