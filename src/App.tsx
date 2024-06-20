@@ -5,6 +5,7 @@ import { CommonLayout } from '../layouts/commonLayout.tsx'
 import { PageNotFoundLayout } from '../layouts/errorPageLayout.tsx'
 
 import HomePage from 'pages/HomePage.tsx'
+import ContactsPage from 'pages/ContactsPage.tsx'
 import ErrorPage from 'pages/ErrorPage.tsx'
 import SadEmoji from '@/assets/sadEmoji.tsx'
 
@@ -66,8 +67,7 @@ function App() {
           path={ReactRoutes.Contacts}
           element={
             <PageNotFoundLayout>
-              <ErrorPage icon={<TechnicalProblems />} errorCode={'500'} />
-              {/*<Contacts />*/}
+              <ContactsPage />
             </PageNotFoundLayout>
           }
         />
@@ -76,7 +76,7 @@ function App() {
           element={
             <PageNotFoundLayout>
               <ErrorPage icon={<TechnicalProblems />} errorCode={'500'} />
-              {/*<Contacts />*/}
+              {/*<ContactsPage />*/}
             </PageNotFoundLayout>
           }
         />
@@ -85,7 +85,7 @@ function App() {
           element={
             <PageNotFoundLayout>
               <ErrorPage icon={<TechnicalProblems />} errorCode={'500'} />
-              {/*<Contacts />*/}
+              {/*<ContactsPage />*/}
             </PageNotFoundLayout>
           }
         />
@@ -94,7 +94,7 @@ function App() {
           element={
             <PageNotFoundLayout>
               <ErrorPage icon={<TechnicalProblems />} errorCode={'500'} />
-              {/*<Contacts />*/}
+              {/*<ContactsPage />*/}
             </PageNotFoundLayout>
           }
         />
@@ -103,7 +103,7 @@ function App() {
           element={
             <PageNotFoundLayout>
               <ErrorPage icon={<TechnicalProblems />} errorCode={'500'} />
-              {/*<Contacts />*/}
+              {/*<ContactsPage />*/}
             </PageNotFoundLayout>
           }
         />

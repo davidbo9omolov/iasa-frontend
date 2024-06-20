@@ -14,7 +14,7 @@ const DropDown = ({ item, classButton, classDropDown, onClick }: DropDownProps) 
   const [isOpen, setIsOpen] = useState(false)
   const { t, i18n } = useTranslation('home')
   const translatedText = (itemElem: { name: string; path: string }) =>
-    t(`dropdown.${itemElem.name.charAt(0).toLowerCase() + itemElem.name.slice(1)}`)
+    t(`${itemElem.name.charAt(0).toLowerCase() + itemElem.name.slice(1)}`)
 
   if (item.dropdown) {
     return (

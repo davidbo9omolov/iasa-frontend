@@ -20,7 +20,7 @@ const WhatDoWeDo = () => {
   return (
     <section className={'min-h-[500px] my-16  md:mb-36 flex justify-center '}>
       <div className={'w-[95%]'}>
-        <p className={'text-2xl lg:text-4xl font-bold '}>{t('whatDoWeDo.title')}</p>
+        <h1 className={'text-2xl lg:text-4xl font-bold '}>{t('whatDoWeDo.title')}</h1>
         <div className={'flex flex-col justify-center border-t-2 border-tertiary mt-6 '}>
           {translatedText.map((item, index) => (
             <React.Fragment key={index}>

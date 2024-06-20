@@ -105,7 +105,7 @@ const Activity = () => {
         }
       >
         <div className={'w-full lg:w-1/3 mt-5 xs:mt-3'}>
-          <p className={'text-2xl lg:text-4xl font-bold mb-4'}>{t('ourActivity.title')}</p>
+          <h1 className={'text-2xl lg:text-4xl font-bold mb-4'}>{t('ourActivity.title')}</h1>
           <p className={'sm:text-sm my-6 text-gray md:text-md'}>{t('ourActivity.description')}</p>
           <div className={'flex w-full justify-evenly lg:w-auto md:justify-normal'}>
             {socialNetworks.map((network, index) => (
