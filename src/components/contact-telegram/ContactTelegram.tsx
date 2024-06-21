@@ -42,10 +42,7 @@ const ContactTelegram = () => {
                 {...jitterVariants}
                 className={'absolute bg-secondary rounded-full w-1/2 h-[80%] cursor-grab'}
                 drag="x"
-                dragConstraints={{ left: 0, right: 200 }}
-                onDrag={() => {
-                  setSelected(!selected)
-                }}
+                dragConstraints={{ left: 0, right: 300 }}
               />
               <div className={'w-1/2 h-full flex justify-center z-10 pointer-events-none'}>
                 <motion.button
