@@ -9,7 +9,7 @@ const ContactHeader = () => {
     <section className={'min-h-[250px] flex justify-center mt-16'}>
       <div className={'w-[95%] border-b-2 border-tertiary'}>
         <h1 className={'text-5xl font-semibold'}>{t('gotQuestion')}</h1>
-        <div className={'flex w-full justify-between mt-9'}>
+        <div className={'flex sm:flex-col w-full justify-between mt-9'}>
           <div className={'flex flex-col w-1/2'}>
             <p>{t('contactUs')}</p>
             <div className={'flex flex-col mt-5'}>
@@ -24,11 +24,11 @@ const ContactHeader = () => {
               </Link>
             </div>
           </div>
-          <div className={'flex flex-col w-1/2'}>
+          <div className={'flex flex-col w-1/2 sm:w-full sm:mt-7'}>
             <p>{t('followUs')}</p>
-            <div className={'flex mt-5'}>
+            <div className={'flex my-5 sm:justify-center'}>
               {socialNetworks.map((item, index) => (
-                <Link target={'_blank'} key={index} to={item.path} className={'mr-5'}>
+                <Link target={'_blank'} key={index} to={item.path} className={'mr-8'}>
                   <item.icon className={'w-[24px] h-[24px]'} />
                 </Link>
               ))}

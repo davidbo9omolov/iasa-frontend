@@ -27,14 +27,14 @@ const ContactTelegram = () => {
     <section className={'min-h-[250px] flex justify-center mt-16'}>
       <div className={'w-[95%] flex flex-col'}>
         <h2 className={'text-4xl font-semibold '}>{t('inTelegram')}</h2>
-        <div className={'flex w-full justify-between  mt-7'}>
-          <div className={'fex flex-col w-1/4'}>
+        <div className={'flex flex-col md:flex-row w-full items-center md:items-start justify-between mt-7'}>
+          <div className={'fex flex-col w-full md:w-1/4 min-w-[350px]'}>
             <p>{t('telegramDescription')}</p>
           </div>
-          <div className={'w-1/2 '}>
+          <div className={'w-full md:w-1/2 mt-7 md:m-0 flex items-center flex-col md:block'}>
             <div
               className={
-                ' relative bg-quaternary rounded-full flex items-center h-[20%] w-[60%] min-w-[400px] max-w-[550px] min-h-[50px] cursor-pointer'
+                ' relative bg-quaternary rounded-full flex items-center h-[20%] w-[60%] min-w-[300px] max-w-[550px] min-h-[50px] cursor-pointer'
               }
               onClick={() => setSelected(!selected)}
             >
