@@ -291,3 +291,41 @@ export const activityImages = [
     image: IMG_IASA_9,
   },
 ]
+
+export const telegramChannels = [
+  {
+    title: 'IASA SC',
+    link: 'https://t.me/IASA_Student_Council',
+  },
+  {
+    title: 'IASA ABIT ',
+    link: 'https://t.me/abitiasa',
+  },
+  {
+    title: 'IASAevent ',
+    link: 'https://t.me/iasa_event',
+  },
+  {
+    title: 'IASAedu ',
+    link: 'https://t.me/iasa_edu',
+  },
+  {
+    title: 'IASA Analytics ',
+    link: 'https://t.me/iasa_analytics',
+  },
+]
+
+export const telegramBots = [
+  {
+    title: 'IASA Bot',
+    link: 'https://t.me/iasa_mate_bot',
+  },
+  {
+    title: 'IASA Suggestions',
+    link: 'https://t.me/IASAsuggestionBot',
+  },
+  {
+    title: 'IASA Student Support ',
+    link: 'https://t.me/iasa_stud_support_bot',
+  },
+]
