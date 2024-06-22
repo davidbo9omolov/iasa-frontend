@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { RouterItems } from 'types/router.ts'
 import MobileDropDown from 'components/mobileDropDown/MobileDropDown.tsx'
 import CustomLink from 'components/customLink/CustomLink.tsx'
+import { motion } from 'framer-motion'
 
 type BurgerMenuProps = {
   translatedRoutes: {
@@ -43,18 +44,50 @@ const BurgerMenu = ({ translatedRoutes }: BurgerMenuProps) => {
           className={`h-[2px] w-[25px] bg-tertiary rounded duration-300 ${isOpen ? 'rotate-45 absolute  translate-y-1' : ''}`}
         ></span>
       </button>
-      <div
-        className={`bg-black flex lg:hidden justify-center absolute w-full h-full left-0 top-0 z-40 transition-transform duration-300 ${isOpen ? 'transform translate-y-0' : 'transform -translate-y-full'}`}
+      <motion.div
+        className={`bg-black flex lg:hidden justify-center absolute w-full h-full left-0 top-0 z-40`}
+        initial={{ y: '-100%' }}
+        animate={{
+          y: isOpen ? 0 : '-100%',
+        }}
+        transition={{
+          duration: 0.6,
+          delay: isOpen ? 0 : 0.54,
+        }}
       >
         <div className={'flex flex-col justify-start w-[95%] mt-20 overflow-hidden'}>
           {translatedRoutes.map((item: RouterItems, index: number) => (
             <React.Fragment key={index}>
-              <MobileDropDown item={item} selected={item.name} className={'my-7 text-2xl '} onClick={handleClick} />
-              <CustomLink item={item} navLink className={'my-7 text-2xl w-fit'} onClick={handleClick} />
+              <motion.div
+                initial={{ opacity: 0, x: '-100%', zIndex: 50 }}
+                whileInView={isOpen ? { opacity: 1, x: 0 } : { x: '-100%' }}
+                transition={{
+                  delay: index,
+                  duration: 0.2,
+                  type: 'spring',
+                  stiffness: 400,
+                  damping: 22,
+                }}
+              >
+                <MobileDropDown item={item} selected={item.name} className={'my-7 text-2xl'} onClick={handleClick} />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: '-50%', zIndex: 50 }}
+                whileInView={isOpen ? { opacity: 1, x: 0 } : { x: '-50%' }}
+                transition={{
+                  delay: index * 0.1,
+                  duration: 0.2,
+                  type: 'spring',
+                  stiffness: 400,
+                  damping: 22,
+                }}
+              >
+                <CustomLink item={item} navLink className={'my-7 text-2xl w-fit'} onClick={handleClick} />
+              </motion.div>
             </React.Fragment>
           ))}
         </div>
-      </div>
+      </motion.div>
     </>
   )
 }
