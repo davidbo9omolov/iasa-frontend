@@ -66,9 +66,9 @@ function App() {
         <Route
           path={ReactRoutes.Contacts}
           element={
-            <PageNotFoundLayout>
+            <CommonLayout>
               <ContactsPage />
-            </PageNotFoundLayout>
+            </CommonLayout>
           }
         />
         <Route

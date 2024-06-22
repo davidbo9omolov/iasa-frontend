@@ -22,9 +22,7 @@ const Footer = () => {
           <div className={'flex flex-col h-[80%]'}>
             <Link
               target={'_blank'}
-              to={
-                'https://mail.google.com/mail/u/0/#inbox?compose=CllgCJqbzqzTlWkqrvvVzTmvWXDwnTMvtSQjkhbwQzvgbJtgXrNrshRWwHLPkzcXSGbJsHTRHSB'
-              }
+              to={'https://mail.google.com/mail/?view=cm&fs=1&to=studrada@gmail.com'}
               className={'underline mb-1'}
             >
               studrada@gmail.com

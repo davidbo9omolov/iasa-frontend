@@ -1,6 +1,6 @@
 const NavigationMap = () => {
   return (
-    <section className={' min-h-[300px] h-[30vw] flex justify-center mt-16'}>
+    <section className={' min-h-[300px] h-[30vw] flex justify-center my-16'}>
       <div className={'w-[95%]'}>
         <iframe
           className={'rounded-2xl w-full h-full'}

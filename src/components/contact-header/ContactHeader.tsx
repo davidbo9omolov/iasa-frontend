@@ -15,9 +15,7 @@ const ContactHeader = () => {
             <div className={'flex flex-col mt-5'}>
               <Link
                 target={'_blank'}
-                to={
-                  'https://mail.google.com/mail/u/0/#inbox?compose=VpCqJTCHczgvLNvBFxZvXQtrbpKLVzKVshwXPQcsmlnBfbRJcvWTdrqLqSjzzJgCnQwHhVV'
-                }
+                to={'https://mail.google.com/mail/?view=cm&fs=1&to=studrada@gmail.com'}
                 className={'underline'}
               >
                 studrada@gmail.com

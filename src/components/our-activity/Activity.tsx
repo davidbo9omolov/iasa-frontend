@@ -167,14 +167,14 @@ const Activity = () => {
         <div className={'w-full lg:w-1/4 xs:mt-0 mt-5 relative flex flex-col md:-translate-y-[25px]'}>
           <p
             className={
-              'my-3 text-gray sm:text-sm md:text-md scroll-opacity-text h-[50px] md:h-auto  md:-translate-y-[25px]'
+              'my-3 sm:h-fit md:h-[30px] lg:h-auto text-gray sm:text-sm md:text-md scroll-opacity-text -translate-y-[20px]'
             }
           >
             {t('ourActivity.animatedDescriptionOne')}
           </p>
           <p
             className={
-              'sm:text-sm  lg:text-md my-3 text-gray absolute scroll-opacity-text top-0 md:text-md  md:-translate-y-[25px]'
+              'sm:text-sm sm:h-fit md:h-[30px] lg:h-auto  lg:text-md my-3 text-gray absolute scroll-opacity-text top-0 md:text-md -translate-y-[20px]'
             }
           >
             {t('ourActivity.animatedDescriptionTwo')}

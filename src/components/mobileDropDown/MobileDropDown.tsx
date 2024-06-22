@@ -25,7 +25,7 @@ const MobileDropDown = ({ children, item, className, selected, dropClassName, on
 
   if (item?.dropdown || children) {
     return (
-      <div className={'md:hidden'}>
+      <div>
         <div className={`w-fit ${className}`} onClick={onOpen}>
           <div className={'flex items-center'}>
             <h1 className={'text-secondary'}>{selected}</h1>

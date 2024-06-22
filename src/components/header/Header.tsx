@@ -27,8 +27,8 @@ const Header = () => {
   }
 
   return (
-    <header className={'flex justify-center py-3 h-[90px]'}>
-      <div className={'flex items-center justify-between w-[95%] my-2'}>
+    <header className={'flex justify-center py-3 h-[90px] '}>
+      <div className={'flex items-center justify-between w-[95%] my-2 '}>
         <CustomLink className={'text-xl z-50'} withArrow={false} link={LinkRoutes.Home}>
           <Logo />
         </CustomLink>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { RouterItems } from 'types/router.ts'
-import MobileDropDownMotion from 'components/mobileDropDown/MobileDropDown.tsx'
+import MobileDropDown from 'components/mobileDropDown/MobileDropDown.tsx'
 import CustomLink from 'components/customLink/CustomLink.tsx'
 
 type BurgerMenuProps = {
@@ -44,17 +44,12 @@ const BurgerMenu = ({ translatedRoutes }: BurgerMenuProps) => {
         ></span>
       </button>
       <div
-        className={`bg-black flex justify-center absolute w-full h-full left-0 top-0 z-40 transition-transform duration-300 ${isOpen ? 'transform translate-y-0' : 'transform -translate-y-full'}`}
+        className={`bg-black flex lg:hidden justify-center absolute w-full h-full left-0 top-0 z-40 transition-transform duration-300 ${isOpen ? 'transform translate-y-0' : 'transform -translate-y-full'}`}
       >
-        <div className={'flex flex-col justify-start w-[95%] mt-20'}>
+        <div className={'flex flex-col justify-start w-[95%] mt-20 overflow-hidden'}>
           {translatedRoutes.map((item: RouterItems, index: number) => (
             <React.Fragment key={index}>
-              <MobileDropDownMotion
-                item={item}
-                selected={item.name}
-                className={'my-7 text-2xl '}
-                onClick={handleClick}
-              />
+              <MobileDropDown item={item} selected={item.name} className={'my-7 text-2xl '} onClick={handleClick} />
               <CustomLink item={item} navLink className={'my-7 text-2xl w-fit'} onClick={handleClick} />
             </React.Fragment>
           ))}
