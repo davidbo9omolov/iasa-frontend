@@ -59,8 +59,8 @@ const BurgerMenu = ({ translatedRoutes }: BurgerMenuProps) => {
           {translatedRoutes.map((item: RouterItems, index: number) => (
             <React.Fragment key={index}>
               <motion.div
-                initial={{ opacity: 0, x: '-100%', zIndex: 50 }}
-                whileInView={isOpen ? { opacity: 1, x: 0 } : { x: '-100%' }}
+                initial={{ opacity: 0, x: '-50%', zIndex: 50 }}
+                whileInView={isOpen ? { opacity: 1, x: 0 } : { x: '-50%' }}
                 transition={{
                   delay: index,
                   duration: 0.2,
