@@ -18,7 +18,7 @@ const WhatDoWeDo = () => {
   })
 
   return (
-    <section className={'min-h-[500px] my-16  md:mb-36 flex justify-center '}>
+    <section className={'min-h-[400px] my-14 md:mb-36 flex justify-center '}>
       <div className={'w-[95%]'}>
         <h1 className={'text-2xl lg:text-4xl font-bold '}>{t('whatDoWeDo.title')}</h1>
         <div className={'flex flex-col justify-center border-t-2 border-tertiary mt-6 '}>

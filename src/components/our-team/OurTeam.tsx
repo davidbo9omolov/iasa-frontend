@@ -17,11 +17,11 @@ const OurTeam = () => {
   return (
     <>
       <div
-        className={`absolute h-full w-full z-40 left-0 bottom-0 bg-transparentBlack flex items-end duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        className={` absolute h-full w-full z-40 left-0 bottom-0 bg-transparentBlack flex items-end duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         onClick={() => setIsOpen(!isOpen)}
       ></div>
 
-      <section className={' min-h-[250px] flex justify-center mb-36'}>
+      <section className={' min-h-[250px] flex justify-center mt-14 mb-36'}>
         <div
           className={
             'relative w-[95%] flex items-center justify-center md:items-center lg:justify-between flex-col lg:flex-row'

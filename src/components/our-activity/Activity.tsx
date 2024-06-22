@@ -98,10 +98,10 @@ const Activity = () => {
   }
 
   return (
-    <section ref={sectionRef} className={` md:min-h-[9000px] flex justify-center  relative  visible`}>
+    <section ref={sectionRef} className={` md:min-h-[9000px] my-14 flex justify-center relative  visible`}>
       <div
         className={
-          'flex-col lg:flex-row w-[95%] flex  justify-between items-center md:sticky top-0 visible h-full md:py-6'
+          'flex-col lg:flex-row w-[95%] flex md:h-screen justify-between items-center md:sticky top-0 visible h-full md:py-6'
         }
       >
         <div className={'w-full lg:w-1/3 mt-5 xs:mt-3'}>
@@ -167,14 +167,14 @@ const Activity = () => {
         <div className={'w-full lg:w-1/4 xs:mt-0 mt-5 relative flex flex-col md:-translate-y-[25px]'}>
           <p
             className={
-              'my-3 sm:h-fit md:h-[30px] lg:h-auto text-gray sm:text-sm md:text-md scroll-opacity-text -translate-y-[20px]'
+              'mt-3 sm:h-fit md:h-[30px] lg:h-auto text-gray sm:text-sm md:text-md scroll-opacity-text -translate-y-[20px]'
             }
           >
             {t('ourActivity.animatedDescriptionOne')}
           </p>
           <p
             className={
-              'sm:text-sm sm:h-fit md:h-[30px] lg:h-auto  lg:text-md my-3 text-gray absolute scroll-opacity-text top-0 md:text-md -translate-y-[20px]'
+              'sm:text-sm sm:h-fit md:h-[30px] lg:h-auto  lg:text-md mt-3 text-gray absolute scroll-opacity-text top-0 md:text-md -translate-y-[20px]'
             }
           >
             {t('ourActivity.animatedDescriptionTwo')}
