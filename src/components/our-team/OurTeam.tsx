@@ -8,6 +8,7 @@ const OurTeam = () => {
   const { t } = useTranslation('home')
   const [isOpen, setIsOpen] = useState(false)
   const [selectedItem, setSelectedItem] = useState<TeamMember>(teamCardsInformation[0])
+  const bottomSpacing = '15vh'
 
   const onMoreInfo = (item: TeamMember) => {
     setIsOpen(!isOpen)
@@ -48,7 +49,7 @@ const OurTeam = () => {
             <p className={'text-primary'}>{t('ourTeam.more')}</p>
           </CustomLink>
           <div
-            className={`absolute h-[75vh] w-[90%] lg:w-[35vw] max-w-[450px] lg:max-w-[700px] md:bottom-[15vh] lg:right-[7vh] bg-quaternary rounded-lg duration-500 z-50 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+            className={`fixed md:absolute h-[75vh] w-[90%] lg:w-[35vw] max-w-[450px] lg:max-w-[700px] bottom-[${bottomSpacing}] lg:right-[7vh] bg-quaternary rounded-lg duration-500 z-50 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
           >
             <div className={`flex flex-col p-7 h-full`}>
               <div className={'w-full h-[60%] bg-secondary rounded-lg'}></div>
