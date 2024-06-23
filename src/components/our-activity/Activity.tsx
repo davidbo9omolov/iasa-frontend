@@ -145,7 +145,7 @@ const Activity = () => {
                   <img
                     src={elem.image}
                     alt={'iphone'}
-                    className={'h-[92%] w-full  object-center absolute'}
+                    className={'h-[92%] w-full object-cover absolute'}
                     loading="lazy"
                   />
                 </div>
