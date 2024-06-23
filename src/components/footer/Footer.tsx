@@ -16,7 +16,7 @@ const Footer = () => {
   }))
 
   return (
-    <footer className={'h-[20%] min-h-[200px] flex flex-col w-full items-center bg-quaternary py-3'}>
+    <footer className={'h-[20%] min-h-[200px] flex flex-col w-full items-center bg-quaternary py-3 sm:p-3'}>
       <div className={`h-full w-[95%] flex justify-between flex-col md:flex-row`}>
         <div className={'flex justify-between w-full md:w-1/2'}>
           <div className={'flex flex-col h-[80%]'}>

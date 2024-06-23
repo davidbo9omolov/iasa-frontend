@@ -6,11 +6,11 @@ type PageNotFoundLayoutProps = {
 }
 export function PageNotFoundLayout({ children }: PageNotFoundLayoutProps) {
   return (
-    <>
+    <div className={'w-full'}>
       <Header />
       <main style={{ height: '80vh' }} className={'flex justify-center items-center'}>
         {children}
       </main>
-    </>
+    </div>
   )
 }

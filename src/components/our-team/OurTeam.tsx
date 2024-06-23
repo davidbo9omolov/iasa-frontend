@@ -29,7 +29,7 @@ const OurTeam = () => {
         >
           <div className={'mb-10 w-full lg:w-[40%] lg:mb-0'}>
             <h1 className={'text-2xl lg:text-4xl font-bold '}>{t('ourTeam.title')}</h1>
-            <p className={'sm:text-sm md:text-md my-6'}>{t('ourTeam.description')}</p>
+            <p className={'sm:text-sm md:text-md my-6 w-auto lg:w-[80%]'}>{t('ourTeam.description')}</p>
             <CustomLink className={'bg-tertiary text-primary w-fit rounded-full p-2 hidden lg:flex'}>
               <p className={'text-primary'}>{t('ourTeam.more')}</p>
             </CustomLink>
@@ -42,15 +42,16 @@ const OurTeam = () => {
             </div>
           </div>
           <CustomLink
-            className={'absolute bottom-[-80px] left-0 bg-tertiary text-primary w-fit rounded-full p-2 lg:hidden'}
+            link={'/about-us'}
+            className={'absolute bottom-[-80px] left-0 bg-tertiary text-primary w-fit rounded-full p-2 px-3 lg:hidden'}
           >
             <p className={'text-primary'}>{t('ourTeam.more')}</p>
           </CustomLink>
           <div
-            className={`absolute h-[75vh] w-[90%] lg:w-[35vw] lg:bottom-[15vh] lg:right-[7vh]   bg-quaternary rounded-2xl duration-500 z-50 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+            className={`absolute h-[75vh] w-[90%] lg:w-[35vw] max-w-[450px] lg:max-w-[700px] md:bottom-[15vh] lg:right-[7vh] bg-quaternary rounded-lg duration-500 z-50 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
           >
             <div className={`flex flex-col p-7 h-full`}>
-              <div className={'w-full h-[60%] bg-secondary rounded-2xl'}></div>
+              <div className={'w-full h-[60%] bg-secondary rounded-lg'}></div>
               <div>
                 <div className={'border-b-2 border-tertiary'}>
                   <p className={'my-3 font-bold text-xl'}>

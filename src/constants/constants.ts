@@ -5,17 +5,7 @@ import { FaFacebookF } from 'react-icons/fa'
 import { FaTiktok } from 'react-icons/fa'
 import { FaYoutube } from 'react-icons/fa'
 
-import {
-  IMG_IASA_1,
-  IMG_IASA_2,
-  IMG_IASA_3,
-  IMG_IASA_4,
-  IMG_IASA_5,
-  IMG_IASA_6,
-  IMG_IASA_7,
-  IMG_IASA_8,
-  IMG_IASA_9,
-} from '@/assets'
+import { IMG_IASA_1, IMG_IASA_2, IMG_IASA_3, IMG_IASA_4, IMG_IASA_5 } from '@/assets'
 
 export enum GlobalRoutes {
   AnalystShop = 'AnalystShop',
@@ -277,18 +267,6 @@ export const activityImages = [
   },
   {
     image: IMG_IASA_5,
-  },
-  {
-    image: IMG_IASA_6,
-  },
-  {
-    image: IMG_IASA_7,
-  },
-  {
-    image: IMG_IASA_8,
-  },
-  {
-    image: IMG_IASA_9,
   },
 ]
 

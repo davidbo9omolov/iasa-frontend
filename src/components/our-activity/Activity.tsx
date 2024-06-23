@@ -50,7 +50,7 @@ const Activity = () => {
       blocks.forEach((block, index) => {
         const scrollPercentage = (window.scrollY / (section.offsetHeight - window.innerHeight)) * 100
         let opacity = 0
-        const quantyOfElements = blocks.length
+        const quantyOfElements = blocks.length * 5.5
 
         if (index === 0 && scrollPercentage < quantyOfElements) {
           opacity = 1
@@ -92,13 +92,13 @@ const Activity = () => {
   }, [])
 
   const settings = {
-    dots: true,
+    dots: false,
     arrows: false,
     infinite: true,
   }
 
   return (
-    <section ref={sectionRef} className={` md:min-h-[9000px] my-14 flex justify-center relative  visible`}>
+    <section ref={sectionRef} className={` md:min-h-[5000px] my-14 flex justify-center relative visible`}>
       <div
         className={
           'flex-col lg:flex-row w-[95%] flex md:h-screen justify-between items-center md:sticky top-0 visible h-full md:py-6'
@@ -115,10 +115,10 @@ const Activity = () => {
             ))}
           </div>
         </div>
-        <div className={'w-fit my-5 md:my-9 '}>
+        <div className={'w-fit my-9 '}>
           <div
             className={
-              ' rounded w-full h-[40vh] md:h-[40vw] min-w-[150px] min-h-[360px] max-h-[650px]  flex justify-center items-center relative select-none'
+              ' rounded w-full h-[40vh] md:h-[40vw] min-w-[150px] min-h-[360px] max-h-[650px]  flex justify-center items-center relative select-none md:-translate-y-[10px]'
             }
           >
             <img src={Iphone} alt={'iphone'} className={'h-full'} loading="lazy" />
@@ -141,7 +141,7 @@ const Activity = () => {
 
             <Slider ref={arrows} className={'md:hidden w-[90%] h-full  absolute '} {...settings}>
               {activityImages.map((elem, index) => (
-                <div key={index} className={'w-[150px] h-[360px] relative !flex justify-center items-center'}>
+                <div key={index} className={'!w-[150px] h-[360px] relative !flex justify-center items-center'}>
                   <img
                     src={elem.image}
                     alt={'iphone'}
@@ -164,17 +164,17 @@ const Activity = () => {
             ))}
           </div>
         </div>
-        <div className={'w-full lg:w-1/4 xs:mt-0 mt-5 relative flex flex-col md:-translate-y-[25px]'}>
+        <div className={'w-full lg:w-1/4 xs:mt-0 md:mt-5 relative flex flex-col md:-translate-y-[25px]'}>
           <p
             className={
-              'mt-3 sm:h-fit md:h-[30px] lg:h-auto text-gray sm:text-sm md:text-md scroll-opacity-text -translate-y-[20px]'
+              ' sm:h-fit  lg:h-auto text-gray sm:text-sm md:text-md scroll-opacity-text md:-translate-y-[20px] '
             }
           >
             {t('ourActivity.animatedDescriptionOne')}
           </p>
           <p
             className={
-              'sm:text-sm sm:h-fit md:h-[30px] lg:h-auto  lg:text-md mt-3 text-gray absolute scroll-opacity-text top-0 md:text-md -translate-y-[20px]'
+              'sm:text-sm sm:h-fit  lg:h-auto  lg:text-md  text-gray absolute scroll-opacity-text top-0 md:text-md  md:-translate-y-[20px]'
             }
           >
             {t('ourActivity.animatedDescriptionTwo')}
@@ -185,7 +185,7 @@ const Activity = () => {
             blankLink={
               'https://photos.google.com/share/AF1QipO2LHqQ0OCVl-lgAKyhbInBu90PDb1EPiWqEpY8SYZ9roz1T-0lnqS_Ha9IubgzNQ?key=WXNpYWJ4RGxmOFRoODluQUp6NXpLZkZtRnFvdHl3'
             }
-            className={'mt-4 md:mt-0 bg-tertiary w-fit rounded-full px-3 py-1 text-primary'}
+            className={'mt-5 md:mt-0 bg-tertiary w-fit rounded-full px-3 py-1 text-primary'}
             withArrow
           >
             {t('ourActivity.check')}

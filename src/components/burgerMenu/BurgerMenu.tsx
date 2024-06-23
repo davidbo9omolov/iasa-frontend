@@ -47,9 +47,7 @@ const BurgerMenu = ({ translatedRoutes }: BurgerMenuProps) => {
       <motion.div
         className={`bg-black flex lg:hidden justify-center absolute w-full h-full left-0 top-0 z-40`}
         initial={{ y: '-100%' }}
-        animate={{
-          y: isOpen ? 0 : '-100%',
-        }}
+        animate={{ y: isOpen ? 0 : '-100%' }}
         transition={{
           duration: 0.6,
           delay: isOpen ? 0 : 0.54,

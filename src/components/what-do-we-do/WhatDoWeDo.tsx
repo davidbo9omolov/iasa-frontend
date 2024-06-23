@@ -24,9 +24,9 @@ const WhatDoWeDo = () => {
         <div className={'flex flex-col justify-center border-t-2 border-tertiary mt-6 '}>
           {translatedText.map((item, index) => (
             <React.Fragment key={index}>
-              <MobileDropDownMotion selected={item.title} item={item} className={'my-7 text-lg '} />
+              <MobileDropDownMotion selected={item.title} item={item} className={'my-7 text-lg md:hidden'} />
               <motion.div
-                className={'mt-8  justify-between flex-col  md:flex-row hidden md:flex'}
+                className={'mt-8  justify-between flex-col md:flex-row hidden md:flex'}
                 initial={{ opacity: 0, x: -100 }}
                 whileInView={{
                   opacity: 1,

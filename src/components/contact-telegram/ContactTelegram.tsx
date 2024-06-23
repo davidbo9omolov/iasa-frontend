@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
@@ -7,6 +7,7 @@ import { telegramBots, telegramChannels } from '@/constants/constants.ts'
 const ContactTelegram = () => {
   const { t } = useTranslation('contacts', { keyPrefix: 'socials' })
   const [selected, setSelected] = useState(false)
+  const switchRef = useRef(null)
 
   const jitterVariants = {
     initial: {
@@ -23,6 +24,10 @@ const ContactTelegram = () => {
     },
   }
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  const rightLimit = switchRef.current?.clientWidth - switchRef.current?.children[0].clientWidth
+
   return (
     <section className={'min-h-[250px] flex justify-center mt-16'}>
       <div className={'w-[95%] flex flex-col'}>
@@ -33,6 +38,7 @@ const ContactTelegram = () => {
           </div>
           <div className={'w-full md:w-1/2 mt-7 md:m-0 flex items-center flex-col md:block'}>
             <div
+              ref={switchRef}
               className={
                 ' relative bg-quaternary rounded-full flex items-center h-[20%] w-[60%] min-w-[300px] max-w-[550px] min-h-[50px] cursor-pointer'
               }
@@ -42,7 +48,9 @@ const ContactTelegram = () => {
                 {...jitterVariants}
                 className={'absolute bg-secondary rounded-full w-1/2 h-[80%] cursor-grab'}
                 drag="x"
-                dragConstraints={{ left: 0, right: 300 }}
+                dragConstraints={{ left: 0, right: rightLimit }}
+                dragElastic={0.1}
+                onDragEnd={() => setSelected(!selected)}
               />
               <div className={'w-1/2 h-full flex justify-center z-10 pointer-events-none'}>
                 <motion.button
