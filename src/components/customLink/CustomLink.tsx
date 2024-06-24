@@ -28,8 +28,6 @@ const CustomLink = ({
 }: ButtonLinkProps) => {
   const { i18n } = useTranslation()
   const computedLink = blankLink ? blankLink : `/${i18n.language}${item?.path || link}`
-  console.log('blankLink:', blankLink)
-  console.log('Computed Link:', computedLink)
 
   if (!item?.dropdown) {
     if (navLink) {

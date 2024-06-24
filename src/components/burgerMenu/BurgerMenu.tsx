@@ -24,10 +24,14 @@ const BurgerMenu = ({ translatedRoutes }: BurgerMenuProps) => {
   }
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
+    if (window.innerWidth < 1250) {
       document.body.style.overflow = 'auto'
+    } else {
+      if (isOpen) {
+        document.body.style.overflow = 'hidden'
+      } else {
+        document.body.style.overflow = 'auto'
+      }
     }
   }, [isOpen])
 

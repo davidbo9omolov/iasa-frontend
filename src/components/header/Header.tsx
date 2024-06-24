@@ -23,7 +23,14 @@ const Header = () => {
   }))
 
   const onChangingLanguage = (lang: string) => {
-    window.location.pathname = `/${lang}/${window.location.pathname.split('/')[2]}`
+    const currentPath = window.location.pathname
+    const pathSegments = currentPath.split('/')
+
+    pathSegments[1] = lang.toLowerCase()
+
+    const newPath = pathSegments.join('/')
+
+    window.location.pathname = newPath
   }
 
   return (
@@ -38,9 +45,9 @@ const Header = () => {
               .filter((item) => item.name != t('routes.contacts'))
               .map((item, index) => (
                 <React.Fragment key={index}>
-                  <DropDown item={item} classButton={'mx-4'} classDropDown={'top-[40px]'} />
+                  <DropDown item={item} classButton={'mx-7'} classDropDown={'top-[40px]'} />
                   <li>
-                    <CustomLink item={item} navLink className={'mx-4'} />
+                    <CustomLink item={item} navLink className={'mx-7'} />
                   </li>
                 </React.Fragment>
               ))}

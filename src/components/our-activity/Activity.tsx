@@ -50,7 +50,7 @@ const Activity = () => {
       blocks.forEach((block, index) => {
         const scrollPercentage = (window.scrollY / (section.offsetHeight - window.innerHeight)) * 100
         let opacity = 0
-        const quantyOfElements = blocks.length * 5.5
+        const quantyOfElements = blocks.length * 5
 
         if (index === 0 && scrollPercentage < quantyOfElements) {
           opacity = 1
@@ -98,7 +98,7 @@ const Activity = () => {
   }
 
   return (
-    <section ref={sectionRef} className={` md:min-h-[5000px] my-14 flex justify-center relative visible`}>
+    <section ref={sectionRef} className={` md:min-h-[8000px] my-14 flex justify-center relative visible`}>
       <div
         className={
           'flex-col lg:flex-row w-[95%] flex md:h-screen justify-between items-center md:sticky top-0 visible h-full md:py-6'
@@ -124,14 +124,14 @@ const Activity = () => {
             <img src={Iphone} alt={'iphone'} className={'h-full'} loading="lazy" />
             <img src={IphoneCamera} alt={'iphoneCamera'} className={'absolute z-10 top-[20px] w-1/4'} loading="lazy" />
             <Arrows arrows={arrows} />
-            <div className={'absolute top-[40px] flex md:hidden z-20 items-center justify-between w-[80%] '}>
+            <div className={'absolute top-[45px] flex md:hidden z-20 items-center justify-between w-[80%] '}>
               <div className={'flex items-center '}>
                 <LogoInstaType />
                 <p className={'text-xs ml-1'}>studrada_iasa...</p>
               </div>
               <ThreeDots />
             </div>
-            <div className={'absolute bottom-[20px] z-20  flex md:hidden justify-between items-center w-[80%]'}>
+            <div className={'absolute bottom-[8px] z-20  flex md:hidden justify-between items-center w-[80%]'}>
               <ReplyInsta />
               <div className={'flex items-center'}>
                 <LikeInsta />
@@ -139,9 +139,9 @@ const Activity = () => {
               </div>
             </div>
 
-            <Slider ref={arrows} className={'md:hidden w-[90%] h-full  absolute '} {...settings}>
+            <Slider ref={arrows} className={'md:hidden w-[90%] h-full  absolute flex items-center'} {...settings}>
               {activityImages.map((elem, index) => (
-                <div key={index} className={'!w-[150px] h-[360px] relative !flex justify-center items-center'}>
+                <div key={index} className={'!w-[150px] h-[315px] relative !flex justify-center items-center'}>
                   <img
                     src={elem.image}
                     alt={'iphone'}

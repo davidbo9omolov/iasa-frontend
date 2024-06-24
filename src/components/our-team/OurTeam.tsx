@@ -1,25 +1,27 @@
-import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { setTeamCard, toggleTeamCard } from '@/store/slices/app.ts'
 import { useTranslation } from 'react-i18next'
 import { teamCardsInformation } from '@/constants/constants.ts'
+
 import TeamCards, { TeamMember } from '@/components/team-cards/TeamCards.tsx'
 import CustomLink from 'components/customLink/CustomLink.tsx'
+import { RootState } from '@/store/store.ts'
 
 const OurTeam = () => {
   const { t } = useTranslation('home')
-  const [isOpen, setIsOpen] = useState(false)
-  const [selectedItem, setSelectedItem] = useState<TeamMember>(teamCardsInformation[0])
-  const bottomSpacing = '15vh'
+  const dispatch = useDispatch()
+  const isOpen = useSelector((state: RootState) => state.app.selectedTeamCard.isOpen)
 
   const onMoreInfo = (item: TeamMember) => {
-    setIsOpen(!isOpen)
-    setSelectedItem(item)
+    console.log('item,', item)
+    dispatch(toggleTeamCard())
+    dispatch(setTeamCard({ ...item }))
   }
 
   return (
     <>
       <div
         className={` absolute h-full w-full z-40 left-0 bottom-0 bg-transparentBlack flex items-end duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-        onClick={() => setIsOpen(!isOpen)}
       ></div>
 
       <section className={' min-h-[250px] flex justify-center mt-14 mb-36'}>
@@ -36,7 +38,7 @@ const OurTeam = () => {
             </CustomLink>
           </div>
           <div className={'w-full lg:w-[60%] flex justify-center lg:justify-start'}>
-            <div className={'grid grid-cols-2 gap-[20px] justify-items-between w-[700px]  h-fit sm:grid-cols-1'}>
+            <div className={'grid grid-cols-2 gap-[20px] gap-x-full w-[700px]  h-fit sm:grid-cols-1'}>
               {teamCardsInformation.map((item, index) => (
                 <TeamCards key={index} item={item} onMoreInfo={onMoreInfo} />
               ))}
@@ -48,37 +50,6 @@ const OurTeam = () => {
           >
             <p className={'text-primary'}>{t('ourTeam.more')}</p>
           </CustomLink>
-          <div
-            className={`fixed md:absolute h-[75vh] w-[90%] lg:w-[35vw] max-w-[450px] lg:max-w-[700px] bottom-[${bottomSpacing}] lg:right-[7vh] bg-quaternary rounded-lg duration-500 z-50 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-          >
-            <div className={`flex flex-col p-7 h-full`}>
-              <div className={'w-full h-[60%] bg-secondary rounded-lg'}></div>
-              <div>
-                <div className={'border-b-2 border-tertiary'}>
-                  <p className={'my-3 font-bold text-xl'}>
-                    {selectedItem.name} {selectedItem.surname}
-                  </p>
-                  <p className={'my-3 text-gray'}>{selectedItem.position}</p>
-                </div>
-                <div>
-                  <p className={'my-3 text-gray'}>Пошта</p>
-                  <p className={'underline'}>dsasaddasdasda@gmail.com</p>
-                  <p className={'my-3 text-gray'}>Соц мережі</p>
-                  <div className={'flex'}>
-                    <p className={'underline mr-3'}>Telegram</p>
-                    <p className={'underline mr-3'}>Instagram</p>
-                    <p className={'underline mr-3'}>Linkedin</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button
-              className={`w-full bg-quaternary text-secondary mt-3 z-10 px-10 py-2 rounded-full text-center`}
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              {t('ourTeam.goBack')}
-            </button>
-          </div>
         </div>
       </section>
     </>

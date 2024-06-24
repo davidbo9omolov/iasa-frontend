@@ -88,11 +88,11 @@ export const routes = [
 export const translations = {
   dropdown: [
     {
-      name: 'ua',
+      name: 'UA',
       path: '/ua',
     },
     {
-      name: 'en',
+      name: 'EN',
       path: '/en',
     },
   ],
