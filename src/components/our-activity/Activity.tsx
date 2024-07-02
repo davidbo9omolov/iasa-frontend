@@ -141,7 +141,7 @@ const Activity = () => {
 
             <Slider ref={arrows} className={'md:hidden w-[90%] h-full  absolute flex items-center'} {...settings}>
               {activityImages.map((elem, index) => (
-                <div key={index} className={'!w-[150px] h-[315px] relative !flex justify-center items-center'}>
+                <div key={index} className={'!min-w-[150px] h-[315px] relative !flex justify-center items-center'}>
                   <img
                     src={elem.image}
                     alt={'iphone'}
