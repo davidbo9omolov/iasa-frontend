@@ -31,7 +31,7 @@ const CustomLink = ({
   let computedLink = `/${i18n.language}${link}`
 
   if (item) {
-    computedLink = `/${i18n.language}${item.path}`
+    computedLink = `/${i18n.language}${item?.path}`
 
     if (item.blankLink) {
       computedLink = item.blankLink
