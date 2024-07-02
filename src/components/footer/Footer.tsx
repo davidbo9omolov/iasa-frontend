@@ -43,11 +43,11 @@ const Footer = () => {
             ))}
           </div>
         </div>
-        <div className={'flex flex-col w-full md:w-fit h-[80%] mt-5 md:mt-0'}>
-          <p className={'w-fit mb-2 '}>Follow us</p>
+        <div className={'flex flex-col items-start md:items-end w-full md:w-fit h-[80%] mt-5 md:mt-0'}>
+          <p className={'w-fit mb-2'}>Follow us</p>
           <div className={'flex w-full justify-evenly md:justify-center'}>
             {socialNetworks.map((item, index) => (
-              <Link target={'_blank'} key={index} to={item.path} className={'mr-3'}>
+              <Link target={'_blank'} key={index} to={item.path} className={'mr-5 md:ml-5 md:mr-0'}>
                 <item.icon className={'w-[24px] h-[24px]'} />
               </Link>
             ))}
