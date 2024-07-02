@@ -6,13 +6,14 @@ import { motion } from 'framer-motion'
 
 type BurgerMenuProps = {
   translatedRoutes: {
-    name: string
-    path: string
-    withArrow: boolean
+    name?: string
+    path?: string
     dropdown?: {
       name: string
       path: string
     }[]
+    withArrow?: boolean
+    blankLink?: string
   }[]
 }
 

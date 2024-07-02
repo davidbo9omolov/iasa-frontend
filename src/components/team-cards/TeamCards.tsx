@@ -1,17 +1,11 @@
 import React from 'react'
 import { GoArrowUpRight } from 'react-icons/go'
 import { motion } from 'framer-motion'
-
-export type TeamMember = {
-  name: string
-  surname: string
-  position: string
-  image?: string
-}
+import { TeamCard } from '@/types/reduxStore'
 
 type TeamCardProps = {
-  item: TeamMember
-  onMoreInfo: (item: TeamMember) => void
+  item: TeamCard
+  onMoreInfo: (item: TeamCard) => void
 }
 
 const TeamCards: React.FC<TeamCardProps> = ({ item, onMoreInfo }) => {

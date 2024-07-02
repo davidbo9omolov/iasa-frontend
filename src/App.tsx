@@ -46,15 +46,6 @@ function App() {
           }
         />
         <Route
-          path={ReactRoutes.Articles}
-          element={
-            <PageNotFoundLayout>
-              <ErrorPage icon={<TechnicalProblems />} errorCode={'500'} />
-              {/*<Articles />*/}
-            </PageNotFoundLayout>
-          }
-        />
-        <Route
           path={ReactRoutes.AnalystShop}
           element={
             <PageNotFoundLayout>

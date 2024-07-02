@@ -1,19 +1,19 @@
 import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from '@/store/store.ts'
+import { TeamCard } from '@/types/reduxStore'
 import { setTeamCard, toggleTeamCard } from '@/store/slices/app.ts'
 import { useTranslation } from 'react-i18next'
 import { teamCardsInformation } from '@/constants/constants.ts'
 
-import TeamCards, { TeamMember } from '@/components/team-cards/TeamCards.tsx'
+import TeamCards from '@/components/team-cards/TeamCards.tsx'
 import CustomLink from 'components/customLink/CustomLink.tsx'
-import { RootState } from '@/store/store.ts'
 
 const OurTeam = () => {
   const { t } = useTranslation('home')
   const dispatch = useDispatch()
   const isOpen = useSelector((state: RootState) => state.app.selectedTeamCard.isOpen)
 
-  const onMoreInfo = (item: TeamMember) => {
-    console.log('item,', item)
+  const onMoreInfo = (item: TeamCard) => {
     dispatch(toggleTeamCard())
     dispatch(setTeamCard({ ...item }))
   }

@@ -22,7 +22,7 @@ export const ReactRoutes = {
   AnalystShop: `/${languageCheck}/analyst-shop`,
   Applicant: `/${languageCheck}/applicant`,
   ForStudent: `/${languageCheck}/for-student`,
-  Articles: `/${languageCheck}/articles`,
+  Articles: 'https://iasastudentcouncil.github.io/iasa-sc-blog/',
   Contacts: `/${languageCheck}/contacts`,
   AboutUs: `/${languageCheck}/about-us`,
   Entry: `/${languageCheck}/applicant/entry`,
@@ -35,7 +35,7 @@ export enum LinkRoutes {
   AnalystShop = '/analyst-shop',
   Applicant = '/applicant',
   ForStudent = '/for-student',
-  Articles = '/articles',
+  Articles = 'https://iasastudentcouncil.github.io/iasa-sc-blog/',
   Contacts = '/contacts',
   AboutUs = '/about-us',
 }
@@ -67,7 +67,7 @@ export const routes = [
   },
   {
     name: GlobalRoutes.Articles,
-    path: LinkRoutes.Articles,
+    blankLink: LinkRoutes.Articles,
     withArrow: true,
   },
   {

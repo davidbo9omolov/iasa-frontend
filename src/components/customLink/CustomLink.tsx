@@ -27,7 +27,19 @@ const CustomLink = ({
   ...rest
 }: ButtonLinkProps) => {
   const { i18n } = useTranslation()
-  const computedLink = blankLink ? blankLink : `/${i18n.language}${item?.path || link}`
+
+  let computedLink = `/${i18n.language}${link}`
+
+  if (item) {
+    computedLink = `/${i18n.language}${item.path}`
+
+    if (item.blankLink) {
+      computedLink = item.blankLink
+    }
+  }
+  if (blankLink) {
+    computedLink = blankLink
+  }
 
   if (!item?.dropdown) {
     if (navLink) {
@@ -41,12 +53,7 @@ const CustomLink = ({
       )
     } else {
       return (
-        <Link
-          to={blankLink || `/${i18n.language}${item?.path || link}`}
-          className={` flex items-center ${className}`}
-          onClick={onClick}
-          {...rest}
-        >
+        <Link to={computedLink} className={` flex items-center ${className}`} onClick={onClick} {...rest}>
           {item?.name || children}
           {withArrow && <GoArrowUpRight className={'min-h-[20px] min-w-[20px] ml-0.5'} />}
         </Link>
