@@ -2,6 +2,14 @@ export interface TeamCard {
   name: string
   surname: string
   position: string
+  image?: string
+  email?: string
+  socialNetworks: [
+    {
+      name: string
+      link: string
+    },
+  ]
 }
 
 export interface SelectedTeamCard {

@@ -6,6 +6,7 @@ import { FaTiktok } from 'react-icons/fa'
 import { FaYoutube } from 'react-icons/fa'
 
 import { IMG_IASA_1, IMG_IASA_2, IMG_IASA_3, IMG_IASA_4, IMG_IASA_5 } from '@/assets'
+import { TeamCard1, TeamCard2, TeamCard3 } from '@/assets'
 
 export enum GlobalRoutes {
   AnalystShop = 'AnalystShop',
@@ -231,24 +232,54 @@ export const whatDoWeDoInformation = [
 
 export const teamCardsInformation = [
   {
-    name: 'Name',
-    surname: 'Surname',
-    position: 'Position',
+    name: 'Андрій',
+    surname: 'Кулєшов',
+    position: 'Голова Студради (President)',
+    image: TeamCard1,
+    socialNetworks: [
+      {
+        name: 'Linkedin',
+        link: 'https://www.linkedin.com/in/andead422/',
+      },
+    ],
   },
   {
-    name: 'Name',
-    surname: 'Surname',
-    position: 'Position',
+    name: 'Валерія',
+    surname: 'Василенко',
+    position: 'Cекретар (Secretary)',
+    image: TeamCard2,
+    email: 'vasylenko.valeria@lll.kpi.ua',
+    socialNetworks: [
+      {
+        name: 'Instagram',
+        link: 'https://www.instagram.com/l_vasilenko_?igsh=MW8xbmN0MmQxM2p5cg%3D%3D&utm_source=qr',
+      },
+      {
+        name: 'Telegram',
+        link: 'https://t.me/ayavriik',
+      },
+    ],
   },
   {
-    name: 'Name',
-    surname: 'Surname',
-    position: 'Position',
+    name: 'Ірина',
+    surname: 'Поліник',
+    position: 'Заступниця Голови (Vice president)',
+    image: TeamCard3,
   },
   {
-    name: 'Name',
-    surname: 'Surname',
-    position: 'Position',
+    name: 'Олександра',
+    surname: 'Коваленко',
+    position: 'Заступниця Голови (Vice president)',
+    socialNetworks: [
+      {
+        name: 'Linkedin',
+        link: 'https://www.linkedin.com/in/%D1%81%D0%B0%D1%88%D0%B0-%D0%BA%D0%BE%D0%B2%D0%B0%D0%BB%D0%B5%D0%BD%D0%BA%D0%BE-06136a23a/',
+      },
+      {
+        name: 'Instagram',
+        link: 'https://www.instagram.com/sa_lico?igsh=MTJ6YTZpNDdoYmo4OA==\n',
+      },
+    ],
   },
 ]
 

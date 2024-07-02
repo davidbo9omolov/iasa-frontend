@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { toggleTeamCard } from '@/store/slices/app.ts'
 import { useSelector, useDispatch } from 'react-redux'
@@ -61,7 +62,14 @@ const SelectedUserTeamCard = () => {
       style={{ bottom: bottomSpace }}
     >
       <div className={`flex flex-col p-7 h-full`}>
-        <div className={'w-full h-[60%] bg-secondary rounded-lg'}></div>
+        <div className={'w-full h-[60%] bg-secondary rounded-lg'}>
+          {teamCard?.image ? (
+            <img src={teamCard?.image} alt={'team member'} className={'rounded-lg w-full h-full object-cover'} />
+          ) : (
+            <div className={'bg-tertiary w-full h-full rounded-lg'}></div>
+          )}
+        </div>
+
         <div>
           <div className={'border-b-2 border-tertiary'}>
             <p className={'my-3 font-bold text-xl'}>
@@ -70,13 +78,21 @@ const SelectedUserTeamCard = () => {
             <p className={'my-3 text-gray'}>{teamCard?.position}</p>
           </div>
           <div>
-            <p className={'my-3 text-gray'}>Пошта</p>
-            <p className={'underline'}>dsasaddasdasda@gmail.com</p>
-            <p className={'my-3 text-gray'}>Соц мережі</p>
+            {teamCard?.email ? (
+              <>
+                <p className={'my-3 text-gray'}>Пошта</p>
+                <p className={'underline'}>{teamCard.email}</p>
+              </>
+            ) : null}
+            {teamCard?.socialNetworks && <p className={'my-3 text-gray'}>Соц мережі</p>}
             <div className={'flex'}>
-              <p className={'underline mr-3'}>Telegram</p>
-              <p className={'underline mr-3'}>Instagram</p>
-              <p className={'underline mr-3'}>Linkedin</p>
+              {teamCard?.socialNetworks
+                ? teamCard?.socialNetworks.map((item, index) => (
+                    <Link key={index} to={item.link} target={'_blank'} className={'underline mr-3'}>
+                      {item.name}
+                    </Link>
+                  ))
+                : null}
             </div>
           </div>
         </div>

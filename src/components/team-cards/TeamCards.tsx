@@ -6,6 +6,7 @@ export type TeamMember = {
   name: string
   surname: string
   position: string
+  image?: string
 }
 
 type TeamCardProps = {
@@ -17,7 +18,7 @@ const TeamCards: React.FC<TeamCardProps> = ({ item, onMoreInfo }) => {
   return (
     <>
       <motion.div
-        className={'h-fit w-full bg-quaternary items-center rounded-lg flex p-3 cursor-pointer'}
+        className={'relative h-fit w-full bg-quaternary items-center rounded-lg flex p-3 cursor-pointer min-h-[105px]'}
         onClick={() => onMoreInfo(item)}
         initial={{
           scale: 0,
@@ -32,15 +33,21 @@ const TeamCards: React.FC<TeamCardProps> = ({ item, onMoreInfo }) => {
         viewport={{ once: true }}
       >
         <div className={'mr-3'}>
-          <img src={'https://via.placeholder.com/75'} alt={'team'} className={'rounded-full'} />
+          {item?.image ? (
+            <img src={item?.image} alt={'team member'} className={'rounded-full min-w-[75px] max-w-[75px]'} />
+          ) : (
+            <div className={'rounded-full bg-tertiary w-[75px] h-[75px]'}></div>
+          )}
         </div>
         <div className={'w-4/5 flex flex-col items-start'}>
-          <p>
+          <p className={'md:text-md mb-1 whitespace-normal w-[85%]'}>
             {item.name} {item.surname}
           </p>
-          <p>{item.position}</p>
+          <p className={'text-xs sm:text-sm md:text-sm truncate w-[75%] md:text-clip md:whitespace-normal md:w-[90%]'}>
+            {item.position}
+          </p>
         </div>
-        <div className={'w-1/10 flex justify-center'}>
+        <div className={'w-1/10 flex justify-center absolute right-[10px] mt-2'}>
           <GoArrowUpRight className={'rotate-90 w-[30px] h-[30px] text-tertiary cursor-pointer'} />
         </div>
       </motion.div>
