@@ -101,7 +101,7 @@ const Activity = () => {
     <section ref={sectionRef} className={` md:min-h-[8000px] my-14 flex justify-center relative visible`}>
       <div
         className={
-          'flex-col lg:flex-row w-[95%] flex md:h-screen justify-between items-center md:sticky top-0 visible h-full md:py-6'
+          'flex-col lg:flex-row w-[95%] flex h-auto md:h-[100vh] md:min-h-[750px] justify-between items-center md:sticky top-0 visible md:py-6'
         }
       >
         <div className={'w-full lg:w-1/3 mt-5 xs:mt-3'}>

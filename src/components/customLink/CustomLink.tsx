@@ -28,15 +28,19 @@ const CustomLink = ({
 }: ButtonLinkProps) => {
   const { i18n } = useTranslation()
 
-  let computedLink = `/${i18n.language}${link}`
+  let computedLink = ''
 
   if (item) {
-    computedLink = `/${i18n.language}${item?.path || link}`
+    computedLink = `/${i18n.language}${item.path || link}`
 
     if (item.blankLink) {
       computedLink = item.blankLink
     }
+  } else {
+    console.log(link)
+    computedLink = `/${i18n.language}${link}`
   }
+
   if (blankLink) {
     computedLink = blankLink
   }

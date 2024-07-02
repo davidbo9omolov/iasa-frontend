@@ -41,7 +41,7 @@ export default {
         screens: {
           'xs': {'max': '376px'},
           'sm': {'max': '550px'},
-          'md': {'min': '850px',},
+          'md': {'min': '900px',},
           'lg': {'min': '1250px'},
           'xl': {'min': '1440px'},
           '2xl': {'min': '1700px'},

@@ -6,7 +6,7 @@ const Department = () => {
   return (
     <section className={'min-h-[400px] flex flex-col w-[100%] my-14 md:my-36 overflow-hidden items-center '}>
       <div className={'h-full w-[95%] flex flex-col justify-center'}>
-        <SliderInform className={'md:translate-x-[4%] overflow-hidden flex justify-center md:block'}>
+        <SliderInform className={' overflow-hidden flex justify-center md:block'}>
           {sliderCardsInformation.map((data, index) => (
             <SliderCard key={index} data={data} />
           ))}
