@@ -47,6 +47,7 @@ const OurTeam = () => {
           <CustomLink
             link={LinkRoutes.AboutUs}
             className={'absolute bottom-[-80px] left-0 bg-tertiary text-primary w-fit rounded-full p-2 px-3 lg:hidden'}
+            navLink
           >
             <p className={'text-primary'}>{t('ourTeam.more')}</p>
           </CustomLink>

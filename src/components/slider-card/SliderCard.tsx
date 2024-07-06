@@ -1,20 +1,24 @@
+import { useTranslation } from 'react-i18next'
 type SliderCardProps = {
   data: {
-    title: string
-    description: string
+    type?: string
     image?: string
     path?: string
   }
 }
 
 const SliderCard = ({ data }: SliderCardProps) => {
+  const { t } = useTranslation('home', { keyPrefix: 'sliderCards' })
+
   return (
     <div className={'bg-quaternary h-[300px] min-w-[300px] max-w-[400px] mx-2 md:mr-4 md:ml-0 rounded-lg p-5'}>
-      <div className={'rounded bg-sliderCardGradient h-1/3'}></div>
-      <p className={'text-xl md:text-2xl font-bold mt-2 mb-4'}>{data.title}</p>
-      <p className={'sm:text-sm md:text-md'}>
-        {data.description.length > 150 ? data.description.slice(0, 150) + '...' : data.description}
-      </p>
+      <div className={'rounded-lg bg-sliderCardGradient h-[45%]'}>
+        <img src={data.image} alt={t(`${data.type}.title`)} className={'w-full h-full object-cover rounded-lg'} />
+      </div>
+      <div className={'h-[55%] overflow-y-auto'}>
+        <p className={'text-xl md:text-2xl font-bold mt-2 mb-4'}>{t(`${data.type}.title`)}</p>
+        <p className={'sm:text-sm md:text-md'}>{t(`${data.type}.description`)}</p>
+      </div>
     </div>
   )
 }

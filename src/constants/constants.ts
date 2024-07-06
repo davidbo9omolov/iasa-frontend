@@ -7,6 +7,7 @@ import { FaYoutube } from 'react-icons/fa'
 
 import { IMG_IASA_1, IMG_IASA_2, IMG_IASA_3, IMG_IASA_4, IMG_IASA_5 } from '@/assets'
 import { TeamCard1, TeamCard2, TeamCard3 } from '@/assets'
+import { Banner1, Banner2, Banner3, Banner4, Banner5, Banner6, Banner7, Banner8, Banner9 } from '@/assets'
 
 export enum GlobalRoutes {
   AnalystShop = 'AnalystShop',
@@ -129,64 +130,48 @@ export const socialNetworks = [
 
 export const sliderCardsInformation = [
   {
-    title: 'Проєктний',
-    image: '#',
-    description:
-      'Ініціює та втілює в життя різноманітні заходи Студради, супроводжуючи їх на всіх етапах: від народження ідеї до фінальної реалізації.',
+    type: 'project',
+    image: Banner3,
     path: '/#',
   },
   {
-    title: 'Інформ',
-    image: '#',
-    description:
-      "Веде IASA Student Council та IASAevent, пише дописи для інших відділів Студради, публікує інтерв'ю з викладачами та редагує все, що містить літери.",
+    type: 'inform',
+    image: Banner4,
     path: '/#',
   },
   {
-    title: 'Абіт',
-    image: '#',
-    description:
-      'Знайомить абітурієнтів з ІПСА та сферою ІТ, влаштовуючи офлайн й онлайн-івенти. Пише статті, інформуючи про наш інститут і вступ.',
+    type: 'abit',
+    image: Banner5,
     path: '/#',
   },
   {
-    title: 'ІТ',
-    image: '#',
-    description:
-      'Розробляє й підтримує телеграм-ботів та вебпродукти для студентів. Бере участь в організації щорічного хакатону та допомагає у створенні аналітики викладачів ІПСА.',
+    type: 'it',
+    image: Banner9,
     path: '/#',
   },
   {
-    title: 'Медіа',
-    image: '#',
-    description:
-      'Відповідає за естетичну складову Студради: веде інстаграм, фотографує на івентах і залишає позитивні враження у світлинах.',
+    type: 'media',
+    image: Banner7,
     path: '/#',
   },
   {
-    title: 'Освітній',
-    image: '#',
-    description:
-      'Веде канал IASAedu з корисною інформацією про сферу ІТ. Допомагає з розв’язанням питань, пов’язаних із процесом навчання. Щорічно створює статті про вибіркові дисципліни та розробляє аналітику викладачів.',
+    type: 'educational',
+    image: Banner6,
     path: '/#',
   },
   {
-    title: 'Дизайнерський',
-    image: '#',
-    description:
-      'Відповідає за графічні матеріали для заходів, подій та проєктів. Створює дизайни для ботів, груп, чатів та іншого.',
+    type: 'design',
+    image: Banner1,
     path: '/#',
   },
   {
-    title: 'Мерч',
-    image: '#',
-    description: "Об'єднує ІПСАшників одягом, наліпками й іншою продукцією з унікальним дизайном.",
+    type: 'merch',
+    image: Banner2,
     path: '/#',
   },
   {
-    title: 'Тікток',
-    image: '#',
-    description: "Об'єднує ІПСАшників одягом, наліпками й іншою продукцією з унікальним дизайном.",
+    type: 'tiktok',
+    image: Banner8,
     path: '/#',
   },
 ]
@@ -236,6 +221,7 @@ export const teamCardsInformation = [
     surname: 'Кулєшов',
     position: 'Голова Студради (President)',
     image: TeamCard1,
+    email: 'an.kulieshov@gmail.com',
     socialNetworks: [
       {
         name: 'Linkedin',
@@ -261,15 +247,21 @@ export const teamCardsInformation = [
     ],
   },
   {
-    name: 'Ірина',
-    surname: 'Поліник',
-    position: 'Заступниця Голови (Vice president)',
-    image: TeamCard3,
-  },
-  {
     name: 'Олександра',
     surname: 'Коваленко',
-    position: 'Заступниця Голови (Vice president)',
+    position: 'Перша Заступниця (First VP)',
+    socialNetworks: [
+      {
+        name: 'Instagram',
+        link: 'https://www.instagram.com/polinikira?igsh=c2tyZGVwbTdwMTli&utm_source=qr',
+      },
+    ],
+  },
+  {
+    name: 'Ірина',
+    surname: 'Поліник',
+    position: 'Заступниця (VP)',
+    image: TeamCard3,
     socialNetworks: [
       {
         name: 'Linkedin',
@@ -277,7 +269,7 @@ export const teamCardsInformation = [
       },
       {
         name: 'Instagram',
-        link: 'https://www.instagram.com/sa_lico?igsh=MTJ6YTZpNDdoYmo4OA==\n',
+        link: 'https://www.instagram.com/polinikira?',
       },
     ],
   },
