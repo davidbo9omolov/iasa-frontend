@@ -58,7 +58,7 @@ const Header = () => {
             <p className={'absolute group-hover:text-tertiary uppercase'}>{i18n.language}</p>
             <DropDown
               item={translations}
-              classDropDown={'top-[40px] left-[-20px] min-w-[60px]'}
+              classDropDown={'top-[40px] left-[-15px] min-w-[55px]'}
               onClick={onChangingLanguage}
             />
           </label>

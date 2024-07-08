@@ -70,7 +70,7 @@ const SelectedUserTeamCard = () => {
           )}
         </div>
 
-        <div>
+        <div className={'overflow-y-auto'}>
           <div className={'border-b-2 border-tertiary'}>
             <p className={'my-3 font-bold text-xl'}>
               {teamCard?.name} {teamCard?.surname}

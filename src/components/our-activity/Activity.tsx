@@ -50,7 +50,7 @@ const Activity = () => {
       blocks.forEach((block, index) => {
         const scrollPercentage = (window.scrollY / (section.offsetHeight - window.innerHeight)) * 100
         let opacity = 0
-        const quantyOfElements = blocks.length * 5
+        const quantyOfElements = blocks.length * 4.5
 
         if (index === 0 && scrollPercentage < quantyOfElements) {
           opacity = 1
@@ -98,14 +98,17 @@ const Activity = () => {
   }
 
   return (
-    <section ref={sectionRef} className={` md:min-h-[8000px] my-14 flex justify-center relative visible`}>
+    <section ref={sectionRef} className={` md:min-h-[9000px] my-14 flex justify-center relative visible`}>
       <div
         className={
           'flex-col lg:flex-row w-[95%] flex h-auto md:h-[100vh] md:min-h-[750px] justify-between items-center md:sticky top-0 visible md:py-6'
         }
       >
         <div className={'w-full lg:w-1/3 mt-5 xs:mt-3'}>
-          <h1 className={'text-2xl lg:text-4xl font-bold mb-4'}>{t('ourActivity.title')}</h1>
+          <h1
+            className={'text-3xl lg:text-5xl font-bold mb-4'}
+            dangerouslySetInnerHTML={{ __html: t('ourActivity.title') }}
+          ></h1>
           <p className={'sm:text-sm my-6 text-gray md:text-md'}>{t('ourActivity.description')}</p>
           <div className={'flex w-full justify-evenly lg:w-auto md:justify-normal'}>
             {socialNetworks.map((network, index) => (
