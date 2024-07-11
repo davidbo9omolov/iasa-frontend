@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import Slider from 'react-slick'
@@ -26,6 +27,7 @@ function Arrows({ arrows }: ArrowsProps) {
 }
 
 const SliderInform = ({ children, className }: SliderProps) => {
+  const { t } = useTranslation('home', { keyPrefix: 'sliderCards' })
   const arrows = useRef(null)
 
   const settings = {
@@ -75,7 +77,7 @@ const SliderInform = ({ children, className }: SliderProps) => {
   return (
     <>
       <div className={' flex justify-between relative items-center mb-6'}>
-        <h1 className={'text-2xl lg:text-4xl font-bold w-[fit]'}>Відділи Студради</h1>
+        <h1 className={'text-2xl lg:text-4xl font-bold w-[fit]'}>{t('title')}</h1>
         <Arrows arrows={arrows} />
       </div>
       <Slider ref={arrows} {...settings}>
