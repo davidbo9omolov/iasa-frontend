@@ -23,22 +23,26 @@ const Footer = () => {
             <Link
               target={'_blank'}
               to={'https://mail.google.com/mail/?view=cm&fs=1&to=studrada@gmail.com'}
-              className={'underline mb-1'}
+              className={'underline mb-1 hover:text-tertiary'}
             >
               studrada@gmail.com
             </Link>
-            <Link to={'https://t.me/iasa_stud_support_bot'} className={' mb-1'} target={'_blank'}>
+            <Link to={'https://t.me/iasa_stud_support_bot'} className={' mb-1 hover:text-tertiary'} target={'_blank'}>
               IASA support bot
             </Link>
-            <Link to={'https://t.me/IASAsuggestionBot'} className={' mb-1'} target={'_blank'}>
+            <Link to={'https://t.me/IASAsuggestionBot'} className={' mb-1 hover:text-tertiary'} target={'_blank'}>
               IASA suggestion bot
             </Link>
           </div>
           <div className={'flex flex-col h-[80%] md:hidden'}>
             {translatedRoutes.map((item, index) => (
               <React.Fragment key={index}>
-                <DropDown item={item} classButton={'mb-1'} classDropDown={'top-0 left-[150px] bg-quaternaryDark'} />
-                <CustomLink item={item} navLink className={'mb-1'} />
+                <DropDown
+                  item={item}
+                  classButton={'mb-1 hover:text-tertiary'}
+                  classDropDown={'top-0 left-[150px] bg-quaternaryDark'}
+                />
+                <CustomLink item={item} navLink className={'mb-1 hover:text-tertiary'} />
               </React.Fragment>
             ))}
           </div>
@@ -47,16 +51,25 @@ const Footer = () => {
           <div className={'hidden md:flex flex-col h-[80%] '}>
             {translatedRoutes.map((item, index) => (
               <React.Fragment key={index}>
-                <DropDown item={item} classButton={'mb-1'} classDropDown={'top-0 left-[150px] bg-quaternaryDark'} />
-                <CustomLink item={item} navLink className={'mb-1'} />
+                <DropDown
+                  item={item}
+                  classButton={'mb-1 hover:text-tertiary'}
+                  classDropDown={'top-0 left-[150px] bg-quaternaryDark'}
+                />
+                <CustomLink item={item} navLink className={'mb-1 hover:text-tertiary'} />
               </React.Fragment>
             ))}
           </div>
           <div className={'flex flex-col items-start md:items-end w-full md:w-fit h-[80%] mt-5 md:mt-0'}>
-            <p className={'w-fit mb-2'}>Follow us</p>
+            <p className={'w-fit mb-6'}>Follow us</p>
             <div className={'flex w-full justify-evenly md:justify-center'}>
               {socialNetworks.map((item, index) => (
-                <Link target={'_blank'} key={index} to={item.path} className={'mr-5 md:ml-5 md:mr-0'}>
+                <Link
+                  target={'_blank'}
+                  key={index}
+                  to={item.path}
+                  className={'mr-5 md:ml-5 md:mr-0 hover:text-tertiary'}
+                >
                   <item.icon className={'w-[24px] h-[24px]'} />
                 </Link>
               ))}

@@ -8,6 +8,13 @@
     "inTelegram": "We're on Telegram",
     "telegramDescription": "Telegram channels offer not only educational materials and job vacancies from leading companies, but also current events and activities. \nYou will always be up to date with the latest events and 'in the rhythm of IPSA'.",
     "telegramChannel": "Telegram channels",
-    "telegramBots": "Telegram bots"
+    "telegramBots": "Telegram bots",
+    "subText": {
+      "sc": "Official Student Council Channel",
+      "abit": "Everything about admissions",
+      "event": "Events and activities",
+      "edu": "Educational project for IT beginners",
+      "anal": "Faculty teachers' analytics"
+    }
   }
 }

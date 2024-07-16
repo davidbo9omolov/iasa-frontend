@@ -26,8 +26,8 @@ const MobileDropDown = ({ children, item, className, selected, dropClassName, on
   if (item?.dropdown || children) {
     return (
       <div>
-        <div className={`w-fit ${className}`} onClick={onOpen}>
-          <div className={'flex items-center'}>
+        <div className={`w-fit cursor-pointer ${className}`} onClick={onOpen}>
+          <div className={'flex items-center '}>
             <h1 className={'text-secondary'}>{selected}</h1>
             <IoIosArrowDown className={`text-secondary ml-2 duration-300 ${open ? 'rotate-180' : ''}`} />
           </div>

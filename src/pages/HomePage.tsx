@@ -1,9 +1,11 @@
-import Intro from 'components/intro/Intro.tsx'
-import Activity from 'components/our-activity/Activity.tsx'
-import Department from 'components/department/Department.tsx'
-import WhatDoWeDo from 'components/what-do-we-do/WhatDoWeDo.tsx'
-import OurTeam from 'components/our-team/OurTeam.tsx'
-import SelectedUserTeamCard from 'components/selectedUserTeamCard/SelectedUserTeamCard.tsx'
+import React from 'react'
+
+const Intro = React.lazy(() => import('components/intro/Intro.tsx'))
+const Activity = React.lazy(() => import('components/our-activity/Activity.tsx'))
+const Department = React.lazy(() => import('components/department/Department.tsx'))
+const WhatDoWeDo = React.lazy(() => import('components/what-do-we-do/WhatDoWeDo.tsx'))
+const OurTeam = React.lazy(() => import('components/our-team/OurTeam.tsx'))
+const SelectedUserTeamCard = React.lazy(() => import('components/selectedUserTeamCard/SelectedUserTeamCard.tsx'))
 
 const HomePage = () => {
   return (

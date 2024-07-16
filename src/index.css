@@ -32,3 +32,22 @@ body {
   display: flex;
   justify-content: center;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(110, 110, 110, 0.62);
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #FFD200;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ffae00;
+}

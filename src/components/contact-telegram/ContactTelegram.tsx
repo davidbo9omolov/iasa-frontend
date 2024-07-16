@@ -78,9 +78,23 @@ const ContactTelegram = () => {
             <div className={'w-fit flex flex-wrap mt-7'}>
               {!selected
                 ? telegramChannels.map((item, index) => (
-                    <Link key={index} to={item.link} target={'_blank'} className={'underline mr-5 mb-5'}>
-                      {item.title}
-                    </Link>
+                    <div className={'relative group'}>
+                      <Link
+                        key={index}
+                        to={item.link}
+                        target={'_blank'}
+                        className={'underline mr-5 mb-5 duration-300 group-hover:text-tertiary'}
+                      >
+                        {item.title}
+                      </Link>
+                      <div
+                        className={
+                          'hidden duration-300 p-1 justify-center items-center absolute mt-[20px] bg-quaternary text-secondary w-[250px] rounded lg:group-hover:flex'
+                        }
+                      >
+                        {t(`subText.${item.subText}`)}
+                      </div>
+                    </div>
                   ))
                 : telegramBots.map((item, index) => (
                     <Link key={index} to={item.link} target={'_blank'} className={'underline mr-5 mb-5'}>

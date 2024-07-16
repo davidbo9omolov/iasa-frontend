@@ -15,15 +15,18 @@ const TeamCards: React.FC<TeamCardProps> = ({ item, onMoreInfo }) => {
         className={'relative h-fit w-full bg-quaternary items-center rounded-lg flex p-3 cursor-pointer min-h-[105px]'}
         onClick={() => onMoreInfo(item)}
         initial={{
-          scale: 0,
+          opacity: 0,
+          scale: 0.7,
         }}
         whileInView={{
+          opacity: 1,
           scale: 1,
         }}
-        whileHover={{
-          scale: 1.05,
+        transition={{
+          type: 'spring',
+          stiffness: 260,
+          damping: 20,
         }}
-        whileTap={{ scale: 0.95 }}
         viewport={{ once: true }}
       >
         <div className={'mr-3'}>
@@ -49,4 +52,4 @@ const TeamCards: React.FC<TeamCardProps> = ({ item, onMoreInfo }) => {
   )
 }
 
-export default TeamCards
+export default React.memo(TeamCards)

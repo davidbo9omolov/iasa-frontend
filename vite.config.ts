@@ -4,10 +4,20 @@ import autoprefixer from 'autoprefixer'
 
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { compression } from 'vite-plugin-compression2';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(),
+    // @ts-ignore
+    compression({
+      verbose: true,
+      disable: false,
+      threshold: 10240,
+      algorithm: 'gzip',
+      ext: '.gz',
+    }),
+  ],
   css: {
     postcss: {
       plugins: [tailwindcss, autoprefixer],

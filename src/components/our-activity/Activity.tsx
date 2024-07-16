@@ -69,7 +69,7 @@ const Activity = () => {
       textBlocks.forEach((textBlock, index) => {
         const scrollPercentage = (window.scrollY / (section.offsetHeight - window.innerHeight)) * 100
         let opacity = 0
-        const quantyOfElements = textBlocks.length * 35
+        const quantyOfElements = textBlocks.length * 33
 
         if (index === 0 && scrollPercentage < quantyOfElements) {
           opacity = 1
@@ -98,7 +98,7 @@ const Activity = () => {
   }
 
   return (
-    <section ref={sectionRef} className={` md:min-h-[9000px] my-14 flex justify-center relative visible`}>
+    <section ref={sectionRef} className={` md:min-h-[5000px] my-14 flex justify-center relative visible`}>
       <div
         className={
           'flex-col lg:flex-row w-[95%] flex h-auto md:h-[100vh] md:min-h-[750px] justify-between items-center md:sticky top-0 visible md:py-6'
@@ -148,7 +148,7 @@ const Activity = () => {
                   <img
                     src={elem.image}
                     alt={'iphone'}
-                    className={'h-[92%] w-full object-cover absolute rounded'}
+                    className={'h-[92%] min-w-[150px] w-full object-cover absolute rounded'}
                     loading="lazy"
                   />
                 </div>

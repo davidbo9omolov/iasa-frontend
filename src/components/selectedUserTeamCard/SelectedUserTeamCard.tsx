@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState, useCallback, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { toggleTeamCard } from '@/store/slices/app.ts'
@@ -13,9 +13,9 @@ const SelectedUserTeamCard = () => {
   const teamCard = useSelector((state: RootState) => state.app.selectedTeamCard.teamCard)
   const [bottomSpace, setBottomSpace] = useState(30)
 
-  const onClose = () => {
+  const onClose = useCallback(() => {
     dispatch(toggleTeamCard())
-  }
+  }, [dispatch])
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -55,6 +55,14 @@ const SelectedUserTeamCard = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const socialNetworks = useMemo(() => {
+    return teamCard?.socialNetworks?.map((item, index) => (
+      <Link key={index} to={item.link} target="_blank" className="underline mr-3">
+        {item.name}
+      </Link>
+    ))
+  }, [teamCard?.socialNetworks])
+
   return (
     <div
       ref={cardRef}
@@ -85,15 +93,7 @@ const SelectedUserTeamCard = () => {
               </>
             ) : null}
             {teamCard?.socialNetworks && <p className={'my-3 text-gray'}>Соц мережі</p>}
-            <div className={'flex'}>
-              {teamCard?.socialNetworks
-                ? teamCard?.socialNetworks.map((item, index) => (
-                    <Link key={index} to={item.link} target={'_blank'} className={'underline mr-3'}>
-                      {item.name}
-                    </Link>
-                  ))
-                : null}
-            </div>
+            <div className="flex">{socialNetworks}</div>
           </div>
         </div>
       </div>
@@ -107,4 +107,4 @@ const SelectedUserTeamCard = () => {
   )
 }
 
-export default SelectedUserTeamCard
+export default React.memo(SelectedUserTeamCard)

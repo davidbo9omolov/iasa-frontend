@@ -1,4 +1,3 @@
-import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { routes, translations, LinkRoutes } from '@/constants/constants.ts'
 import { useTranslation } from 'react-i18next'
@@ -9,6 +8,7 @@ import DropDown from 'components/dropDown/DropDown.tsx'
 import styles from './Header.module.css'
 import BurgerMenu from 'components/burgerMenu/BurgerMenu.tsx'
 import CustomLink from 'components/customLink/CustomLink.tsx'
+import HeaderRoutes from 'components/header/HeaderRoutes.tsx'
 
 const Header = () => {
   const { t, i18n } = useTranslation('home')
@@ -41,16 +41,7 @@ const Header = () => {
         </CustomLink>
         <nav>
           <ul className={'hidden lg:flex'}>
-            {translatedRoutes
-              .filter((item) => item.name != t('routes.contacts'))
-              .map((item, index) => (
-                <React.Fragment key={index}>
-                  <DropDown item={item} classButton={'mx-7'} classDropDown={'top-[40px]'} />
-                  <li>
-                    <CustomLink item={item} navLink className={'mx-7'} />
-                  </li>
-                </React.Fragment>
-              ))}
+            <HeaderRoutes translatedRoutes={translatedRoutes} />
           </ul>
         </nav>
         <div className={'flex items-center'}>

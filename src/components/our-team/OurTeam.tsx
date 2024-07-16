@@ -1,3 +1,4 @@
+import React, { useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '@/store/store.ts'
 import { TeamCard } from '@/types/reduxStore'
@@ -13,10 +14,13 @@ const OurTeam = () => {
   const dispatch = useDispatch()
   const isOpen = useSelector((state: RootState) => state.app.selectedTeamCard.isOpen)
 
-  const onMoreInfo = (item: TeamCard) => {
-    dispatch(toggleTeamCard())
-    dispatch(setTeamCard({ ...item }))
-  }
+  const onMoreInfo = useCallback(
+    (item: TeamCard) => {
+      dispatch(toggleTeamCard())
+      dispatch(setTeamCard({ ...item }))
+    },
+    [dispatch],
+  )
 
   return (
     <>
@@ -57,4 +61,4 @@ const OurTeam = () => {
   )
 }
 
-export default OurTeam
+export default React.memo(OurTeam)

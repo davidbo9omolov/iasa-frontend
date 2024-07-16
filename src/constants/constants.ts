@@ -297,22 +297,27 @@ export const telegramChannels = [
   {
     title: 'IASA SC',
     link: 'https://t.me/IASA_Student_Council',
+    subText: 'sc',
   },
   {
     title: 'IASA ABIT ',
     link: 'https://t.me/abitiasa',
+    subText: 'abit',
   },
   {
     title: 'IASAevent ',
     link: 'https://t.me/iasa_event',
+    subText: 'event',
   },
   {
     title: 'IASAedu ',
     link: 'https://t.me/iasa_edu',
+    subText: 'edu',
   },
   {
     title: 'IASA Analytics ',
     link: 'https://t.me/iasa_analytics',
+    subText: 'anal',
   },
 ]
 

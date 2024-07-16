@@ -1,21 +1,23 @@
+import React, { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { whatDoWeDoInformation } from '@/constants/constants.ts'
 import MobileDropDownMotion from 'components/mobileDropDown/MobileDropDown.tsx'
-import React from 'react'
 
 const WhatDoWeDo = () => {
   const { t } = useTranslation('home')
 
-  const translatedText = whatDoWeDoInformation.map((item) => {
-    return {
+  const translatedText = useMemo(() => {
+    return whatDoWeDoInformation.map((item) => ({
       title: t(`whatDoWeDo.${item.title.charAt(0).toLowerCase() + item.title.slice(1)}`),
       description: t(`whatDoWeDo.${item.description.charAt(0).toLowerCase() + item.description.slice(1)}`),
-      dropdown: item.dropdown?.map((item) => ({
-        description: t(`whatDoWeDo.${item.description.charAt(0).toLowerCase() + item.description.slice(1)}`),
+      dropdown: item.dropdown?.map((dropdownItem) => ({
+        description: t(
+          `whatDoWeDo.${dropdownItem.description.charAt(0).toLowerCase() + dropdownItem.description.slice(1)}`,
+        ),
       })),
-    }
-  })
+    }))
+  }, [t])
 
   return (
     <section className={'min-h-[400px] my-14 md:mb-36 flex justify-center '}>
@@ -49,4 +51,4 @@ const WhatDoWeDo = () => {
   )
 }
 
-export default WhatDoWeDo
+export default React.memo(WhatDoWeDo)
