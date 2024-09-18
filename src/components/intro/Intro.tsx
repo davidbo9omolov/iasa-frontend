@@ -160,7 +160,7 @@ const Intro = () => {
         )}
       </motion.div>
       <div
-        className={`${fullScreen ? 'w-[100%] h-[100vh]' : 'w-[95%] h-[85vh]'} relative z-10 flex justify-center items-center`}
+        className={`${fullScreen ? 'w-[100%] h-[100vh]' : 'w-[95%] h-[85vh]'} relative z-0 flex justify-center items-center`}
         onClick={onClick}
         onMouseEnter={projectEnter}
         onMouseLeave={projectLeave}
