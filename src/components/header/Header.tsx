@@ -5,10 +5,11 @@ import { useTranslation } from 'react-i18next'
 import Logo from '@/assets/logo.tsx'
 import DropDown from 'components/dropDown/DropDown.tsx'
 
-import styles from './Header.module.css'
 import BurgerMenu from 'components/burgerMenu/BurgerMenu.tsx'
 import CustomLink from 'components/customLink/CustomLink.tsx'
 import HeaderRoutes from 'components/header/HeaderRoutes.tsx'
+
+import styles from './Header.module.css'
 
 const Header = () => {
   const { t, i18n } = useTranslation('home')

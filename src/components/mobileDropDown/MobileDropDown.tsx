@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 
 import { IoIosArrowDown } from 'react-icons/io'
+import { useBurgerMenu } from 'components/burgerMenu/BurgerMenuProvider.tsx'
 
 export type MobileDropDownProps = {
   children?: React.ReactNode
@@ -17,6 +18,8 @@ export type MobileDropDownProps = {
 
 const MobileDropDown = ({ children, item, className, selected, dropClassName, onClick }: MobileDropDownProps) => {
   const [open, setOpen] = useState(false)
+  const { isOpen, setIsOpen } = useBurgerMenu()
+
   const { i18n } = useTranslation()
 
   const onOpen = () => {
@@ -35,7 +38,7 @@ const MobileDropDown = ({ children, item, className, selected, dropClassName, on
         {open && (
           <div className={` ${dropClassName}`}>
             {item?.dropdown?.map((item, index: number) => (
-              <div key={index} className={'ml-2 mb-2'}>
+              <div key={index} className={'ml-2 mb-2'} onClick={() => setIsOpen(!isOpen)}>
                 {'path' in item ? (
                   <Link to={`/${i18n.language}${item.path}`} className={'text-md font-semibold'} onClick={onClick}>
                     {item.name}

@@ -55,6 +55,13 @@ const Intro = () => {
     }
   }, [customBlockRef, t, midiumScreenResolution])
 
+  useEffect(() => {
+    if (midiumScreenResolution) {
+      setCursorText(t('intro.play'))
+      setCursorVariant('screen')
+    }
+  }, [midiumScreenResolution])
+
   const variants: Variants = {
     default: {
       scale: 0,
@@ -159,7 +166,7 @@ const Intro = () => {
         onMouseLeave={projectLeave}
       >
         <VideoComponent src={fullScreen ? videoFull1 : videoShort1} />
-        <div className={'absolute  z-20 mt-48 backdrop-blur-[10px] bg-cursor p-3 px-5 rounded-full lg:hidden'}>
+        <div className={`absolute  z-20 mt-48 backdrop-blur-[10px] bg-cursor p-3 px-5 rounded-full lg:hidden`}>
           <span className="text-md">{cursorText}</span>
         </div>
         <div className={'absolute top-0 bg-blackGradient w-full h-full'}></div>

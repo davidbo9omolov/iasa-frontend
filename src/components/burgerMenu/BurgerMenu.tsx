@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
+import { useBurgerMenu } from 'components/burgerMenu/BurgerMenuProvider.tsx'
 import { RouterItems } from 'types/router.ts'
 import MobileDropDown from 'components/mobileDropDown/MobileDropDown.tsx'
 import CustomLink from 'components/customLink/CustomLink.tsx'
@@ -18,11 +19,7 @@ type BurgerMenuProps = {
 }
 
 const BurgerMenu = ({ translatedRoutes }: BurgerMenuProps) => {
-  const [isOpen, setIsOpen] = useState(false)
-
-  const handleClick = () => {
-    setIsOpen(!isOpen)
-  }
+  const { isOpen, setIsOpen } = useBurgerMenu()
 
   useEffect(() => {
     if (window.innerWidth < 1250) {
@@ -38,7 +35,7 @@ const BurgerMenu = ({ translatedRoutes }: BurgerMenuProps) => {
 
   return (
     <>
-      <button className={'flex flex-col relative z-50 ml-5 lg:hidden'} onClick={handleClick}>
+      <button className={'flex flex-col relative z-50 ml-5 lg:hidden'} onClick={() => setIsOpen(!isOpen)}>
         <span
           className={`h-[2px] w-[25px] bg-tertiary rounded duration-300 ${isOpen ? 'rotate-45 absolute translate-y-1' : ''}`}
         ></span>
@@ -72,7 +69,12 @@ const BurgerMenu = ({ translatedRoutes }: BurgerMenuProps) => {
                   damping: 22,
                 }}
               >
-                <MobileDropDown item={item} selected={item.name} className={'my-7 text-2xl'} onClick={handleClick} />
+                <MobileDropDown
+                  item={item}
+                  selected={item.name}
+                  className={'my-7 text-2xl'}
+                  onClick={() => setIsOpen(!isOpen)}
+                />
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, x: '-50%', zIndex: 50 }}
@@ -85,7 +87,7 @@ const BurgerMenu = ({ translatedRoutes }: BurgerMenuProps) => {
                   damping: 22,
                 }}
               >
-                <CustomLink item={item} navLink className={'my-7 text-2xl w-fit'} onClick={handleClick} />
+                <CustomLink item={item} navLink className={'my-7 text-2xl w-fit'} onClick={() => setIsOpen(!isOpen)} />
               </motion.div>
             </React.Fragment>
           ))}
