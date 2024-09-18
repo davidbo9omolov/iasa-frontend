@@ -128,6 +128,7 @@ const Intro = () => {
         video.addEventListener('fullscreenchange', () => {
           if (!document.fullscreenElement) {
             setFullScreen(false)
+            document.exitFullscreen()
           }
         })
       }
