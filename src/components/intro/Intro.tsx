@@ -161,14 +161,17 @@ const Intro = () => {
       </motion.div>
       <div
         className={`${fullScreen ? 'w-[100%] h-[100vh]' : 'w-[95%] h-[85vh]'} relative z-10 flex justify-center items-center`}
-        onClick={onClick}
+        onClick={midiumScreenResolution ? undefined : onClick}
         onMouseEnter={projectEnter}
         onMouseLeave={projectLeave}
       >
         <VideoComponent src={fullScreen ? videoFull1 : videoShort1} />
-        <div className={`absolute  z-20 mt-48 backdrop-blur-[10px] bg-cursor p-3 px-5 rounded-full lg:hidden`}>
+        <button
+          className={`absolute  z-20 mt-48 backdrop-blur-[10px] bg-cursor p-3 px-5 rounded-full lg:hidden`}
+          onClick={onClick}
+        >
           <span className="text-md">{cursorText}</span>
-        </div>
+        </button>
         <div className={'absolute top-0 bg-blackGradient w-full h-full'}></div>
       </div>
       {fullScreen && <div className={'absolute  top-0  w-full h-full bg-primary'}></div>}
