@@ -2,6 +2,7 @@ import React from 'react'
 import { GoArrowUpRight } from 'react-icons/go'
 import { motion } from 'framer-motion'
 import { TeamCard } from '@/types/reduxStore'
+import { useTranslation } from 'react-i18next'
 
 type TeamCardProps = {
   item: TeamCard
@@ -9,6 +10,8 @@ type TeamCardProps = {
 }
 
 const TeamCards: React.FC<TeamCardProps> = ({ item, onMoreInfo }) => {
+  const { t } = useTranslation('home', { keyPrefix: 'ourTeam.members.' + item.position })
+
   return (
     <>
       <motion.div
@@ -38,10 +41,10 @@ const TeamCards: React.FC<TeamCardProps> = ({ item, onMoreInfo }) => {
         </div>
         <div className={'w-4/5 flex flex-col items-start'}>
           <p className={'md:text-md mb-1 whitespace-normal w-[85%]'}>
-            {item.name} {item.surname}
+            {t('name')} {t('surname')}
           </p>
           <p className={'text-xs sm:text-sm md:text-sm truncate w-[75%] md:text-clip md:whitespace-normal md:w-[90%]'}>
-            {item.position}
+            {t('position')}
           </p>
         </div>
         <div className={'w-1/10 flex justify-center absolute right-[10px] mt-2'}>

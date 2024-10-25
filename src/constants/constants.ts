@@ -20,7 +20,7 @@ export enum GlobalRoutes {
 
 export const ReactRoutes = {
   Home: `/${languageCheck}/home`,
-  AnalystShop: `/${languageCheck}/analyst-shop`,
+  AnalystShop: `https://t.me/analyst_shop`,
   Applicant: `/${languageCheck}/applicant`,
   ForStudent: `/${languageCheck}/for-student`,
   Articles: 'https://iasastudentcouncil.github.io/iasa-sc-blog/',
@@ -33,7 +33,7 @@ export const ReactRoutes = {
 
 export enum LinkRoutes {
   Home = '/home',
-  AnalystShop = '/analyst-shop',
+  AnalystShop = 'https://t.me/analyst_shop',
   Applicant = '/applicant',
   ForStudent = '/for-student',
   Articles = 'https://iasastudentcouncil.github.io/iasa-sc-blog/',
@@ -73,7 +73,7 @@ export const routes = [
   },
   {
     name: GlobalRoutes.AnalystShop,
-    path: LinkRoutes.AnalystShop,
+    blankLink: LinkRoutes.AnalystShop,
     withArrow: true,
   },
   {
@@ -217,9 +217,7 @@ export const whatDoWeDoInformation = [
 
 export const teamCardsInformation = [
   {
-    name: 'Андрій',
-    surname: 'Кулєшов',
-    position: 'Голова Студради (President)',
+    position: 'president',
     image: TeamCard1,
     email: 'an.kulieshov@gmail.com',
     socialNetworks: [
@@ -230,9 +228,7 @@ export const teamCardsInformation = [
     ],
   },
   {
-    name: 'Валерія',
-    surname: 'Василенко',
-    position: 'Cекретар (Secretary)',
+    position: 'secretary',
     image: TeamCard2,
     email: 'vasylenko.valeria@lll.kpi.ua',
     socialNetworks: [
@@ -247,26 +243,28 @@ export const teamCardsInformation = [
     ],
   },
   {
-    name: 'Олександра',
-    surname: 'Коваленко',
-    position: 'Перша Заступниця (First VP)',
+    position: 'firstDeputyChairman',
+    // image: TeamCard3,
+    email: 'o.a.polul@gmail.com',
     socialNetworks: [
       {
+        name: 'Linkedin',
+        link: 'https://www.linkedin.com/in/olha-poliuliakh-9166b1313?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
+      },
+      {
         name: 'Instagram',
-        link: 'https://www.instagram.com/polinikira?igsh=c2tyZGVwbTdwMTli&utm_source=qr',
+        link: 'https://www.instagram.com/olya.pllkh?igsh=YWlqY3BiYXF3cGo1',
+      },
+      {
+        name: 'Telegram',
+        link: 'https://t.me/olya_poliuliakh',
       },
     ],
   },
   {
-    name: 'Ірина',
-    surname: 'Поліник',
-    position: 'Заступниця (VP)',
+    position: 'deputyChairman',
     image: TeamCard3,
     socialNetworks: [
-      {
-        name: 'Linkedin',
-        link: 'https://www.linkedin.com/in/%D1%81%D0%B0%D1%88%D0%B0-%D0%BA%D0%BE%D0%B2%D0%B0%D0%BB%D0%B5%D0%BD%D0%BA%D0%BE-06136a23a/',
-      },
       {
         name: 'Instagram',
         link: 'https://www.instagram.com/polinikira?',

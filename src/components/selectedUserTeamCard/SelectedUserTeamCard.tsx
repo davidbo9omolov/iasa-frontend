@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '@/store/store.ts'
 
 const SelectedUserTeamCard = () => {
-  const { t } = useTranslation('home')
+  const { t } = useTranslation('home', { keyPrefix: 'ourTeam' })
   const cardRef = useRef<HTMLDivElement>(null)
   const dispatch = useDispatch()
   const isOpen = useSelector((state: RootState) => state.app.selectedTeamCard.isOpen)
@@ -81,18 +81,18 @@ const SelectedUserTeamCard = () => {
         <div className={'overflow-y-auto'}>
           <div className={'border-b-2 border-tertiary'}>
             <p className={'my-3 font-bold text-xl'}>
-              {teamCard?.name} {teamCard?.surname}
+              {t(`members.${teamCard.position}.name`)} {t(`members.${teamCard.position}.surname`)}
             </p>
-            <p className={'my-3 text-gray'}>{teamCard?.position}</p>
+            <p className={'my-3 text-gray'}>{t(`members.${teamCard.position}.position`)}</p>
           </div>
           <div>
             {teamCard?.email ? (
               <>
-                <p className={'my-3 text-gray'}>Пошта</p>
+                <p className={'my-3 text-gray'}>{t('email')}</p>
                 <p className={'underline'}>{teamCard.email}</p>
               </>
             ) : null}
-            {teamCard?.socialNetworks && <p className={'my-3 text-gray'}>Соц мережі</p>}
+            {teamCard?.socialNetworks && <p className={'my-3 text-gray'}>{t('socialNetworks')}</p>}
             <div className="flex">{socialNetworks}</div>
           </div>
         </div>
@@ -101,7 +101,7 @@ const SelectedUserTeamCard = () => {
         className={`w-full bg-quaternary text-secondary mt-3 z-10 px-10 py-2 rounded-full text-center`}
         onClick={onClose}
       >
-        {t('ourTeam.goBack')}
+        {t('goBack')}
       </button>
     </div>
   )
