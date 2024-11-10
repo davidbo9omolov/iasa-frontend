@@ -42,30 +42,30 @@ export enum LinkRoutes {
 }
 
 export const routes = [
-  {
-    name: GlobalRoutes.Applicant,
-    path: LinkRoutes.Applicant,
-    withArrow: false,
-    dropdown: [
-      {
-        name: 'Entry',
-        path: '/entry',
-      },
-      {
-        name: 'Activities',
-        path: '/activities',
-      },
-      {
-        name: 'Resources',
-        path: '/resources',
-      },
-    ],
-  },
-  {
-    name: GlobalRoutes.ForStudent,
-    path: LinkRoutes.ForStudent,
-    withArrow: true,
-  },
+  // {
+  //   name: GlobalRoutes.Applicant,
+  //   path: LinkRoutes.Applicant,
+  //   withArrow: false,
+  //   dropdown: [
+  //     {
+  //       name: 'Entry',
+  //       path: '/entry',
+  //     },
+  //     {
+  //       name: 'Activities',
+  //       path: '/activities',
+  //     },
+  //     {
+  //       name: 'Resources',
+  //       path: '/resources',
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: GlobalRoutes.ForStudent,
+  //   path: LinkRoutes.ForStudent,
+  //   withArrow: true,
+  // },
   {
     name: GlobalRoutes.Articles,
     blankLink: LinkRoutes.Articles,
@@ -76,25 +76,25 @@ export const routes = [
     blankLink: LinkRoutes.AnalystShop,
     withArrow: true,
   },
-  {
-    name: GlobalRoutes.AboutUs,
-    path: LinkRoutes.AboutUs,
-    withArrow: false,
-    dropdown: [
-      {
-        name: 'Entry',
-        path: '/entry',
-      },
-      {
-        name: 'Activities',
-        path: '/activities',
-      },
-      {
-        name: 'Resources',
-        path: '/resources',
-      },
-    ],
-  },
+  // {
+  //   name: GlobalRoutes.AboutUs,
+  //   path: LinkRoutes.AboutUs,
+  //   withArrow: false,
+  //   dropdown: [
+  //     {
+  //       name: 'Entry',
+  //       path: '/entry',
+  //     },
+  //     {
+  //       name: 'Activities',
+  //       path: '/activities',
+  //     },
+  //     {
+  //       name: 'Resources',
+  //       path: '/resources',
+  //     },
+  //   ],
+  // },
   {
     name: GlobalRoutes.Contacts,
     path: LinkRoutes.Contacts,
