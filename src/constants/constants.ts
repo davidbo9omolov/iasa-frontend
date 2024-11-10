@@ -80,6 +80,20 @@ export const routes = [
     name: GlobalRoutes.AboutUs,
     path: LinkRoutes.AboutUs,
     withArrow: false,
+    dropdown: [
+      {
+        name: 'Entry',
+        path: '/entry',
+      },
+      {
+        name: 'Activities',
+        path: '/activities',
+      },
+      {
+        name: 'Resources',
+        path: '/resources',
+      },
+    ],
   },
   {
     name: GlobalRoutes.Contacts,

@@ -37,7 +37,7 @@ const DropDown = ({ item, classButton, classDropDown, onClick }: DropDownProps) 
           {item.name}
         </button>
         {item.dropdown && isOpen && (
-          <div className={`bg-quaternary absolute flex flex-col w-full z-20 rounded-2xl ${classDropDown}`}>
+          <div className={`bg-quaternary flex flex-col w-full z-20 rounded-2xl ${classDropDown}`}>
             {item.dropdown
               ? item.dropdown.map((itemElem, index) =>
                   onClick ? (

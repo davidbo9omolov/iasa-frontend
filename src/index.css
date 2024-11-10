@@ -51,3 +51,8 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #ffae00;
 }
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
