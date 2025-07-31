@@ -37,7 +37,10 @@ const OurTeam = () => {
           <div className={'mb-10 w-full lg:w-[40%] lg:mb-0'}>
             <h1 className={'text-2xl lg:text-4xl font-bold '}>{t('ourTeam.title')}</h1>
             <p className={'sm:text-sm md:text-md my-6 w-auto lg:w-[80%]'}>{t('ourTeam.description')}</p>
-            <CustomLink className={'bg-tertiary text-primary w-fit rounded-full p-2 hidden lg:flex'}>
+            <CustomLink
+              link={LinkRoutes.AboutUs}
+              className={'bg-tertiary text-primary w-fit rounded-full p-2 hidden lg:flex'}
+            >
               <p className={'text-primary'}>{t('ourTeam.more')}</p>
             </CustomLink>
           </div>
