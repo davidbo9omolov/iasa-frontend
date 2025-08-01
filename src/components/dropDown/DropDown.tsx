@@ -37,14 +37,14 @@ const DropDown = ({ item, classButton, classDropDown, onClick }: DropDownProps) 
           {item.name}
         </button>
         {item.dropdown && isOpen && (
-          <div className={`bg-quaternary absolute flex flex-col w-full z-20 rounded-2xl ${classDropDown}`}>
+          <div className={`bg-quaternary absolute flex flex-col w-full z-20 rounded-[1.25rem] py-1 ${classDropDown}`}>
             {item.dropdown
               ? item.dropdown.map((itemElem, index) =>
                   onClick ? (
                     <button
                       key={index}
                       onClick={() => onClick(itemElem.name)}
-                      className={`mx-4 py-1 hover:text-tertiary ${item.dropdown && index !== item.dropdown.length - 1 ? 'border-thin border-b-[1px]' : ''}`}
+                      className={`mx-4 py-2 hover:text-tertiary ${item.dropdown && index !== item.dropdown.length - 1 ? 'border-thin border-b-[1px]' : ''}`}
                     >
                       {translatedText(itemElem)}
                     </button>
