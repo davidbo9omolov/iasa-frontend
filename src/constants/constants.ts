@@ -337,13 +337,16 @@ export const telegramBots = [
   {
     title: 'IASA Bot',
     link: 'https://t.me/iasa_mate_bot',
+    subText: 'bot',
   },
   {
     title: 'IASA Suggestions',
     link: 'https://t.me/IASAsuggestionBot',
+    subText: 'sug',
   },
   {
     title: 'IASA Student Support ',
     link: 'https://t.me/iasa_stud_support_bot',
+    subText: 'sup',
   },
 ]

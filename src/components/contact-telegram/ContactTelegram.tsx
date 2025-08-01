@@ -32,11 +32,11 @@ const ContactTelegram = () => {
     <section className={'min-h-[250px] flex justify-center mt-16'}>
       <div className={'w-[95%] flex flex-col'}>
         <h2 className={'text-4xl font-semibold '}>{t('inTelegram')}</h2>
-        <div className={'flex flex-col md:flex-row w-full items-center md:items-start justify-between mt-7'}>
+        <div className={'flex flex-col md:flex-row w-full items-center md:items-start justify-between mt-[20px]'}>
           <div className={'fex flex-col w-full md:w-1/4 min-w-[350px]'}>
             <p>{t('telegramDescription')}</p>
           </div>
-          <div className={'w-full md:w-1/2 mt-7 md:m-0 flex items-center flex-col md:block'}>
+          <div className={'w-full md:w-1/2 mt-[20px] md:m-0 flex items-center flex-col md:block'}>
             <div
               ref={switchRef}
               className={
@@ -75,7 +75,7 @@ const ContactTelegram = () => {
                 </motion.button>
               </div>
             </div>
-            <div className={'w-fit flex flex-wrap mt-7'}>
+            <div className={'w-fit flex flex-wrap gap-y-[20px] mt-[20px] ml-[10px]'}>
               {!selected
                 ? telegramChannels.map((item, index) => (
                     <div className={'relative group'}>
@@ -83,13 +83,13 @@ const ContactTelegram = () => {
                         key={index}
                         to={item.link}
                         target={'_blank'}
-                        className={'underline mr-5 mb-5 duration-300 group-hover:text-tertiary'}
+                        className={'underline mr-12 mb-5 duration-300 group-hover:text-tertiary mb:mb-10'}
                       >
                         {item.title}
                       </Link>
                       <div
                         className={
-                          'hidden duration-300 p-1 justify-center items-center absolute mt-[20px] bg-quaternary text-secondary w-[250px] rounded lg:group-hover:flex'
+                          'hidden duration-300 p-1 justify-center items-center absolute mt-[20px] bg-quaternary text-secondary w-max rounded lg:group-hover:flex'
                         }
                       >
                         {t(`subText.${item.subText}`)}
@@ -97,9 +97,23 @@ const ContactTelegram = () => {
                     </div>
                   ))
                 : telegramBots.map((item, index) => (
-                    <Link key={index} to={item.link} target={'_blank'} className={'underline mr-5 mb-5'}>
-                      {item.title}
-                    </Link>
+                    <div className={'relative group'}>
+                      <Link
+                        key={index}
+                        to={item.link}
+                        target={'_blank'}
+                        className={'underline mr-12 mb-5 duration-300 group-hover:text-tertiary'}
+                      >
+                        {item.title}
+                      </Link>
+                      <div
+                        className={
+                          'hidden duration-300 p-1 justify-center items-center absolute mt-[20px] bg-quaternary text-secondary w-max rounded lg:group-hover:flex'
+                        }
+                      >
+                        {t(`subText.${item.subText}`)}
+                      </div>
+                    </div>
                   ))}
             </div>
           </div>
