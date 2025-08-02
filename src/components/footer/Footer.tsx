@@ -17,7 +17,7 @@ const Footer = () => {
 
   return (
     <footer className={'h-[20%] min-h-[200px] flex flex-col w-full items-center bg-quaternary py-3 sm:p-3'}>
-      <div className={`h-full w-[95%] flex justify-between flex-col md:flex-row`}>
+      <div className={`h-full w-[95%] flex justify-between flex-col md:flex-row py-3`}>
         <div className={'flex justify-between w-full md:w-[40%]'}>
           <div className={'flex flex-col h-[80%]'}>
             <Link
@@ -77,7 +77,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className={'border-t-[1px] border-thin flex justify-center py-5 w-[95%] mt-4'}>
+      <div className={'border-t-[1px] border-thin flex justify-center py-5 w-[95%] mt-3'}>
         <p className={'w-full text-center text-gray'}>&copy; IASA Student Council {year}</p>
       </div>
     </footer>

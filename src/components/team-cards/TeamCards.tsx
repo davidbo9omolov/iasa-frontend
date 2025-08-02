@@ -15,7 +15,7 @@ const TeamCards: React.FC<TeamCardProps> = ({ item, onMoreInfo }) => {
   return (
     <>
       <motion.div
-        className={'relative h-fit w-full bg-quaternary items-center rounded-lg flex p-3 cursor-pointer min-h-[105px]'}
+        className={'relative h-fit w-full bg-quaternary items-center rounded-2xl flex p-3 cursor-pointer min-h-[105px]'}
         onClick={() => onMoreInfo(item)}
         initial={{
           opacity: 0,
