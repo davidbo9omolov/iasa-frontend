@@ -41,7 +41,9 @@ const OurTeam = () => {
             </CustomLink>
           </div>
           <div className={'w-full lg:w-[60%] flex lg:justify-center lg:justify-start'}>
-            <div className={'grid grid-cols-2 gap-[40px] gap-x-full lg:w-full w-full h-fit sm:grid-cols-1'}>
+            <div
+              className={'grid grid-cols-2 gap-[20px] md:gap-[40px] gap-x-full lg:w-full w-full h-fit sm:grid-cols-1'}
+            >
               {teamCardsInformation.map((item, index) => (
                 <TeamCards key={index} item={item} onMoreInfo={onMoreInfo} />
               ))}
