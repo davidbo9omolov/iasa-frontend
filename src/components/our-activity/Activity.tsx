@@ -109,10 +109,10 @@ const Activity = () => {
             className={'text-3xl lg:text-5xl font-bold mb-4'}
             dangerouslySetInnerHTML={{ __html: t('ourActivity.title') }}
           ></h1>
-          <p className={'sm:text-sm my-6 text-gray md:text-md'}>{t('ourActivity.description')}</p>
+          <p className={'sm:text-sm my-12 text-gray md:text-md'}>{t('ourActivity.description')}</p>
           <div className={'flex w-full justify-evenly lg:w-auto md:justify-normal'}>
             {socialNetworks.map((network, index) => (
-              <Link target={'_blank'} key={index} to={network.path} className={'flex mr-5'}>
+              <Link target={'_blank'} key={index} to={network.path} className={'flex mr-9'}>
                 <network.icon className={'w-[24px] h-[24px]'} />
               </Link>
             ))}
