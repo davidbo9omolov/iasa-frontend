@@ -282,10 +282,15 @@ export const teamCardsInformation = [
   {
     position: 'deputyChairman',
     image: TeamCard3,
+    email: 'lisazayarchenko@gmail.com',
     socialNetworks: [
       {
         name: 'Telegram',
         link: 'https://t.me/jwbaelis',
+      },
+      {
+        name: 'Instagram',
+        link: 'https://www.instagram.com/baelis_jw',
       },
     ],
   },
@@ -349,7 +354,7 @@ export const telegramBots = [
     subText: 'sug',
   },
   {
-    title: 'IASA Student Support ',
+    title: 'IASA Student Support',
     link: 'https://t.me/iasa_stud_support_bot',
     subText: 'sup',
   },
