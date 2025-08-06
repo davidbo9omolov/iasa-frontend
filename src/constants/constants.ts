@@ -6,7 +6,7 @@ import { FaTiktok } from 'react-icons/fa'
 import { FaYoutube } from 'react-icons/fa'
 
 import { IMG_IASA_1, IMG_IASA_2, IMG_IASA_3, IMG_IASA_4, IMG_IASA_5 } from '@/assets'
-import { TeamCard1, TeamCard2, TeamCard3 } from '@/assets'
+import { TeamCard1, TeamCard2, TeamCard3, TeamCard4 } from '@/assets'
 import { Banner1, Banner2, Banner3, Banner4, Banner5, Banner6, Banner7, Banner8, Banner9 } from '@/assets'
 
 export enum GlobalRoutes {
@@ -233,45 +233,49 @@ export const teamCardsInformation = [
   {
     position: 'president',
     image: TeamCard1,
-    email: 'an.kulieshov@gmail.com',
+    email: 'melika.maria@lll.kpi.ua',
     socialNetworks: [
       {
         name: 'Linkedin',
-        link: 'https://www.linkedin.com/in/andead422/',
+        link: 'https://www.linkedin.com/in/maria-melika-860ba6338',
+      },
+      {
+        name: 'Instagram',
+        link: 'https://www.instagram.com/veswitch',
+      },
+      {
+        name: 'Telegram',
+        link: 'https://t.me/mashenka2277',
       },
     ],
   },
   {
     position: 'secretary',
-    image: TeamCard2,
-    email: 'vasylenko.valeria@lll.kpi.ua',
+    image: TeamCard4,
+    email: 'rrragulinaaa@gmail.com',
     socialNetworks: [
       {
+        name: 'Linkedin',
+        link: 'http://linkedin.com/in/rahulina',
+      },
+      {
         name: 'Instagram',
-        link: 'https://www.instagram.com/l_vasilenko_?igsh=MW8xbmN0MmQxM2p5cg%3D%3D&utm_source=qr',
+        link: 'https://www.instagram.com/rrragulina',
       },
       {
         name: 'Telegram',
-        link: 'https://t.me/ayavriik',
+        link: 'https://t.me/rrragulina',
       },
     ],
   },
   {
     position: 'firstDeputyChairman',
-    // image: TeamCard3,
-    email: 'o.a.polul@gmail.com',
+    image: TeamCard2,
+    email: 'valeriaplusnina879@gmail.com',
     socialNetworks: [
       {
-        name: 'Linkedin',
-        link: 'https://www.linkedin.com/in/olha-poliuliakh-9166b1313?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
-      },
-      {
         name: 'Instagram',
-        link: 'https://www.instagram.com/olya.pllkh?igsh=YWlqY3BiYXF3cGo1',
-      },
-      {
-        name: 'Telegram',
-        link: 'https://t.me/olya_poliuliakh',
+        link: 'https://www.instagram.com/lerrrich',
       },
     ],
   },
@@ -280,8 +284,8 @@ export const teamCardsInformation = [
     image: TeamCard3,
     socialNetworks: [
       {
-        name: 'Instagram',
-        link: 'https://www.instagram.com/polinikira?',
+        name: 'Telegram',
+        link: 'https://t.me/jwbaelis',
       },
     ],
   },
@@ -312,22 +316,22 @@ export const telegramChannels = [
     subText: 'sc',
   },
   {
-    title: 'IASA ABIT ',
+    title: 'IASA ABIT',
     link: 'https://t.me/abitiasa',
     subText: 'abit',
   },
   {
-    title: 'IASAevent ',
+    title: 'IASAevent',
     link: 'https://t.me/iasa_event',
     subText: 'event',
   },
   {
-    title: 'IASAedu ',
+    title: 'IASAedu',
     link: 'https://t.me/iasa_edu',
     subText: 'edu',
   },
   {
-    title: 'IASA Analytics ',
+    title: 'IASA Analytics',
     link: 'https://t.me/iasa_analytics',
     subText: 'anal',
   },

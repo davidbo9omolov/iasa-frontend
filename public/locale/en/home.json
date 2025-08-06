@@ -3,7 +3,7 @@
     "applicant": "For applicants",
     "forStudent": "For students",
     "analystShop": "Analyst Shop",
-    "articles": "Articles",
+    "articles": "IASA Articles",
     "contacts": "Contacts",
     "aboutUs": "About us"
   },
@@ -15,94 +15,94 @@
     "ua": "UA"
   },
   "intro": {
-    "play": "Play Reel"
+    "play": "Play"
   },
-  "ourActivity": {
+    "ourActivity": {
     "title": "Activities of the Student Council.",
-    "description": "The Student Council is the voice of the students of our institute. We represent and protect the interests of students, monitor the quality of learning conditions, and try to make leisure fun and active. Organizing events, resolving administrative issues, and informing about important events and activities are only a small part of our activities.",
-    "animatedDescriptionOne": "The website is designed to inform students about the activities of the IPSA Student Council, introduce our team, facilitate the search for necessary information for applicants, and draw attention to all online resources and web products of IPSA.",
-    "animatedDescriptionTwo": "The website will be useful not only for IPSA students but also for prospective students who are still considering applying to our institute",
-    "more": "More photos here.",
-    "check": "Check out"
+    "description": "The Student Council is the voice of our institute’s students. We represent and protect students’ interests, monitor the quality of study conditions, and strive to make leisure time fun and engaging. Event organization, administrative issue resolution, and keeping students informed — that's just a small part of what we do.",
+    "animatedDescriptionOne": "This website informs students about the IPSA Student Council’s work, introduces our team, simplifies access to key information for applicants, and highlights all IPSA’s online resources and web tools.",
+    "animatedDescriptionTwo": "The site is useful not only for IPSA students but also for applicants who are still considering joining our institute.",
+    "more": "More photos here",
+    "check": "View"
   },
   "whatDoWeDo": {
-    "title": "What do we do",
-    "interests": "Representation of Student Interests",
-    "interestsDescription": "The Student Council acts as a mediator between students and the administration with the teaching staff. We gather feedback from education seekers regarding the quality of education and fairness of assessment, process them, and communicate current issues to the university community.",
-    "abiturients": "Assistance to Applicants",
-    "abiturientsDescription": "We actively assist applicants in choosing their specialization and maintain communication with them throughout the entire admission campaign. On our resources, you can find numerous interesting articles on topics related to future learning aspects.",
-    "events": "Organization of Events",
-    "eventsDescription": "The activities of the Student Council are not limited to the educational process: we also make the leisure of education seekers more enjoyable and interesting. It is our responsibility to organize events of various directions: introductory to attract applicants, educational to improve knowledge levels and enhance practical skills, and, of course, entertaining for students with any preferences.",
-    "inform": "Informing about Events and Activities",
-    "informDescription": "We deliver relevant information to the student community so that its members are always aware of events happening within their alma mater's walls. In addition, the Student Council creates entertaining media and textual content, as well as highlights employment opportunities."
+    "title": "What We Do",
+    "interests": "Representing Student Interests",
+    "interestsDescription": "The Student Council serves as a mediator between students and the administration or faculty. We collect feedback from students regarding the quality of education and fairness of assessments, process it, and deliver key issues to the university community.",
+    "abiturients": "Supporting Applicants",
+    "abiturientsDescription": "We actively assist applicants in choosing their specialization and stay in contact with them throughout the admission process. On our platforms, you’ll find many useful articles related to studying at IPSA.",
+    "events": "Event Organization",
+    "eventsDescription": "The Student Council’s work goes beyond academics — we also make student life more enjoyable and vibrant. We organize events of all kinds: orientation for applicants, educational ones to boost skills, and, of course, entertainment for everyone.",
+    "inform": "Sharing News and Events",
+    "informDescription": "We keep the student community informed about all relevant updates and happenings at our alma mater. We also produce fun media and written content and promote job opportunities."
   },
   "sliderCards": {
-    "title": "Departments of the Student Council",
+    "title": "Student Council Departments",
     "abit": {
-      "title": "Abit",
-      "description": "Introduces prospective students to IASA and the IT field by organizing offline and online events. Writes articles to inform about our institute and admissions."
+      "title": "Abit (Admissions)",
+      "description": "⁤The first point of contact for future IASA students. ⁤⁤The team guides applicants through every step of the admissions process, from Open Days to personal consultations."
     },
     "inform": {
-      "title": "Inform",
-      "description": "Manages the IASA Student Council and IASAevent, writes posts for other departments of the Student Council, publishes interviews with teachers, and edits everything containing text."
+      "title": "Information",
+      "description": "⁤The informing engine. ⁤⁤They manage posts, articles, and updates to keep the student body informed."
+    },
+    "educational": {
+      "title": "Education",
+      "description": "⁤⁤Those pioneers organises hackathons, IT championships, and lectures to provide students with high-quality educational experiences."
     },
     "it": {
       "title": "IT",
-      "description": "Develops and maintains Telegram bots and web products for students. Participates in organizing the annual hackathon and assists in creating analytics for IASA teachers."
+      "description": "⁤Tech innovators who develop Telegram bots, build websites, and ensure the digital aspects of student life run smoothly."
     },
     "design": {
       "title": "Design",
-      "description": "Responsible for graphic materials for events and projects. Creates designs for bots, groups, chats, and more."
+      "description": "⁤From visual identity to creative posters, this team guarantees that every design for events and campaigns stands out and looks exceptional."
     },
     "project": {
-      "title": "Project",
-      "description": "Initiates and implements various Student Council events, overseeing them at all stages from idea conception to final realization."
+      "title": "Event",
+      "description": "⁤This team creates memorable experiences, planning everything from unforgettable parties and student quests to charitable events and medical training sessions, ensuring a well-rounded student life experience."
     },
     "media": {
       "title": "Media",
-      "description": "Responsible for the aesthetic component of the Student Council: manages Instagram, photographs events, and leaves positive impressions through photos."
+      "description": "Сaptures key moments through photography and video, bringing every event to life for students."
     },
     "merch": {
       "title": "Merch",
-      "description": "Unites IASA students with clothing, stickers, and other products with unique designs."
+      "description": "⁤The creators behind IASA's iconic merch. ⁤⁤They manage orders, engage with customers, and generate creative ideas for new products."
     },
     "tiktok": {
       "title": "TikTok",
-      "description": "Unites IASA students with clothing, stickers, and other products with unique designs."
-    },
-    "educational": {
-      "title": "Educational",
-      "description": "Runs the IASAedu channel with useful information about the IT field. Helps with issues related to the learning process. Annually creates articles about elective courses and develops analytics for teachers."
+      "description": "⁤The newest addition focused on TikTok trends and creating entertaining and engaging content for our audience."
     }
   },
   "ourTeam": {
     "title": "Our Team",
-    "description": "The work of Studrada would be impossible without proactive and determined individuals who make a significant contribution to our student body every day.",
-    "more": "Learn more about us",
+    "description": "The work of Student Council would be impossible without proactive and determined individuals who make a significant contribution to our student body every day.",
+    "more": "Learn more",
     "goBack": "Go back",
     "members": {
       "president": {
-        "name": "Andrew",
-        "surname": "Kulieshev",
+        "name": "Mariia",
+        "surname": "Melika",
         "position": "President"
       },
       "secretary": {
-        "name": "Valeria",
-        "surname": "Vasilenko",
+        "name": "Anna",
+        "surname": "Rahulina",
         "position": "Secretary"
       },
       "firstDeputyChairman": {
-        "name": "Olga",
-        "surname": "Polyulyakh",
+        "name": "Valeria",
+        "surname": "Pliusnina",
         "position": "First Deputy Chairman"
       },
       "deputyChairman": {
-        "name": "Irina",
-        "surname": "Poliniak",
+        "name": "Vasylysa",
+        "surname": "Zaiarchenko",
         "position": "Deputy Chairman"
       }
     },
     "email": "Email",
-    "socialNetworks": "Social networks"
+    "socialNetworks": "Socials"
   }
 }
