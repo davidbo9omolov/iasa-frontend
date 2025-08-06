@@ -1,0 +1,6 @@
+# /public/robots.txt
+User-agent: *
+Allow: /
+Disallow: /node_modules/
+Host: https://iasa.sc.kpi.ua
+Sitemap: https://iasa.sc.kpi.ua/sitemap.xml

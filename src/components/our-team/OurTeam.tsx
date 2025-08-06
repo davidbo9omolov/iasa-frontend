@@ -29,20 +29,23 @@ const OurTeam = () => {
       ></div>
 
       <section className={' min-h-[250px] flex justify-center mt-14 mb-36'}>
-        <div
-          className={
-            'relative w-[95%] flex items-center justify-center md:items-center lg:justify-between flex-col lg:flex-row'
-          }
-        >
+        <div className={'relative w-[95%] flex items-start justify-center lg:justify-between flex-col lg:flex-row'}>
           <div className={'mb-10 w-full lg:w-[40%] lg:mb-0'}>
-            <h1 className={'text-2xl lg:text-4xl font-bold '}>{t('ourTeam.title')}</h1>
-            <p className={'sm:text-sm md:text-md my-6 w-auto lg:w-[80%]'}>{t('ourTeam.description')}</p>
-            <CustomLink className={'bg-tertiary text-primary w-fit rounded-full p-2 hidden lg:flex'}>
+            <h1 className={'text-2xl lg:text-[48px] leading-[110%] tracking-[0.32px] font-[550]'}>
+              {t('ourTeam.title')}
+            </h1>
+            <p className={'sm:text-sm md:text-md text-gray w-full md:w-[60%] mt-10 mb-6'}>{t('ourTeam.description')}</p>
+            <CustomLink
+              link={LinkRoutes.AboutUs}
+              className={'bg-tertiary text-primary w-fit rounded-full p-2 hidden lg:flex'}
+            >
               <p className={'text-primary'}>{t('ourTeam.more')}</p>
             </CustomLink>
           </div>
-          <div className={'w-full lg:w-[60%] flex justify-center lg:justify-start'}>
-            <div className={'grid grid-cols-2 gap-[20px] gap-x-full w-[700px]  h-fit sm:grid-cols-1'}>
+          <div className={'w-full lg:w-[60%] flex lg:justify-center lg:justify-start'}>
+            <div
+              className={'grid grid-cols-2 gap-[20px] md:gap-[40px] gap-x-full lg:w-full w-full h-fit sm:grid-cols-1'}
+            >
               {teamCardsInformation.map((item, index) => (
                 <TeamCards key={index} item={item} onMoreInfo={onMoreInfo} />
               ))}

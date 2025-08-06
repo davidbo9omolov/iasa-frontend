@@ -77,7 +77,7 @@ const SliderInform = ({ children, className }: SliderProps) => {
   return (
     <>
       <div className={' flex justify-between relative items-center mb-6'}>
-        <h1 className={'text-2xl lg:text-4xl font-bold w-[fit]'}>{t('title')}</h1>
+        <h1 className={'text-2xl lg:text-[48px] leading-[110%] tracking-[0.32px] font-[550] w-[fit]'}>{t('title')}</h1>
         <Arrows arrows={arrows} />
       </div>
       <Slider ref={arrows} {...settings}>

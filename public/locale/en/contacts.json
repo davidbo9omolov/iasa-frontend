@@ -5,16 +5,19 @@
     "followUs": "Follow us"
   },
   "socials": {
-    "inTelegram": "We're on Telegram",
-    "telegramDescription": "Telegram channels offer not only educational materials and job vacancies from leading companies, but also current events and activities. \nYou will always be up to date with the latest events and 'in the rhythm of IPSA'.",
+    "inTelegram": "Find us on Telegram",
+    "telegramDescription": "Our Telegram channels provide more than just educational resources and job openings from top companies — they also keep you informed about the latest events and opportunities.\nStay updated and keep up with the IPSA vibe.",
     "telegramChannel": "Telegram channels",
     "telegramBots": "Telegram bots",
     "subText": {
-      "sc": "Official Student Council Channel",
-      "abit": "Everything about admissions",
+      "sc": "Official Student Council channel",
+      "abit": "Admissions info and updates",
       "event": "Events and activities",
-      "edu": "Educational project for IT beginners",
-      "anal": "Faculty teachers' analytics"
+      "edu": "Introductory IT education project",
+      "anal": "Faculty analytics and reviews",
+      "bot": "Class schedule bot",
+      "sug": "Feedback bot",
+      "sup": "Student help and support"
     }
   }
 }

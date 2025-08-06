@@ -4,9 +4,10 @@ import IMG_IASA_3 from '@/assets/IASA Gallery/IMG_0580.jpeg'
 import IMG_IASA_4 from '@/assets/IASA Gallery/IMG_0579.jpeg'
 import IMG_IASA_5 from '@/assets/IASA Gallery/IMG_0581.jpeg'
 
-import TeamCard1 from '@/assets/Team Cards/IMG_8539.jpg'
-import TeamCard2 from '@/assets/Team Cards/IMG_8538.jpg'
-import TeamCard3 from '@/assets/Team Cards/IMG_8537.jpg'
+import TeamCard1 from '@/assets/Team Cards/IMG_9000.jpg'
+import TeamCard2 from '@/assets/Team Cards/IMG_9001.jpg'
+import TeamCard3 from '@/assets/Team Cards/IMG_9002.jpg'
+import TeamCard4 from '@/assets/Team Cards/IMG_9003.jpg'
 
 import Banner1 from '@/assets/Banners/Banners-01.png'
 import Banner2 from '@/assets/Banners/Banners-02.png'
@@ -27,6 +28,7 @@ export {
   TeamCard1,
   TeamCard2,
   TeamCard3,
+  TeamCard4,
   Banner1,
   Banner2,
   Banner3,

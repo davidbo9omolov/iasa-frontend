@@ -17,10 +17,10 @@ const Header = () => {
   const translatedRoutes = routes.map((item) => ({
     ...item,
     name: t(`routes.${item.name.charAt(0).toLowerCase() + item.name.slice(1)}`),
-    dropdown: item.dropdown?.map((item) => ({
-      ...item,
-      name: t(`dropdown.${item.name.charAt(0).toLowerCase() + item.name.slice(1)}`),
-    })),
+    // dropdown: item.dropdown?.map((item) => ({
+    //   ...item,
+    //   name: t(`dropdown.${item.name.charAt(0).toLowerCase() + item.name.slice(1)}`),
+    // })),
   }))
 
   const onChangingLanguage = (lang: string) => {
@@ -46,7 +46,7 @@ const Header = () => {
           </ul>
         </nav>
         <div className={'flex items-center'}>
-          <label className={'relative mr-8 group z-50'}>
+          <label className={'relative mr-8 lg:mr-16 group z-50'}>
             <p className={'absolute group-hover:text-tertiary uppercase'}>{i18n.language}</p>
             <DropDown
               item={translations}

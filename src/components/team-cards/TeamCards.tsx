@@ -15,7 +15,7 @@ const TeamCards: React.FC<TeamCardProps> = ({ item, onMoreInfo }) => {
   return (
     <>
       <motion.div
-        className={'relative h-fit w-full bg-quaternary items-center rounded-lg flex p-3 cursor-pointer min-h-[105px]'}
+        className={'relative h-fit w-full bg-quaternary items-center rounded-2xl flex cursor-pointer min-h-[105px]'}
         onClick={() => onMoreInfo(item)}
         initial={{
           opacity: 0,
@@ -32,11 +32,11 @@ const TeamCards: React.FC<TeamCardProps> = ({ item, onMoreInfo }) => {
         }}
         viewport={{ once: true }}
       >
-        <div className={'mr-3'}>
+        <div className={'p-3'}>
           {item?.image ? (
-            <img src={item?.image} alt={'team member'} className={'rounded-full min-w-[75px] max-w-[75px]'} />
+            <img src={item?.image} alt={'team member'} className={'rounded-full min-w-[80px] max-w-[80px]'} />
           ) : (
-            <div className={'rounded-full bg-tertiary w-[75px] h-[75px]'}></div>
+            <div className={'rounded-full bg-tertiary w-[80px] h-[80px]'}></div>
           )}
         </div>
         <div className={'w-4/5 flex flex-col items-start'}>
@@ -47,7 +47,7 @@ const TeamCards: React.FC<TeamCardProps> = ({ item, onMoreInfo }) => {
             {t('position')}
           </p>
         </div>
-        <div className={'w-1/10 flex justify-center absolute right-[10px] mt-2'}>
+        <div className={'w-1/10 flex justify-center absolute right-[10px]'}>
           <GoArrowUpRight className={'rotate-90 w-[30px] h-[30px] text-tertiary cursor-pointer'} />
         </div>
       </motion.div>
