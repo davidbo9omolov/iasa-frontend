@@ -80,7 +80,7 @@ const SelectedUserTeamCard = () => {
 
         <div className={'flex flex-col h-[40%] overflow-hidden mt-4'}>
           <div className={'shrink-0 border-b-2 border-tertiary pb-2'}>
-            <p className={'my-1 font-bold text-xl'}>
+            <p className={'my-1 font-[550] text-xl'}>
               {t(`members.${teamCard.position}.name`)} {t(`members.${teamCard.position}.surname`)}
             </p>
             <p className={'my-3 text-gray'}>{t(`members.${teamCard.position}.position`)}</p>

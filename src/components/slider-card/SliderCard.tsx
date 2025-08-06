@@ -16,7 +16,9 @@ const SliderCard = ({ data }: SliderCardProps) => {
         <img src={data.image} alt={t(`${data.type}.title`)} className={'w-full h-full object-cover rounded-lg'} />
       </div>
       <div className={'h-[55%]'}>
-        <p className={'text-xl md:text-2xl font-bold mt-2 mb-4'}>{t(`${data.type}.title`)}</p>
+        <p className={'text-xl leading-[110%] tracking-[0.32px] font-[550] md:text-2xl mt-2 mb-4'}>
+          {t(`${data.type}.title`)}
+        </p>
         <p className={'sm:text-sm md:text-md overflow-y-auto max-h-[70%]'}>{t(`${data.type}.description`)}</p>
       </div>
     </div>

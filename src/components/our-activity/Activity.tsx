@@ -188,7 +188,14 @@ const Activity = () => {
           >
             {t('ourActivity.animatedDescriptionTwo')}
           </p>
-          <p className={'hidden md:block text-2xl font-bold my-4 xs:my-2'}> {t('ourActivity.more')}</p>
+          <p
+            className={
+              'hidden md:block text-2xl lg:text-[32px] leading-[110%] tracking-[0.32px] font-[550] mb-4 my-4 xs:my-2'
+            }
+          >
+            {' '}
+            {t('ourActivity.more')}
+          </p>
           <CustomLink
             target="_blank"
             blankLink={
