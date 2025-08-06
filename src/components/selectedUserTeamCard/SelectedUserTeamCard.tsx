@@ -78,14 +78,14 @@ const SelectedUserTeamCard = () => {
           )}
         </div>
 
-        <div className={'overflow-y-auto'}>
-          <div className={'border-b-2 border-tertiary'}>
-            <p className={'my-3 font-bold text-xl'}>
+        <div className={'flex flex-col h-[40%] overflow-hidden mt-4'}>
+          <div className={'shrink-0 border-b-2 border-tertiary pb-2'}>
+            <p className={'my-1 font-bold text-xl'}>
               {t(`members.${teamCard.position}.name`)} {t(`members.${teamCard.position}.surname`)}
             </p>
             <p className={'my-3 text-gray'}>{t(`members.${teamCard.position}.position`)}</p>
           </div>
-          <div>
+          <div className={'overflow-y-auto mt-2'}>
             {teamCard?.email ? (
               <>
                 <p className={'my-3 text-gray'}>{t('email')}</p>

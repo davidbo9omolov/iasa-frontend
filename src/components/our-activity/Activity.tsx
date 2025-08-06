@@ -106,13 +106,19 @@ const Activity = () => {
       >
         <div className={'w-full lg:w-1/3 mt-5 xs:mt-3'}>
           <h1
-            className={'text-3xl lg:text-5xl font-bold mb-4'}
+            className={'text-3xl lg:text-[64px] leading-[110%] tracking-[0.32px] font-[550] mb-4'}
             dangerouslySetInnerHTML={{ __html: t('ourActivity.title') }}
           ></h1>
-          <p className={'sm:text-sm my-12 text-gray md:text-md'}>{t('ourActivity.description')}</p>
-          <div className={'flex w-full justify-evenly lg:w-auto md:justify-normal'}>
+          <p
+            className={
+              'text-[16px] leading-[150%] tracking-[0.32px] font-normal sm:text-sm my-6 lg:my-12 text-gray md:text-md'
+            }
+          >
+            {t('ourActivity.description')}
+          </p>
+          <div className={'flex w-full justify-start lg:w-auto md:justify-normal'}>
             {socialNetworks.map((network, index) => (
-              <Link target={'_blank'} key={index} to={network.path} className={'flex mr-9'}>
+              <Link target={'_blank'} key={index} to={network.path} className={'flex mr-10'}>
                 <network.icon className={'w-[24px] h-[24px]'} />
               </Link>
             ))}
@@ -170,14 +176,14 @@ const Activity = () => {
         <div className={'w-full lg:w-1/4 xs:mt-0 md:mt-5 relative flex flex-col md:-translate-y-[25px]'}>
           <p
             className={
-              ' sm:h-fit  lg:h-auto text-gray sm:text-sm md:text-md scroll-opacity-text md:-translate-y-[20px] '
+              'text-[16px] leading-[150%] tracking-[0.32px] font-normal sm:h-fit lg:h-auto text-gray sm:text-sm md:text-md scroll-opacity-text md:-translate-y-[20px] '
             }
           >
             {t('ourActivity.animatedDescriptionOne')}
           </p>
           <p
             className={
-              'sm:text-sm sm:h-fit  lg:h-auto  lg:text-md  text-gray absolute scroll-opacity-text top-0 md:text-md  md:-translate-y-[20px]'
+              'text-[16px] leading-[150%] tracking-[0.32px] font-normal sm:text-sm sm:h-fit lg:h-auto lg:text-md text-gray absolute scroll-opacity-text top-0 md:text-md md:-translate-y-[20px]'
             }
           >
             {t('ourActivity.animatedDescriptionTwo')}
