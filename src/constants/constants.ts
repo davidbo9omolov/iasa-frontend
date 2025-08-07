@@ -360,7 +360,7 @@ export const presidiumCardsInformation = [
     socialNetworks: [
       {
         name: 'Linkedin',
-        link: '',
+        link: 'https://www.linkedin.com/in/oleksandra-bohdanova-632b8b365',
       },
       {
         name: 'Instagram',
