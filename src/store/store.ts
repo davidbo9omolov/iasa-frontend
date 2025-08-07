@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 
 import appReducer from '@/store/slices/app'
+import { presidiumReducer } from '@/store/slices/app'
 
 export const store = configureStore({
   reducer: {
     app: appReducer,
+    presidium: presidiumReducer,
   },
 })
 
