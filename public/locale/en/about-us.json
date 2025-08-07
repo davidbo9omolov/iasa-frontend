@@ -1,0 +1,63 @@
+{
+    "Presidium": {
+        "title": "Student Council Board",
+        "description": "The Board (Presidium) is the core of our organization. It coordinates the work of all departments, makes key decisions, and defines the strategic direction of the Student Council. We ensure efficient internal processes, maintain communication between students, the administration, and the team, and foster a culture of responsible student leadership.",
+        "members": {
+            "president": {
+                "name": "Mariia",
+                "surname": "Melika",
+                "position": "President"
+            },
+            "secretary": {
+                "name": "Anna",
+                "surname": "Rahulina",
+                "position": "Secretary"
+            },
+            "firstDeputyChairman": {
+                "name": "Valeria",
+                "surname": "Pliusnina",
+                "position": "First Vice President"
+            },
+            "deputyChairman": {
+                "name": "Vasylysa",
+                "surname": "Zayarchenko",
+                "position": "Vice President"
+            },
+            "abithead": {
+                "name": "Oleksandra",
+                "surname": "Bohdanova",
+                "position": "Head of Abit Department"
+            },
+            "designhead": {
+                "name": "Kateryna",
+                "surname": "Dorokhina",
+                "position": "Head of Design Department"
+            },
+            "informhead": {
+                "name": "Anna",
+                "surname": "Kruchok",
+                "position": "Head of Information Department"
+            },
+            "megiahead": {
+                "name": "Valeria",
+                "surname": "Khapilina",
+                "position": "Head of Media Department"
+            },
+            "merchhead": {
+                "name": "Oleksandra",
+                "surname": "Kovalenko",
+                "position": "Head of Merch Department"
+            },
+            "eduhead": {
+                "name": "Anastasiia",
+                "surname": "Kindzerska",
+                "position": "Head of Educational Department"
+            },
+            "eventhead": {
+                "name": "Olha",
+                "surname": "Poliuliakh",
+                "position": "Head of Event Department"
+            }
+        }
+    }
+}
