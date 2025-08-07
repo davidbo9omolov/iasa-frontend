@@ -9,4 +9,5 @@ export default {
   error,
   contacts,
   about_us,
+  footer
 }
