@@ -22,8 +22,8 @@
     "description": "The Student Council is the voice of our institute’s students. We represent and protect students’ interests, monitor the quality of study conditions, and strive to make leisure time fun and engaging. Event organization, administrative issue resolution, and keeping students informed — that's just a small part of what we do.",
     "animatedDescriptionOne": "This website informs students about the IPSA Student Council’s work, introduces our team, simplifies access to key information for applicants, and highlights all IPSA’s online resources and web tools.",
     "animatedDescriptionTwo": "The site is useful not only for IPSA students but also for applicants who are still considering joining our institute.",
-    "more": "View IASA Galery",
-    "check": "View"
+    "more": "More photos",
+    "check": "View IASA Galery"
   },
   "whatDoWeDo": {
     "title": "What We Do",
@@ -69,10 +69,6 @@
     "merch": {
       "title": "Merch",
       "description": "⁤The creators behind IASA's iconic merch. ⁤⁤They manage orders, engage with customers, and generate creative ideas for new products."
-    },
-    "tiktok": {
-      "title": "TikTok",
-      "description": "⁤The newest addition focused on TikTok trends and creating entertaining and engaging content for our audience."
     }
   },
   "ourTeam": {
@@ -94,12 +90,12 @@
       "firstDeputyChairman": {
         "name": "Valeria",
         "surname": "Pliusnina",
-        "position": "First Deputy Chairman"
+        "position": "First Vice President"
       },
       "deputyChairman": {
         "name": "Vasylysa",
-        "surname": "Zaiarchenko",
-        "position": "Deputy Chairman"
+        "surname": "Zayarchenko",
+        "position": "Vice President"
       }
     },
     "email": "Email",
