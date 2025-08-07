@@ -419,19 +419,10 @@ export const presidiumCardsInformation = [
   {
     position: 'merchhead',
     image: TeamCard9,
-    email: '',
     socialNetworks: [
       {
-        name: 'Linkedin',
-        link: '',
-      },
-      {
-        name: 'Instagram',
-        link: '',
-      },
-      {
         name: 'Telegram',
-        link: '',
+        link: 'https://t.me/sa_lico',
       },
     ],
   },

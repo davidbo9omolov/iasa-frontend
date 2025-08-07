@@ -1,7 +1,7 @@
 {
     "Presidium": {
         "title": "Student Council Board",
-        "description": "The Board (Presidium) is the core of our organization. It coordinates the work of all departments, makes key decisions, and defines the strategic direction of the Student Council. We ensure efficient internal processes, maintain communication between students, the administration, and the team, and foster a culture of responsible student leadership.",
+        "description": "The Board (Presidium) is the core of our organization. It coordinates the work of all departments, makes key decisions, and defines the strategic direction of the Student Council. We ensure efficient internal processes, maintain communication between students and administration, and foster a culture of responsible student leadership.",
         "goBack": "Go back",
         "members": {
             "president": {
