@@ -40,4 +40,18 @@
     <priority>1.0</priority>
     </url>
 
+    <url>
+    <loc>https://iasa.sc.kpi.ua/ua/about-us</loc>
+    <lastmod>2025-08-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    </url>
+
+    <url>
+    <loc>https://iasa.sc.kpi.ua/en/about-us</loc>
+    <lastmod>2025-08-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    </url>
+
 </urlset>
