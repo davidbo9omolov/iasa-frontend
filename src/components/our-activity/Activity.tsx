@@ -110,9 +110,7 @@ const Activity = () => {
             dangerouslySetInnerHTML={{ __html: t('ourActivity.title') }}
           ></h1>
           <p
-            className={
-              'text-[16px] leading-[150%] tracking-[0.32px] font-normal sm:text-sm my-6 lg:my-12 text-gray md:text-md'
-            }
+            className={'text-[16px] leading-[150%] tracking-[0.32px] font-normal sm:text-sm my-12 text-gray md:text-md'}
           >
             {t('ourActivity.description')}
           </p>
@@ -176,7 +174,7 @@ const Activity = () => {
         <div className={'w-full lg:w-1/4 xs:mt-0 md:mt-5 relative flex flex-col md:-translate-y-[25px]'}>
           <p
             className={
-              'text-[16px] leading-[150%] tracking-[0.32px] font-normal sm:h-fit lg:h-auto text-gray sm:text-sm md:text-md scroll-opacity-text md:-translate-y-[20px] '
+              'text-[16px] leading-[150%] tracking-[0.32px] font-normal sm:h-fit lg:h-auto text-gray sm:text-sm md:text-md scroll-opacity-text md:-translate-y-[20px]'
             }
           >
             {t('ourActivity.animatedDescriptionOne')}
@@ -201,7 +199,7 @@ const Activity = () => {
             blankLink={
               'https://photos.google.com/share/AF1QipO2LHqQ0OCVl-lgAKyhbInBu90PDb1EPiWqEpY8SYZ9roz1T-0lnqS_Ha9IubgzNQ?key=WXNpYWJ4RGxmOFRoODluQUp6NXpLZkZtRnFvdHl3'
             }
-            className={'mt-5 md:mt-0 bg-tertiary w-fit rounded-full px-3 py-1 text-primary'}
+            className="mt-8 md:mt-5 bg-tertiary w-fit rounded-full px-4 py-3 text-primary text-[16px] leading-none tracking-[0.32px] font-medium"
             withArrow
           >
             {t('ourActivity.check')}

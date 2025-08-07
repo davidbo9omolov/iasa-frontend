@@ -27,10 +27,19 @@ const Footer = () => {
             >
               studrada@gmail.com
             </Link>
-            <Link to={'https://t.me/iasa_stud_support_bot'} className={' mb-1 hover:text-tertiary'} target={'_blank'}>
+            <p className={'mt-4 mb-2'}>Telegram bots</p>
+            <Link
+              to={'https://t.me/iasa_stud_support_bot'}
+              className={' mb-1 hover:text-tertiary underline'}
+              target={'_blank'}
+            >
               IASA support bot
             </Link>
-            <Link to={'https://t.me/IASAsuggestionBot'} className={' mb-1 hover:text-tertiary'} target={'_blank'}>
+            <Link
+              to={'https://t.me/IASAsuggestionBot'}
+              className={' mb-1 hover:text-tertiary underline'}
+              target={'_blank'}
+            >
               IASA suggestion bot
             </Link>
           </div>

@@ -76,25 +76,11 @@ export const routes = [
     blankLink: LinkRoutes.AnalystShop,
     withArrow: true,
   },
-  // {
-  //   name: GlobalRoutes.AboutUs,
-  //   path: LinkRoutes.AboutUs,
-  //   withArrow: false,
-  //   dropdown: [
-  //     {
-  //       name: 'Entry',
-  //       path: '/entry',
-  //     },
-  //     {
-  //       name: 'Activities',
-  //       path: '/activities',
-  //     },
-  //     {
-  //       name: 'Resources',
-  //       path: '/resources',
-  //     },
-  //   ],
-  // },
+  {
+    name: GlobalRoutes.AboutUs,
+    path: LinkRoutes.AboutUs,
+    withArrow: false,
+  },
   {
     name: GlobalRoutes.Contacts,
     path: LinkRoutes.Contacts,
