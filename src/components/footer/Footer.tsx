@@ -66,7 +66,12 @@ const Footer = () => {
                   classButton={'mb-1 hover:text-tertiary'}
                   classDropDown={'top-0 left-[150px] bg-quaternaryDark'}
                 />
-                <CustomLink item={item} navLink className={'mb-1 hover:text-tertiary'} />
+                <CustomLink
+                  item={item}
+                  target={item.withArrow ? '_blank' : undefined}
+                  navLink
+                  className={'mb-1 hover:text-tertiary'}
+                />
               </React.Fragment>
             ))}
           </div>
@@ -88,7 +93,9 @@ const Footer = () => {
         </div>
       </div>
       <div className={'border-t-[1px] border-thin flex justify-center py-5 w-[95%] mt-3'}>
-        <p className={'w-full text-center text-gray'}>&copy; IASA Student Council {year}</p>
+        <p className={'w-full text-center text-gray'}>
+          &copy; {tFooter('socials.iasasc')} {year}
+        </p>
       </div>
     </footer>
   )

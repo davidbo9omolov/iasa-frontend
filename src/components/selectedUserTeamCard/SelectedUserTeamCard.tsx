@@ -83,11 +83,11 @@ const SelectedUserTeamCard = () => {
             <p className={'my-1 font-[550] text-xl'}>
               {t(`members.${teamCard.position}.name`)} {t(`members.${teamCard.position}.surname`)}
             </p>
-            <p className={'my-3 text-gray'}>{t(`members.${teamCard.position}.position`)}</p>
           </div>
           <div className={'overflow-y-auto mt-2'}>
             {teamCard?.email ? (
               <>
+                <p className={'my-3 text-gray'}>{t(`members.${teamCard.position}.position`)}</p>
                 <p className={'my-3 text-gray'}>{t('email')}</p>
                 <p className={'underline'}>{teamCard.email}</p>
               </>

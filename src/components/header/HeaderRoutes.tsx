@@ -18,7 +18,12 @@ const HeaderRoutes = ({ translatedRoutes }: HeaderRoutesProps) => {
         <React.Fragment key={index}>
           <DropDown item={item} classButton={'mx-7 hover:text-tertiary'} classDropDown={'top-[40px]'} />
           <li>
-            <CustomLink item={item} navLink className={'mx-7 hover:text-tertiary'} />
+            <CustomLink
+              item={item}
+              target={item.withArrow ? '_blank' : undefined}
+              navLink
+              className={'mx-7 hover:text-tertiary'}
+            />
           </li>
         </React.Fragment>
       ))}
