@@ -406,19 +406,14 @@ export const presidiumCardsInformation = [
   {
     position: 'megiahead',
     image: TeamCard8,
-    email: '',
     socialNetworks: [
       {
-        name: 'Linkedin',
-        link: '',
-      },
-      {
         name: 'Instagram',
-        link: '',
+        link: 'https://www.instagram.com/kkkkkkerber',
       },
       {
         name: 'Telegram',
-        link: '',
+        link: 'https://t.me/kkkerber',
       },
     ],
   },
