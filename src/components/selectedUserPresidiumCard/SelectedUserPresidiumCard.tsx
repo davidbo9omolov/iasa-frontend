@@ -1,26 +1,26 @@
 import React, { useEffect, useRef, useState, useCallback, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { toggleTeamCard } from '@/store/slices/app.ts'
+import { togglePresidiumCard } from '@/store/slices/app.ts'
 import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '@/store/store.ts'
 
-const SelectedUserTeamCard = () => {
-  const { t } = useTranslation('home', { keyPrefix: 'ourTeam' })
+const SelectedUserPresidiumCard = () => {
+  const { t } = useTranslation('about_us', { keyPrefix: 'Presidium' })
   const cardRef = useRef<HTMLDivElement>(null)
   const dispatch = useDispatch()
-  const isOpen = useSelector((state: RootState) => state.app.selectedTeamCard.isOpen)
-  const teamCard = useSelector((state: RootState) => state.app.selectedTeamCard.teamCard)
+  const isOpen = useSelector((state: RootState) => state.presidium.selectedPresidiumCard.isOpen)
+  const presidiumCard = useSelector((state: RootState) => state.presidium.selectedPresidiumCard.presidiumCard)
   const [bottomSpace, setBottomSpace] = useState(30)
 
   const onClose = useCallback(() => {
-    dispatch(toggleTeamCard())
+    dispatch(togglePresidiumCard())
   }, [dispatch])
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (cardRef.current && !cardRef.current.contains(event.target as Node)) {
-        dispatch(toggleTeamCard({ isOpen: false }))
+        dispatch(togglePresidiumCard({ isOpen: false }))
       }
     }
 
@@ -56,23 +56,27 @@ const SelectedUserTeamCard = () => {
   }, [])
 
   const socialNetworks = useMemo(() => {
-    return teamCard?.socialNetworks?.map((item, index) => (
+    return presidiumCard?.socialNetworks?.map((item, index) => (
       <Link key={index} to={item.link} target="_blank" className="underline mr-3">
         {item.name}
       </Link>
     ))
-  }, [teamCard?.socialNetworks])
+  }, [presidiumCard?.socialNetworks])
 
   return (
     <div
       ref={cardRef}
-      className={`fixed right-1/2 translate-x-1/2 md:translate-x-0 md:!bottom-[10vh] md:absolute mb-16 mt-4 h-[75vh] w-[90%] lg:w-[35vw] max-w-[450px] lg:max-w-[700px] md:right-[7vh] bg-quaternary rounded-lg duration-500 z-50 ${isOpen ? 'opacity-100' : 'opacity-0 hidden pointer-events-none'}`}
+      className={`fixed right-1/2 translate-x-1/2 md:translate-x-0 md:!bottom-[8vh] lg:!bottom-[14vh] md:absolute mb-16 mt-4 h-[75vh] w-[90%] lg:w-[35vw] max-w-[450px] lg:max-w-[700px] md:right-[7vh] bg-quaternary rounded-lg duration-500 z-50 ${isOpen ? 'opacity-100' : 'opacity-0 hidden pointer-events-none'}`}
       style={{ bottom: bottomSpace }}
     >
       <div className={`flex flex-col p-7 h-full`}>
         <div className={'w-full h-[60%] bg-secondary rounded-lg'}>
-          {teamCard?.image ? (
-            <img src={teamCard?.image} alt={'team member'} className={'rounded-lg w-full h-full object-cover'} />
+          {presidiumCard?.image ? (
+            <img
+              src={presidiumCard?.image}
+              alt={'Presidium member'}
+              className={'rounded-lg w-full h-full object-cover'}
+            />
           ) : (
             <div className={'bg-tertiary w-full h-full rounded-lg'}></div>
           )}
@@ -81,18 +85,18 @@ const SelectedUserTeamCard = () => {
         <div className={'flex flex-col h-[40%] overflow-hidden mt-4'}>
           <div className={'shrink-0 border-b-2 border-tertiary pb-2'}>
             <p className={'my-1 font-[550] text-xl'}>
-              {t(`members.${teamCard.position}.name`)} {t(`members.${teamCard.position}.surname`)}
+              {t(`members.${presidiumCard.position}.name`)} {t(`members.${presidiumCard.position}.surname`)}
             </p>
           </div>
           <div className={'overflow-y-auto mt-2'}>
-            {teamCard?.email ? (
+            {presidiumCard?.email ? (
               <>
-                <p className={'my-3 text-gray'}>{t(`members.${teamCard.position}.position`)}</p>
+                <p className={'my-3 text-gray'}>{t(`members.${presidiumCard.position}.position`)}</p>
                 <p className={'my-3 text-gray'}>{t('email')}</p>
-                <p className={'underline'}>{teamCard.email}</p>
+                <p className={'underline'}>{presidiumCard.email}</p>
               </>
             ) : null}
-            {teamCard?.socialNetworks && <p className={'my-3 text-gray'}>{t('socialNetworks')}</p>}
+            {presidiumCard?.socialNetworks && <p className={'my-3 text-gray'}>{t('socialNetworks')}</p>}
             <div className="flex">{socialNetworks}</div>
           </div>
         </div>
@@ -107,4 +111,4 @@ const SelectedUserTeamCard = () => {
   )
 }
 
-export default React.memo(SelectedUserTeamCard)
+export default React.memo(SelectedUserPresidiumCard)

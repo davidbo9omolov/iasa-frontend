@@ -6,8 +6,19 @@ import { FaTiktok } from 'react-icons/fa'
 import { FaYoutube } from 'react-icons/fa'
 
 import { IMG_IASA_1, IMG_IASA_2, IMG_IASA_3, IMG_IASA_4, IMG_IASA_5 } from '@/assets'
-import { TeamCard1, TeamCard2, TeamCard3, TeamCard4 } from '@/assets'
-import { Banner1, Banner2, Banner3, Banner4, Banner5, Banner6, Banner7, Banner8, Banner9 } from '@/assets'
+import {
+  TeamCard1,
+  TeamCard2,
+  TeamCard3,
+  TeamCard4,
+  TeamCard5,
+  TeamCard6,
+  TeamCard7,
+  TeamCard8,
+  TeamCard9,
+  TeamCard11,
+} from '@/assets'
+import { Banner1, Banner2, Banner3, Banner4, Banner5, Banner6, Banner7, Banner9 } from '@/assets'
 
 export enum GlobalRoutes {
   AnalystShop = 'AnalystShop',
@@ -76,25 +87,11 @@ export const routes = [
     blankLink: LinkRoutes.AnalystShop,
     withArrow: true,
   },
-  // {
-  //   name: GlobalRoutes.AboutUs,
-  //   path: LinkRoutes.AboutUs,
-  //   withArrow: false,
-  //   dropdown: [
-  //     {
-  //       name: 'Entry',
-  //       path: '/entry',
-  //     },
-  //     {
-  //       name: 'Activities',
-  //       path: '/activities',
-  //     },
-  //     {
-  //       name: 'Resources',
-  //       path: '/resources',
-  //     },
-  //   ],
-  // },
+  {
+    name: GlobalRoutes.AboutUs,
+    path: LinkRoutes.AboutUs,
+    withArrow: false,
+  },
   {
     name: GlobalRoutes.Contacts,
     path: LinkRoutes.Contacts,
@@ -181,11 +178,6 @@ export const sliderCardsInformation = [
   {
     type: 'merch',
     image: Banner2,
-    path: '/#',
-  },
-  {
-    type: 'tiktok',
-    image: Banner8,
     path: '/#',
   },
 ]
@@ -291,6 +283,174 @@ export const teamCardsInformation = [
       {
         name: 'Instagram',
         link: 'https://www.instagram.com/baelis_jw',
+      },
+    ],
+  },
+]
+
+export const presidiumCardsInformation = [
+  {
+    position: 'president',
+    image: TeamCard1,
+    email: 'melika.maria@lll.kpi.ua',
+    socialNetworks: [
+      {
+        name: 'Linkedin',
+        link: 'https://www.linkedin.com/in/maria-melika-860ba6338',
+      },
+      {
+        name: 'Instagram',
+        link: 'https://www.instagram.com/veswitch',
+      },
+      {
+        name: 'Telegram',
+        link: 'https://t.me/mashenka2277',
+      },
+    ],
+  },
+  {
+    position: 'secretary',
+    image: TeamCard4,
+    email: 'rrragulinaaa@gmail.com',
+    socialNetworks: [
+      {
+        name: 'Linkedin',
+        link: 'http://linkedin.com/in/rahulina',
+      },
+      {
+        name: 'Instagram',
+        link: 'https://www.instagram.com/rrragulina',
+      },
+      {
+        name: 'Telegram',
+        link: 'https://t.me/rrragulina',
+      },
+    ],
+  },
+  {
+    position: 'firstDeputyChairman',
+    image: TeamCard2,
+    email: 'valeriaplusnina879@gmail.com',
+    socialNetworks: [
+      {
+        name: 'Instagram',
+        link: 'https://www.instagram.com/lerrrich',
+      },
+    ],
+  },
+  {
+    position: 'deputyChairman',
+    image: TeamCard3,
+    email: 'lisazayarchenko@gmail.com',
+    socialNetworks: [
+      {
+        name: 'Telegram',
+        link: 'https://t.me/jwbaelis',
+      },
+      {
+        name: 'Instagram',
+        link: 'https://www.instagram.com/baelis_jw',
+      },
+    ],
+  },
+  {
+    position: 'abithead',
+    image: TeamCard5,
+    email: 'oleksandrabgdnv@gmail.com',
+    socialNetworks: [
+      {
+        name: 'Linkedin',
+        link: '',
+      },
+      {
+        name: 'Instagram',
+        link: 'https://www.instagram.com/itsasha_',
+      },
+      {
+        name: 'Telegram',
+        link: 'https://t.me/itsasha8',
+      },
+    ],
+  },
+  {
+    position: 'designhead',
+    image: TeamCard6,
+    email: 'katerina.dorokhina95@gmail.com',
+    socialNetworks: [
+      {
+        name: 'Linkedin',
+        link: 'https://www.linkedin.com/in/kateryna-dorokhina-949140320',
+      },
+      {
+        name: 'Instagram',
+        link: 'https://www.instagram.com/katerina_do_95/',
+      },
+      {
+        name: 'Telegram',
+        link: 'https://t.me/katerina_do_95',
+      },
+    ],
+  },
+  {
+    position: 'informhead',
+    image: TeamCard7,
+    email: 'anya.kruchok5555@gmail.com',
+    socialNetworks: [
+      {
+        name: 'Linkedin',
+        link: 'https://www.linkedin.com/in/anna-k-331389312',
+      },
+    ],
+  },
+  {
+    position: 'megiahead',
+    image: TeamCard8,
+    socialNetworks: [
+      {
+        name: 'Instagram',
+        link: 'https://www.instagram.com/kkkkkkerber',
+      },
+      {
+        name: 'Telegram',
+        link: 'https://t.me/kkkerber',
+      },
+    ],
+  },
+  {
+    position: 'merchhead',
+    image: TeamCard9,
+    email: '',
+    socialNetworks: [
+      {
+        name: 'Linkedin',
+        link: '',
+      },
+      {
+        name: 'Instagram',
+        link: '',
+      },
+      {
+        name: 'Telegram',
+        link: '',
+      },
+    ],
+  },
+  {
+    position: 'eventhead',
+    image: TeamCard11,
+    email: 'o.a.polul@gmail.com',
+    socialNetworks: [
+      {
+        name: 'Linkedin',
+        link: 'https://www.linkedin.com/in/olha-poliuliakh-9166b1313',
+      },
+      {
+        name: 'Instagram',
+        link: 'https://www.instagram.com/olya.pllkh',
+      },
+      {
+        name: 'Telegram',
+        link: 'https://t.me/olya_poliuliakh',
       },
     ],
   },

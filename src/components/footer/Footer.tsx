@@ -9,6 +9,7 @@ const Footer = () => {
   const date = new Date()
   const year = date.getFullYear()
   const { t } = useTranslation('home')
+  const [tFooter] = useTranslation('footer')
 
   const translatedRoutes = routes.map((item) => ({
     ...item,
@@ -25,13 +26,22 @@ const Footer = () => {
               to={'https://mail.google.com/mail/?view=cm&fs=1&to=studrada@gmail.com'}
               className={'underline mb-1 hover:text-tertiary'}
             >
-              studrada@gmail.com
+              {tFooter('socials.email')}
             </Link>
-            <Link to={'https://t.me/iasa_stud_support_bot'} className={' mb-1 hover:text-tertiary'} target={'_blank'}>
-              IASA support bot
+            <p className={'mt-4 mb-2'}>{tFooter('socials.telegramBots')}</p>
+            <Link
+              to={'https://t.me/iasa_stud_support_bot'}
+              className={' mb-1 hover:text-tertiary underline'}
+              target={'_blank'}
+            >
+              {tFooter('socials.support-bot')}
             </Link>
-            <Link to={'https://t.me/IASAsuggestionBot'} className={' mb-1 hover:text-tertiary'} target={'_blank'}>
-              IASA suggestion bot
+            <Link
+              to={'https://t.me/IASAsuggestionBot'}
+              className={' mb-1 hover:text-tertiary underline'}
+              target={'_blank'}
+            >
+              {tFooter('socials.suggestion-bot')}
             </Link>
           </div>
           <div className={'flex flex-col h-[80%] md:hidden'}>
@@ -56,12 +66,17 @@ const Footer = () => {
                   classButton={'mb-1 hover:text-tertiary'}
                   classDropDown={'top-0 left-[150px] bg-quaternaryDark'}
                 />
-                <CustomLink item={item} navLink className={'mb-1 hover:text-tertiary'} />
+                <CustomLink
+                  item={item}
+                  target={item.withArrow ? '_blank' : undefined}
+                  navLink
+                  className={'mb-1 hover:text-tertiary'}
+                />
               </React.Fragment>
             ))}
           </div>
           <div className={'flex flex-col items-start md:items-end w-full md:w-fit h-[80%] mt-5 md:mt-0'}>
-            <p className={'w-fit mb-6'}>Follow us</p>
+            <p className={'w-fit mb-6'}>{tFooter('socials.followUs')}</p>
             <div className={'flex w-full justify-evenly md:justify-center'}>
               {socialNetworks.map((item, index) => (
                 <Link
@@ -78,7 +93,9 @@ const Footer = () => {
         </div>
       </div>
       <div className={'border-t-[1px] border-thin flex justify-center py-5 w-[95%] mt-3'}>
-        <p className={'w-full text-center text-gray'}>&copy; IASA Student Council {year}</p>
+        <p className={'w-full text-center text-gray'}>
+          &copy; {tFooter('socials.iasasc')} {year}
+        </p>
       </div>
     </footer>
   )

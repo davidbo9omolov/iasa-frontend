@@ -22,7 +22,7 @@ const WhatDoWeDo = () => {
   return (
     <section className={'min-h-[400px] my-14 md:mb-36 flex justify-center '}>
       <div className={'w-[95%]'}>
-        <h1 className={'text-2xl lg:text-[48px] leading-[110%] tracking-[0.32px] font-[550]'}>
+        <h1 className={'text-3xl lg:text-[48px] leading-[110%] tracking-[0.32px] font-[550]'}>
           {t('whatDoWeDo.title')}
         </h1>
         <div className={'flex flex-col justify-center border-t-2 border-tertiary mt-6 '}>
@@ -43,7 +43,9 @@ const WhatDoWeDo = () => {
                 viewport={{ once: true }}
               >
                 <p
-                  className={'sm:text-xl  text-2xl leading-[110%] tracking-[0.32px] font-[400] mb-4 w-full md:w-[30%]'}
+                  className={
+                    'text-xl lg:text-[36px] leading-[120%] tracking-[0.18px] font-normal text-white mb-4 w-full md:w-[30%]'
+                  }
                 >
                   {item.title}
                 </p>

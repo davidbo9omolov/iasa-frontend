@@ -1,14 +1,14 @@
 {
   "contact-header": {
     "gotQuestion": "Виникли питання?",
-    "contactUs": "Contact us",
-    "followUs": "Follow us"
+    "contactUs": "Контактна адреса",
+    "followUs": "Соцмережі"
   },
   "socials": {
     "inTelegram": "Ми в телеграмі",
     "telegramDescription": "У телеграм-каналах є можливість знайти не тільки матеріали для самоосвіти чи ознайомитися з вакансіями в провідних компаніях, а й дізнатися про актуальні заходи та івенти.\nТаким чином, ти будеш в курсі останніх подій і залишатимешся «в ритмі ІПСА».",
-    "telegramChannel": "Telegram канали",
-    "telegramBots": "Telegram боти",
+    "telegramChannel": "Телеграм канали",
+    "telegramBots": "Телеграм боти",
     "subText": {
       "sc": "Офіційний канал Студради",
       "abit": "Все про вступ",

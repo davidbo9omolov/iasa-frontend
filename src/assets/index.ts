@@ -8,6 +8,13 @@ import TeamCard1 from '@/assets/Team Cards/IMG_9000.jpg'
 import TeamCard2 from '@/assets/Team Cards/IMG_9001.jpg'
 import TeamCard3 from '@/assets/Team Cards/IMG_9002.jpg'
 import TeamCard4 from '@/assets/Team Cards/IMG_9003.jpg'
+import TeamCard5 from '@/assets/Team Cards/IMG_9004.jpg'
+import TeamCard6 from '@/assets/Team Cards/IMG_9005.jpg'
+import TeamCard7 from '@/assets/Team Cards/IMG_9006.jpg'
+import TeamCard8 from '@/assets/Team Cards/IMG_9007.jpg'
+import TeamCard9 from '@/assets/Team Cards/IMG_9008.jpg'
+import TeamCard10 from '@/assets/Team Cards/IMG_9009.jpg'
+import TeamCard11 from '@/assets/Team Cards/IMG_9010.jpg'
 
 import Banner1 from '@/assets/Banners/Banners-01.png'
 import Banner2 from '@/assets/Banners/Banners-02.png'
@@ -29,6 +36,13 @@ export {
   TeamCard2,
   TeamCard3,
   TeamCard4,
+  TeamCard5,
+  TeamCard6,
+  TeamCard7,
+  TeamCard8,
+  TeamCard9,
+  TeamCard10,
+  TeamCard11,
   Banner1,
   Banner2,
   Banner3,

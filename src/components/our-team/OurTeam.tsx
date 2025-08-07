@@ -37,12 +37,14 @@ const OurTeam = () => {
             <p className={'sm:text-sm md:text-md text-gray w-full md:w-[60%] mt-10 mb-6'}>{t('ourTeam.description')}</p>
             <CustomLink
               link={LinkRoutes.AboutUs}
-              className={'bg-tertiary text-primary w-fit rounded-full p-2 hidden lg:flex'}
+              className={
+                'bg-tertiary text-primary w-fit rounded-[40px] p-4 text-[16px] leading-[16px] tracking-normal font-medium hidden lg:flex'
+              }
             >
               <p className={'text-primary'}>{t('ourTeam.more')}</p>
             </CustomLink>
           </div>
-          <div className={'w-full lg:w-[60%] flex lg:justify-center lg:justify-start'}>
+          <div className={'w-full lg:w-[60%] flex lg:justify-center lg:justify-start mb-5'}>
             <div
               className={'grid grid-cols-2 gap-[20px] md:gap-[40px] gap-x-full lg:w-full w-full h-fit sm:grid-cols-1'}
             >
@@ -53,7 +55,9 @@ const OurTeam = () => {
           </div>
           <CustomLink
             link={LinkRoutes.AboutUs}
-            className={'absolute bottom-[-80px] left-0 bg-tertiary text-primary w-fit rounded-full p-2 px-3 lg:hidden'}
+            className={
+              'absolute bottom-[-80px] left-0 bg-tertiary text-primary w-fit rounded-[40px] p-4 text-[16px] leading-[16px] font-medium lg:hidden'
+            }
             navLink
           >
             <p className={'text-primary'}>{t('ourTeam.more')}</p>
