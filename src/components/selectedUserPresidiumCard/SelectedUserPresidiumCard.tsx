@@ -66,7 +66,7 @@ const SelectedUserPresidiumCard = () => {
   return (
     <div
       ref={cardRef}
-      className={`fixed right-1/2 translate-x-1/2 md:translate-x-0 md:!bottom-[22vh] lg:!bottom-[10vh] md:absolute mb-16 mt-4 h-[75vh] w-[90%] lg:w-[35vw] max-w-[450px] lg:max-w-[700px] md:right-[7vh] bg-quaternary rounded-lg duration-500 z-50 ${isOpen ? 'opacity-100' : 'opacity-0 hidden pointer-events-none'}`}
+      className={`fixed right-1/2 translate-x-1/2 md:translate-x-0 md:!bottom-[8vh] lg:!bottom-[14vh] md:absolute mb-16 mt-4 h-[75vh] w-[90%] lg:w-[35vw] max-w-[450px] lg:max-w-[700px] md:right-[7vh] bg-quaternary rounded-lg duration-500 z-50 ${isOpen ? 'opacity-100' : 'opacity-0 hidden pointer-events-none'}`}
       style={{ bottom: bottomSpace }}
     >
       <div className={`flex flex-col p-7 h-full`}>
@@ -87,11 +87,11 @@ const SelectedUserPresidiumCard = () => {
             <p className={'my-1 font-[550] text-xl'}>
               {t(`members.${presidiumCard.position}.name`)} {t(`members.${presidiumCard.position}.surname`)}
             </p>
-            <p className={'my-3 text-gray'}>{t(`members.${presidiumCard.position}.position`)}</p>
           </div>
           <div className={'overflow-y-auto mt-2'}>
             {presidiumCard?.email ? (
               <>
+                <p className={'my-3 text-gray'}>{t(`members.${presidiumCard.position}.position`)}</p>
                 <p className={'my-3 text-gray'}>{t('email')}</p>
                 <p className={'underline'}>{presidiumCard.email}</p>
               </>
