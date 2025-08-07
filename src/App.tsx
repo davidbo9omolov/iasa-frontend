@@ -16,6 +16,7 @@ import { useTranslation } from 'react-i18next'
 import Header from 'components/header/Header.tsx'
 import { Suspense } from 'react'
 import Spinner from 'components/loader/Spinner.tsx'
+import AboutUs from './pages/AboutUs.tsx'
 
 function App() {
   const { i18n } = useTranslation()
@@ -63,10 +64,9 @@ function App() {
             <Route
               path={ReactRoutes.AboutUs}
               element={
-                <PageNotFoundLayout>
-                  <ErrorPage icon={<TechnicalProblems />} errorCode={'500'} />
-                  {/*<ContactsPage />*/}
-                </PageNotFoundLayout>
+                <CommonLayout>
+                  <AboutUs />
+                </CommonLayout>
               }
             />
             <Route

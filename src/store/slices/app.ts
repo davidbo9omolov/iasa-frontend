@@ -1,6 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { AppState, SelectedTeamCard, TeamCard } from 'types/reduxStore.ts'
+import {
+  AppState,
+  SelectedTeamCard,
+  TeamCard,
+  PresidiumMember,
+  SelectedPresidiumCard,
+  PresidiumCard,
+} from 'types/reduxStore.ts'
 
 const initialState: AppState = {
   user: {
@@ -11,6 +18,22 @@ const initialState: AppState = {
   selectedTeamCard: {
     isOpen: false,
     teamCard: {
+      name: '',
+      surname: '',
+      position: '',
+    },
+  },
+}
+
+const initialPresidiumMember: PresidiumMember = {
+  user: {
+    name: '',
+    email: '',
+    token: '',
+  },
+  selectedPresidiumCard: {
+    isOpen: false,
+    presidiumCard: {
       name: '',
       surname: '',
       position: '',
@@ -37,5 +60,29 @@ export const appSlice = createSlice({
     },
   },
 })
+
+export const presidiumSlice = createSlice({
+  name: 'presidium',
+  initialState: initialPresidiumMember,
+  reducers: {
+    addPresidiumUser: (state, action: PayloadAction<PresidiumMember['user']>) => {
+      state.user = action.payload
+    },
+    togglePresidiumCard: (state, action: PayloadAction<Partial<SelectedPresidiumCard> | undefined>) => {
+      if (action.payload && typeof action.payload.isOpen !== 'undefined') {
+        state.selectedPresidiumCard.isOpen = action.payload.isOpen
+      } else {
+        state.selectedPresidiumCard.isOpen = !state.selectedPresidiumCard.isOpen
+      }
+    },
+    setPresidiumCard: (state, action: PayloadAction<PresidiumCard>) => {
+      state.selectedPresidiumCard.presidiumCard = action.payload
+    },
+  },
+})
+
 export const { addUser, toggleTeamCard, setTeamCard } = appSlice.actions
 export default appSlice.reducer
+
+export const { addPresidiumUser, togglePresidiumCard, setPresidiumCard } = presidiumSlice.actions
+export const presidiumReducer = presidiumSlice.reducer
