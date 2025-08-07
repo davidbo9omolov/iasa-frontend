@@ -26,7 +26,7 @@ const PresidiumBoard = () => {
       <div
         className={`absolute h-full w-full z-40 left-0 bottom-0 bg-transparentBlack flex items-end duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
       ></div>
-      <section className={'min-h-screen flex flex-col justify-start my-[150px]'}>
+      <section className={'min-h-screen flex flex-col justify-start my-[40px] lg:my-[150px]'}>
         <div className="flex justify-center">
           <div className="w-[95%]">
             <h1 className={'text-2xl lg:text-[48px] leading-[110%] tracking-[0.32px] font-[550]'}>

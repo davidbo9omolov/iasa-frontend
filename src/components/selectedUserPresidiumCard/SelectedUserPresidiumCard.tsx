@@ -66,7 +66,7 @@ const SelectedUserPresidiumCard = () => {
   return (
     <div
       ref={cardRef}
-      className={`fixed right-1/2 translate-x-1/2 md:translate-x-0 md:!bottom-[14vh] md:absolute mb-16 mt-4 h-[75vh] w-[90%] lg:w-[35vw] max-w-[450px] lg:max-w-[700px] md:right-[7vh] bg-quaternary rounded-lg duration-500 z-50 ${isOpen ? 'opacity-100' : 'opacity-0 hidden pointer-events-none'}`}
+      className={`fixed right-1/2 translate-x-1/2 md:translate-x-0 md:!bottom-[22vh] lg:!bottom-[10vh] md:absolute mb-16 mt-4 h-[75vh] w-[90%] lg:w-[35vw] max-w-[450px] lg:max-w-[700px] md:right-[7vh] bg-quaternary rounded-lg duration-500 z-50 ${isOpen ? 'opacity-100' : 'opacity-0 hidden pointer-events-none'}`}
       style={{ bottom: bottomSpace }}
     >
       <div className={`flex flex-col p-7 h-full`}>
