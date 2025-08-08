@@ -16,7 +16,6 @@ import {
   TeamCard7,
   TeamCard8,
   TeamCard9,
-  TeamCard10,
   TeamCard11,
 } from '@/assets'
 import { Banner1, Banner2, Banner3, Banner4, Banner5, Banner6, Banner7, Banner9 } from '@/assets'
@@ -357,7 +356,7 @@ export const presidiumCardsInformation = [
   {
     position: 'abithead',
     image: TeamCard5,
-    email: '',
+    email: 'oleksandrabgdnv@gmail.com',
     socialNetworks: [
       {
         name: 'Linkedin',
@@ -365,30 +364,30 @@ export const presidiumCardsInformation = [
       },
       {
         name: 'Instagram',
-        link: '',
+        link: 'https://www.instagram.com/itsasha_',
       },
       {
         name: 'Telegram',
-        link: '',
+        link: 'https://t.me/itsasha8',
       },
     ],
   },
   {
     position: 'designhead',
     image: TeamCard6,
-    email: '',
+    email: 'katerina.dorokhina95@gmail.com',
     socialNetworks: [
       {
         name: 'Linkedin',
-        link: '',
+        link: 'https://www.linkedin.com/in/kateryna-dorokhina-949140320',
       },
       {
         name: 'Instagram',
-        link: '',
+        link: 'https://www.instagram.com/katerina_do_95/',
       },
       {
         name: 'Telegram',
-        link: '',
+        link: 'https://t.me/katerina_do_95',
       },
     ],
   },
@@ -406,19 +405,14 @@ export const presidiumCardsInformation = [
   {
     position: 'megiahead',
     image: TeamCard8,
-    email: '',
     socialNetworks: [
       {
-        name: 'Linkedin',
-        link: '',
-      },
-      {
         name: 'Instagram',
-        link: '',
+        link: 'https://www.instagram.com/kkkkkkerber',
       },
       {
         name: 'Telegram',
-        link: '',
+        link: 'https://t.me/kkkerber',
       },
     ],
   },
@@ -442,40 +436,21 @@ export const presidiumCardsInformation = [
     ],
   },
   {
-    position: 'eduhead',
-    image: TeamCard10,
-    email: '',
-    socialNetworks: [
-      {
-        name: 'Linkedin',
-        link: '',
-      },
-      {
-        name: 'Instagram',
-        link: '',
-      },
-      {
-        name: 'Telegram',
-        link: '',
-      },
-    ],
-  },
-  {
     position: 'eventhead',
     image: TeamCard11,
-    email: '',
+    email: 'o.a.polul@gmail.com',
     socialNetworks: [
       {
         name: 'Linkedin',
-        link: '',
+        link: 'https://www.linkedin.com/in/olha-poliuliakh-9166b1313',
       },
       {
         name: 'Instagram',
-        link: '',
+        link: 'https://www.instagram.com/olya.pllkh',
       },
       {
         name: 'Telegram',
-        link: '',
+        link: 'https://t.me/olya_poliuliakh',
       },
     ],
   },

@@ -15,7 +15,7 @@
                 "position": "Secretary"
             },
             "firstDeputyChairman": {
-                "name": "Valeria",
+                "name": "Valeriia",
                 "surname": "Pliusnina",
                 "position": "First Vice President"
             },
@@ -40,7 +40,7 @@
                 "position": "Head of Information Department"
             },
             "megiahead": {
-                "name": "Valeria",
+                "name": "Valeriia",
                 "surname": "Khapilina",
                 "position": "Head of Media Department"
             },
@@ -48,11 +48,6 @@
                 "name": "Oleksandra",
                 "surname": "Kovalenko",
                 "position": "Head of Merch Department"
-            },
-            "eduhead": {
-                "name": "Anastasiia",
-                "surname": "Kindzerska",
-                "position": "Head of Educational Department"
             },
             "eventhead": {
                 "name": "Olha",
