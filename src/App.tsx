@@ -17,6 +17,7 @@ import Header from 'components/header/Header.tsx'
 import { Suspense } from 'react'
 import Spinner from 'components/loader/Spinner.tsx'
 import AboutUs from './pages/AboutUs.tsx'
+import ScrollToTop from './components/scroll-to-top/ScrollToTop.tsx'
 
 function App() {
   const { i18n } = useTranslation()
@@ -24,6 +25,7 @@ function App() {
     <div className={'min-h-screen relative'}>
       <BurgerMenuProvider>
         <Header />
+        <ScrollToTop />
         <Suspense fallback={<Spinner />}>
           <Routes>
             <Route path="/" element={<Navigate to={`/${i18n.language}${LinkRoutes.Home}`} />} />
