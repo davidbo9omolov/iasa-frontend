@@ -181,10 +181,17 @@ const Activity = () => {
           </p>
           <p
             className={
-              'text-[16px] leading-[150%] tracking-[0.32px] font-normal sm:text-sm sm:h-fit lg:h-auto lg:text-md text-gray absolute scroll-opacity-text top-0 md:text-md md:-translate-y-[20px]'
+              'text-[16px] leading-[150%] tracking-[0.32px] font-normal sm:text-sm sm:h-fit lg:h-auto lg:text-md text-gray absolute scroll-opacity-text top-0 md:text-md md:-translate-y-[20px] sm:hidden'
             }
           >
             {t('ourActivity.animatedDescriptionTwo')}
+          </p>
+          <p
+            className={
+              'text-[16px] leading-[150%] tracking-[0.32px] font-normal sm:h-fit lg:h-auto text-gray sm:text-sm md:text-md md:-translate-y-[20px] hidden sm:block'
+            }
+          >
+            {t('ourActivity.animatedDescriptionOne')}
           </p>
           <p
             className={
