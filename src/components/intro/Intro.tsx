@@ -116,6 +116,35 @@ const Intro = () => {
   }
 
   const onClick = () => {
+    if (midiumScreenResolution) {
+      const video = document.getElementById('screen') as
+        | (HTMLVideoElement & {
+            webkitEnterFullscreen?: () => void
+          })
+        | null
+      if (video) {
+        // Start playback as part of the click gesture
+        try {
+          video.play().catch(() => {})
+        } catch (e) {
+          /* noop */
+        }
+        // Prefer native iOS fullscreen, fallback to standard
+        if (typeof video.webkitEnterFullscreen === 'function') {
+          try {
+            video.webkitEnterFullscreen()
+          } catch (e) {
+            /* noop */
+          }
+        } else if (video.requestFullscreen) {
+          video.requestFullscreen().catch(() => {})
+        }
+      }
+      setFullScreen(true)
+      setClose(true)
+      return
+    }
+    // Desktop: toggle overlay fullscreen
     setFullScreen(!fullScreen)
     setClose(!close)
   }
@@ -235,12 +264,13 @@ const Intro = () => {
           autopauseOffscreen={!fullScreen}
         />
         <button
+          type="button"
           className={`absolute  z-20 mt-48 backdrop-blur-[10px] bg-cursor p-3 px-5 rounded-full lg:hidden`}
           onClick={onClick}
         >
           <span className="text-md">{cursorText}</span>
         </button>
-        <div className={'absolute top-0 bg-blackGradient w-full h-full'}></div>
+        <div className={'absolute top-0 bg-blackGradient w-full h-full pointer-events-none'}></div>
       </div>
       {fullScreen && <div className={'absolute  top-0  w-full h-full bg-primary'}></div>}
     </section>
