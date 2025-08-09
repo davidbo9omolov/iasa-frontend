@@ -354,6 +354,36 @@ export const presidiumCardsInformation = [
     ],
   },
   {
+    position: 'eventhead',
+    image: TeamCard11,
+    email: 'o.a.polul@gmail.com',
+    socialNetworks: [
+      {
+        name: 'Linkedin',
+        link: 'https://www.linkedin.com/in/olha-poliuliakh-9166b1313',
+      },
+      {
+        name: 'Instagram',
+        link: 'https://www.instagram.com/olya.pllkh',
+      },
+      {
+        name: 'Telegram',
+        link: 'https://t.me/olya_poliuliakh',
+      },
+    ],
+  },
+  {
+    position: 'informhead',
+    image: TeamCard7,
+    email: 'anya.kruchok5555@gmail.com',
+    socialNetworks: [
+      {
+        name: 'Linkedin',
+        link: 'https://www.linkedin.com/in/anna-k-331389312',
+      },
+    ],
+  },
+  {
     position: 'abithead',
     image: TeamCard5,
     email: 'oleksandrabgdnv@gmail.com',
@@ -369,6 +399,20 @@ export const presidiumCardsInformation = [
       {
         name: 'Telegram',
         link: 'https://t.me/itsasha8',
+      },
+    ],
+  },
+  {
+    position: 'megiahead',
+    image: TeamCard8,
+    socialNetworks: [
+      {
+        name: 'Instagram',
+        link: 'https://www.instagram.com/kkkkkkerber',
+      },
+      {
+        name: 'Telegram',
+        link: 'https://t.me/kkkerber',
       },
     ],
   },
@@ -392,56 +436,12 @@ export const presidiumCardsInformation = [
     ],
   },
   {
-    position: 'informhead',
-    image: TeamCard7,
-    email: 'anya.kruchok5555@gmail.com',
-    socialNetworks: [
-      {
-        name: 'Linkedin',
-        link: 'https://www.linkedin.com/in/anna-k-331389312',
-      },
-    ],
-  },
-  {
-    position: 'megiahead',
-    image: TeamCard8,
-    socialNetworks: [
-      {
-        name: 'Instagram',
-        link: 'https://www.instagram.com/kkkkkkerber',
-      },
-      {
-        name: 'Telegram',
-        link: 'https://t.me/kkkerber',
-      },
-    ],
-  },
-  {
     position: 'merchhead',
     image: TeamCard9,
     socialNetworks: [
       {
         name: 'Telegram',
         link: 'https://t.me/sa_lico',
-      },
-    ],
-  },
-  {
-    position: 'eventhead',
-    image: TeamCard11,
-    email: 'o.a.polul@gmail.com',
-    socialNetworks: [
-      {
-        name: 'Linkedin',
-        link: 'https://www.linkedin.com/in/olha-poliuliakh-9166b1313',
-      },
-      {
-        name: 'Instagram',
-        link: 'https://www.instagram.com/olya.pllkh',
-      },
-      {
-        name: 'Telegram',
-        link: 'https://t.me/olya_poliuliakh',
       },
     ],
   },
