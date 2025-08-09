@@ -87,7 +87,13 @@ const BurgerMenu = ({ translatedRoutes }: BurgerMenuProps) => {
                   damping: 22,
                 }}
               >
-                <CustomLink item={item} navLink className={'my-7 text-2xl w-fit'} onClick={() => setIsOpen(!isOpen)} />
+                <CustomLink
+                  item={item}
+                  navLink
+                  target={item.withArrow ? '_blank' : undefined}
+                  className={'my-7 text-2xl w-fit'}
+                  onClick={() => setIsOpen(!isOpen)}
+                />
               </motion.div>
             </React.Fragment>
           ))}
