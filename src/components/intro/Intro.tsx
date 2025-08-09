@@ -1,8 +1,10 @@
 import { useRef, useEffect, useState } from 'react'
 import { IoClose } from 'react-icons/io5'
 import VideoComponent from 'components/video-component/VideoComponent.tsx'
-import videoFull1 from '@/assets/full_mp4.mp4'
-import videoShort1 from '@/assets/short_mp4.mp4'
+import videoFullMp4 from '@/assets/full_mp4.mp4'
+import videoShortMp4 from '@/assets/short_mp4.mp4'
+import videoFullWebm from '@/assets/full_webM.webm'
+import videoShortWebm from '@/assets/short_webM.webm'
 import { useTranslation } from 'react-i18next'
 import useMouse from '@react-hook/mouse-position'
 import { motion, Variants } from 'framer-motion'
@@ -60,7 +62,7 @@ const Intro = () => {
       setCursorText(t('intro.play'))
       setCursorVariant('screen')
     }
-  }, [midiumScreenResolution])
+  }, [midiumScreenResolution, t])
 
   const variants: Variants = {
     default: {
@@ -119,28 +121,53 @@ const Intro = () => {
   }
 
   useEffect(() => {
-    if (fullScreen) {
+    const prevBodyOverflow = document.body.style.overflow
+    const prevHtmlOverflow = document.documentElement.style.overflow
+    if (fullScreen && !midiumScreenResolution) {
       document.body.style.overflow = 'hidden'
+      document.documentElement.style.overflow = 'hidden'
     } else {
-      document.body.style.overflow = 'auto'
+      document.body.style.overflow = prevBodyOverflow || ''
+      document.documentElement.style.overflow = prevHtmlOverflow || ''
     }
-  }, [fullScreen])
+    return () => {
+      document.body.style.overflow = prevBodyOverflow || ''
+      document.documentElement.style.overflow = prevHtmlOverflow || ''
+    }
+  }, [fullScreen, midiumScreenResolution])
 
   useEffect(() => {
-    const video = document.getElementById('screen')
-    if (midiumScreenResolution && fullScreen && video?.requestFullscreen) {
-      video.requestFullscreen()
-
-      if (video) {
-        video.addEventListener('fullscreenchange', () => {
-          if (!document.fullscreenElement) {
-            setFullScreen(false)
-            document.exitFullscreen()
-          }
-        })
+    const video = document.getElementById('screen') as HTMLVideoElement | null
+    const onFsChange = () => {
+      if (!document.fullscreenElement) {
+        setFullScreen(false)
+        setClose(false)
       }
     }
+
+    if (midiumScreenResolution && fullScreen && video?.requestFullscreen) {
+      video.requestFullscreen().catch(() => {})
+    }
+
+    document.addEventListener('fullscreenchange', onFsChange)
+    return () => {
+      document.removeEventListener('fullscreenchange', onFsChange)
+    }
   }, [midiumScreenResolution, fullScreen])
+
+  useEffect(() => {
+    const onVisibility = () => {
+      const el = document.getElementById('screen') as HTMLVideoElement | null
+      if (!el) return
+      if (document.hidden) {
+        el.pause()
+      } else {
+        el.play().catch(() => {})
+      }
+    }
+    document.addEventListener('visibilitychange', onVisibility)
+    return () => document.removeEventListener('visibilitychange', onVisibility)
+  }, [])
 
   return (
     <section
@@ -165,7 +192,20 @@ const Intro = () => {
         onMouseEnter={projectEnter}
         onMouseLeave={projectLeave}
       >
-        <VideoComponent src={fullScreen ? videoFull1 : videoShort1} />
+        <VideoComponent
+          sources={
+            fullScreen
+              ? [
+                  { src: videoFullWebm, type: 'video/webm' },
+                  { src: videoFullMp4, type: 'video/mp4' },
+                ]
+              : [
+                  { src: videoShortWebm, type: 'video/webm' },
+                  { src: videoShortMp4, type: 'video/mp4' },
+                ]
+          }
+          ariaLabel={t('intro.play')}
+        />
         <button
           className={`absolute  z-20 mt-48 backdrop-blur-[10px] bg-cursor p-3 px-5 rounded-full lg:hidden`}
           onClick={onClick}
