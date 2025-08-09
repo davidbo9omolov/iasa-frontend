@@ -174,17 +174,24 @@ const Activity = () => {
         <div className={'w-full lg:w-1/4 xs:mt-0 md:mt-5 relative flex flex-col md:-translate-y-[25px]'}>
           <p
             className={
-              'text-[16px] leading-[150%] tracking-[0.32px] font-normal sm:h-fit lg:h-auto text-gray sm:text-sm md:text-md scroll-opacity-text md:-translate-y-[20px]'
+              'text-[16px] leading-[150%] tracking-[0.32px] font-normal sm:h-fit lg:h-auto text-gray sm:text-sm md:text-md scroll-opacity-text md:-translate-y-[20px] sm:hidden'
             }
           >
             {t('ourActivity.animatedDescriptionOne')}
           </p>
           <p
             className={
-              'text-[16px] leading-[150%] tracking-[0.32px] font-normal sm:text-sm sm:h-fit lg:h-auto lg:text-md text-gray absolute scroll-opacity-text top-0 md:text-md md:-translate-y-[20px]'
+              'text-[16px] leading-[150%] tracking-[0.32px] font-normal sm:text-sm sm:h-fit lg:h-auto lg:text-md text-gray absolute scroll-opacity-text top-0 md:text-md md:-translate-y-[20px] sm:hidden'
             }
           >
             {t('ourActivity.animatedDescriptionTwo')}
+          </p>
+          <p
+            className={
+              'text-[16px] leading-[150%] tracking-[0.32px] font-normal sm:h-fit lg:h-auto text-gray sm:text-sm md:text-md md:-translate-y-[20px] hidden sm:block'
+            }
+          >
+            {t('ourActivity.animatedDescriptionOne')}
           </p>
           <p
             className={
