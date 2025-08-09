@@ -28,7 +28,7 @@ const SelectedUserPresidiumCard = () => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [])
+  }, [dispatch])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,8 +74,13 @@ const SelectedUserPresidiumCard = () => {
           {presidiumCard?.image ? (
             <img
               src={presidiumCard?.image}
-              alt={'Presidium member'}
+              alt={
+                `${t(`members.${presidiumCard.position}.name`)} ${t(
+                  `members.${presidiumCard.position}.surname`,
+                )}`.trim() || 'Presidium member'
+              }
               className={'rounded-lg w-full h-full object-cover'}
+              loading="lazy"
             />
           ) : (
             <div className={'bg-tertiary w-full h-full rounded-lg'}></div>

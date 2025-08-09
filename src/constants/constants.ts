@@ -438,7 +438,16 @@ export const presidiumCardsInformation = [
   {
     position: 'merchhead',
     image: TeamCard9,
+    email: 'alexandra.kovko@gmail.com',
     socialNetworks: [
+      {
+        name: 'Linkedin',
+        link: 'https://www.linkedin.com/in/%D1%81%D0%B0%D1%88%D0%B0-%D0%BA%D0%BE%D0%B2%D0%B0%D0%BB%D0%B5%D0%BD%D0%BA%D0%BE-06136a23a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+      },
+      {
+        name: 'Instagram',
+        link: 'https://www.instagram.com/sa_lico',
+      },
       {
         name: 'Telegram',
         link: 'https://t.me/sa_lico',

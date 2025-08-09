@@ -116,7 +116,7 @@ const Activity = () => {
           </p>
           <div className={'flex w-full justify-start lg:w-auto md:justify-normal'}>
             {socialNetworks.map((network, index) => (
-              <Link target={'_blank'} key={index} to={network.path} className={'flex mr-10'}>
+              <Link target={'_blank'} rel="noopener noreferrer" key={index} to={network.path} className={'flex mr-10'}>
                 <network.icon className={'w-[24px] h-[24px]'} />
               </Link>
             ))}
@@ -128,8 +128,8 @@ const Activity = () => {
               ' rounded w-full h-[40vh] md:h-[40vw] min-w-[150px] min-h-[360px] max-h-[650px]  flex justify-center items-center relative select-none md:-translate-y-[10px]'
             }
           >
-            <img src={Iphone} alt={'iphone'} className={'h-full'} loading="lazy" />
-            <img src={IphoneCamera} alt={'iphoneCamera'} className={'absolute z-10 top-[20px] w-1/4'} loading="lazy" />
+            <img src={Iphone} alt={'iPhone frame'} className={'h-full'} loading="lazy" />
+            <img src={IphoneCamera} alt={'iPhone camera'} className={'absolute z-10 top-[20px] w-1/4'} loading="lazy" />
             <Arrows arrows={arrows} />
             <div className={'absolute top-[45px] flex md:hidden z-20 items-center justify-between w-[80%] '}>
               <div className={'flex items-center '}>
@@ -151,7 +151,7 @@ const Activity = () => {
                 <div key={index} className={'!min-w-[150px] h-[315px] relative !flex justify-center items-center'}>
                   <img
                     src={elem.image}
-                    alt={'iphone'}
+                    alt={'gallery image'}
                     className={'h-[92%] min-w-[150px] w-full object-cover absolute rounded'}
                     loading="lazy"
                   />
@@ -163,7 +163,7 @@ const Activity = () => {
               <div key={index} className={' w-[90%] h-[95%] absolute scroll-opacity-iphone hidden md:block '}>
                 <img
                   src={elem.image}
-                  alt={'iphone'}
+                  alt={'gallery image'}
                   className={'h-full w-full object-center rounded-3xl'}
                   loading="lazy"
                 />

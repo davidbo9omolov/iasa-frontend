@@ -13,7 +13,12 @@ const SliderCard = ({ data }: SliderCardProps) => {
   return (
     <div className={'bg-quaternary h-[300px] min-w-[300px] max-w-[400px] mx-2 md:mr-4 md:ml-0 rounded-lg p-5'}>
       <div className={'rounded-lg bg-sliderCardGradient h-[45%]'}>
-        <img src={data.image} alt={t(`${data.type}.title`)} className={'w-full h-full object-cover rounded-lg'} />
+        <img
+          src={data.image}
+          alt={t(`${data.type}.title`) || 'slider image'}
+          className={'w-full h-full object-cover rounded-lg'}
+          loading="lazy"
+        />
       </div>
       <div className={'h-[55%]'}>
         <p className={'text-xl leading-[110%] tracking-[0.32px] font-[550] md:text-2xl mt-2 mb-4'}>

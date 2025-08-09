@@ -7,7 +7,9 @@ type CommonLayoutProps = {
 export function CommonLayout({ children }: CommonLayoutProps) {
   return (
     <div className={'w-full'}>
-      <main className={'flex justify-center min-h-[80vh]'}>{children}</main>
+      <main className={'flex justify-center min-h-[80vh]'} role={'main'}>
+        {children}
+      </main>
       <Footer />
     </div>
   )

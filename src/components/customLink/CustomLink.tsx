@@ -38,10 +38,20 @@ const CustomLink = ({
   }
 
   if (!item?.dropdown) {
+    const isExternal = /^(https?:|mailto:|tel:)/.test(computedLink)
+    const target = rest.target || (isExternal ? '_blank' : undefined)
+    const rel = target === '_blank' || isExternal ? 'noopener noreferrer' : undefined
     if (navLink) {
       return (
         <>
-          <NavLink to={computedLink} className={` flex items-center ${className}`} onClick={onClick} {...rest}>
+          <NavLink
+            to={computedLink}
+            className={` flex items-center ${className}`}
+            onClick={onClick}
+            target={target}
+            rel={rel}
+            {...rest}
+          >
             {item?.name || children}
             {item?.withArrow && <GoArrowUpRight className={'min-h-[20px] min-w-[20px] ml-0.5'} />}
           </NavLink>
@@ -49,7 +59,14 @@ const CustomLink = ({
       )
     } else {
       return (
-        <Link to={computedLink} className={` flex items-center ${className}`} onClick={onClick} {...rest}>
+        <Link
+          to={computedLink}
+          className={` flex items-center ${className}`}
+          onClick={onClick}
+          target={target}
+          rel={rel}
+          {...rest}
+        >
           {item?.name || children}
           {withArrow && <GoArrowUpRight className={'min-h-[20px] min-w-[20px] ml-0.5'} />}
         </Link>
