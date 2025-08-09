@@ -1,10 +1,8 @@
 import { useRef, useEffect, useState } from 'react'
 import { IoClose } from 'react-icons/io5'
 import VideoComponent from 'components/video-component/VideoComponent.tsx'
-import videoFullMp4 from '@/assets/full_mp4.mp4'
-import videoShortMp4 from '@/assets/short_mp4.mp4'
-import videoFullWebm from '@/assets/full_webM.webm'
-import videoShortWebm from '@/assets/short_webM.webm'
+import videoFull1 from '@/assets/full_mp4.mp4'
+import videoShort1 from '@/assets/short_mp4.mp4'
 import { useTranslation } from 'react-i18next'
 import useMouse from '@react-hook/mouse-position'
 import { motion, Variants } from 'framer-motion'
@@ -62,7 +60,7 @@ const Intro = () => {
       setCursorText(t('intro.play'))
       setCursorVariant('screen')
     }
-  }, [midiumScreenResolution, t])
+  }, [midiumScreenResolution])
 
   const variants: Variants = {
     default: {
@@ -116,114 +114,33 @@ const Intro = () => {
   }
 
   const onClick = () => {
-    if (midiumScreenResolution) {
-      const video = document.getElementById('screen') as
-        | (HTMLVideoElement & {
-            webkitEnterFullscreen?: () => void
-          })
-        | null
-      if (video) {
-        // Start playback as part of the click gesture
-        try {
-          video.play().catch(() => {})
-        } catch (e) {
-          /* noop */
-        }
-        // Prefer native iOS fullscreen, fallback to standard
-        if (typeof video.webkitEnterFullscreen === 'function') {
-          try {
-            video.webkitEnterFullscreen()
-          } catch (e) {
-            /* noop */
-          }
-        } else if (video.requestFullscreen) {
-          video.requestFullscreen().catch(() => {})
-        }
-      }
-      setFullScreen(true)
-      setClose(true)
-      return
-    }
-    // Desktop: toggle overlay fullscreen
     setFullScreen(!fullScreen)
     setClose(!close)
   }
 
   useEffect(() => {
-    const prevBodyOverflow = document.body.style.overflow
-    const prevHtmlOverflow = document.documentElement.style.overflow
-    if (fullScreen && !midiumScreenResolution) {
+    if (fullScreen) {
       document.body.style.overflow = 'hidden'
-      document.documentElement.style.overflow = 'hidden'
     } else {
-      document.body.style.overflow = prevBodyOverflow || ''
-      document.documentElement.style.overflow = prevHtmlOverflow || ''
+      document.body.style.overflow = 'auto'
     }
-    return () => {
-      document.body.style.overflow = prevBodyOverflow || ''
-      document.documentElement.style.overflow = prevHtmlOverflow || ''
-    }
-  }, [fullScreen, midiumScreenResolution])
+  }, [fullScreen])
 
   useEffect(() => {
-    const video = document.getElementById('screen') as
-      | (HTMLVideoElement & {
-          webkitEnterFullscreen?: () => void
+    const video = document.getElementById('screen')
+    if (midiumScreenResolution && fullScreen && video?.requestFullscreen) {
+      video.requestFullscreen()
+
+      if (video) {
+        video.addEventListener('fullscreenchange', () => {
+          if (!document.fullscreenElement) {
+            setFullScreen(false)
+            document.exitFullscreen()
+          }
         })
-      | null
-
-    const onStdFsChange = () => {
-      if (!document.fullscreenElement) {
-        setFullScreen(false)
-        setClose(false)
       }
-    }
-
-    const onWebkitEndFs = () => {
-      setFullScreen(false)
-      setClose(false)
-    }
-
-    if (midiumScreenResolution && fullScreen && video) {
-      // Ensure playback starts on user interaction
-      video.play().catch(() => {})
-      if (typeof video.webkitEnterFullscreen === 'function') {
-        try {
-          video.webkitEnterFullscreen()
-        } catch (e) {
-          /* ignore */
-        }
-      } else if (video.requestFullscreen) {
-        video.requestFullscreen().catch(() => {})
-      }
-    }
-
-    document.addEventListener('fullscreenchange', onStdFsChange)
-    // iOS Safari fullscreen end event on the video element
-    video?.addEventListener('webkitendfullscreen' as unknown as keyof HTMLVideoElement, onWebkitEndFs as EventListener)
-
-    return () => {
-      document.removeEventListener('fullscreenchange', onStdFsChange)
-      video?.removeEventListener(
-        'webkitendfullscreen' as unknown as keyof HTMLVideoElement,
-        onWebkitEndFs as EventListener,
-      )
     }
   }, [midiumScreenResolution, fullScreen])
-
-  useEffect(() => {
-    const onVisibility = () => {
-      const el = document.getElementById('screen') as HTMLVideoElement | null
-      if (!el) return
-      if (document.hidden) {
-        el.pause()
-      } else {
-        el.play().catch(() => {})
-      }
-    }
-    document.addEventListener('visibilitychange', onVisibility)
-    return () => document.removeEventListener('visibilitychange', onVisibility)
-  }, [])
 
   return (
     <section
@@ -248,29 +165,14 @@ const Intro = () => {
         onMouseEnter={projectEnter}
         onMouseLeave={projectLeave}
       >
-        <VideoComponent
-          sources={
-            fullScreen
-              ? [
-                  { src: videoFullWebm, type: 'video/webm' },
-                  { src: videoFullMp4, type: 'video/mp4' },
-                ]
-              : [
-                  { src: videoShortWebm, type: 'video/webm' },
-                  { src: videoShortMp4, type: 'video/mp4' },
-                ]
-          }
-          ariaLabel={t('intro.play')}
-          autopauseOffscreen={!fullScreen}
-        />
+        <VideoComponent src={fullScreen ? videoFull1 : videoShort1} />
         <button
-          type="button"
           className={`absolute  z-20 mt-48 backdrop-blur-[10px] bg-cursor p-3 px-5 rounded-full lg:hidden`}
           onClick={onClick}
         >
           <span className="text-md">{cursorText}</span>
         </button>
-        <div className={'absolute top-0 bg-blackGradient w-full h-full pointer-events-none'}></div>
+        <div className={'absolute top-0 bg-blackGradient w-full h-full'}></div>
       </div>
       {fullScreen && <div className={'absolute  top-0  w-full h-full bg-primary'}></div>}
     </section>
