@@ -6,7 +6,7 @@ type PageNotFoundLayoutProps = {
 export function PageNotFoundLayout({ children }: PageNotFoundLayoutProps) {
   return (
       <div className={'w-full'}>
-        <main style={{ height: '80vh' }} className={'flex justify-center items-center'}>
+        <main style={{ height: '80vh' }} className={'flex justify-center items-center'} role={'main'} aria-label={'Error'}>
           {children}
         </main>
       </div>

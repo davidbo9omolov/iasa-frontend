@@ -83,6 +83,7 @@ const ContactTelegram = () => {
                         key={index}
                         to={item.link}
                         target={'_blank'}
+                        rel="noopener noreferrer"
                         className={'underline mr-12 mb-5 duration-300 group-hover:text-tertiary mb:mb-10'}
                       >
                         {item.title}
@@ -102,6 +103,7 @@ const ContactTelegram = () => {
                         key={index}
                         to={item.link}
                         target={'_blank'}
+                        rel="noopener noreferrer"
                         className={'underline mr-12 mb-5 duration-300 group-hover:text-tertiary'}
                       >
                         {item.title}

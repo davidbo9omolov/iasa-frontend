@@ -2,5 +2,11 @@
 User-agent: *
 Allow: /
 Disallow: /node_modules/
+Disallow: /*/applicant*
+Disallow: /*/for-student*
+Disallow: /*/resources*
+Disallow: /*/activities*
+Disallow: /*/entry*
+
 Host: https://iasa.sc.kpi.ua
 Sitemap: https://iasa.sc.kpi.ua/sitemap.xml

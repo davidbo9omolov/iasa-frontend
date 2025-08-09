@@ -34,7 +34,12 @@ const TeamCards: React.FC<TeamCardProps> = ({ item, onMoreInfo }) => {
       >
         <div className={'p-3'}>
           {item?.image ? (
-            <img src={item?.image} alt={'team member'} className={'rounded-full min-w-[80px] max-w-[80px]'} />
+            <img
+              src={item?.image}
+              alt={`${t('name')} ${t('surname')} — ${t('position')}`}
+              className={'rounded-full min-w-[80px] max-w-[80px]'}
+              loading="lazy"
+            />
           ) : (
             <div className={'rounded-full bg-tertiary w-[80px] h-[80px]'}></div>
           )}

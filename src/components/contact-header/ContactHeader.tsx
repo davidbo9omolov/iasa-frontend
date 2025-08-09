@@ -15,6 +15,7 @@ const ContactHeader = () => {
             <div className={'flex flex-col mt-5'}>
               <Link
                 target={'_blank'}
+                rel={'noopener noreferrer'}
                 to={'https://mail.google.com/mail/?view=cm&fs=1&to=studrada@gmail.com'}
                 className={'underline'}
               >
@@ -26,7 +27,7 @@ const ContactHeader = () => {
             <p>{t('followUs')}</p>
             <div className={'flex my-5 sm:justify-center'}>
               {socialNetworks.map((item, index) => (
-                <Link target={'_blank'} key={index} to={item.path} className={'mr-8'}>
+                <Link target={'_blank'} rel={'noopener noreferrer'} key={index} to={item.path} className={'mr-8'}>
                   <item.icon className={'w-[24px] h-[24px]'} />
                 </Link>
               ))}

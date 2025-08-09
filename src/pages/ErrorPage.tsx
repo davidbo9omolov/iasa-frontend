@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import CustomLink from 'components/customLink/CustomLink.tsx'
 import { LinkRoutes } from '@/constants/constants.ts'
 import { useTranslation } from 'react-i18next'
@@ -10,6 +10,19 @@ type ErrorPageProps = {
 
 const ErrorPage = ({ icon, errorCode }: ErrorPageProps) => {
   const { t } = useTranslation('error')
+  useEffect(() => {
+    const upsert = (name: string, content: string) => {
+      let el = document.head.querySelector(`meta[name="${name}"]`) as HTMLMetaElement | null
+      if (!el) {
+        el = document.createElement('meta')
+        el.setAttribute('name', name)
+        document.head.appendChild(el)
+      }
+      el.setAttribute('content', content)
+    }
+    upsert('robots', 'noindex, nofollow')
+    upsert('googlebot', 'noindex, nofollow')
+  }, [])
 
   return (
     <div className={'flex flex-col justify-center items-center h-fit'}>

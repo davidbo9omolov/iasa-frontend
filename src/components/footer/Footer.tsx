@@ -23,6 +23,7 @@ const Footer = () => {
           <div className={'flex flex-col h-[80%]'}>
             <Link
               target={'_blank'}
+              rel={'noopener noreferrer'}
               to={'https://mail.google.com/mail/?view=cm&fs=1&to=studrada@gmail.com'}
               className={'underline mb-1 hover:text-tertiary'}
             >
@@ -33,6 +34,7 @@ const Footer = () => {
               to={'https://t.me/iasa_stud_support_bot'}
               className={' mb-1 hover:text-tertiary underline'}
               target={'_blank'}
+              rel={'noopener noreferrer'}
             >
               {tFooter('socials.support-bot')}
             </Link>
@@ -40,6 +42,7 @@ const Footer = () => {
               to={'https://t.me/IASAsuggestionBot'}
               className={' mb-1 hover:text-tertiary underline'}
               target={'_blank'}
+              rel={'noopener noreferrer'}
             >
               {tFooter('socials.suggestion-bot')}
             </Link>
@@ -81,6 +84,7 @@ const Footer = () => {
               {socialNetworks.map((item, index) => (
                 <Link
                   target={'_blank'}
+                  rel={'noopener noreferrer'}
                   key={index}
                   to={item.path}
                   className={'mr-5 md:ml-5 md:mr-0 hover:text-tertiary'}

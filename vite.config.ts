@@ -8,7 +8,8 @@ import { compression } from 'vite-plugin-compression2';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(),
+  plugins: [
+    react(),
     // @ts-ignore
     compression({
       verbose: true,
@@ -16,6 +17,14 @@ export default defineConfig({
       threshold: 10240,
       algorithm: 'gzip',
       ext: '.gz',
+    }),
+    // @ts-ignore add brotli compression output as well
+    compression({
+      verbose: false,
+      disable: false,
+      threshold: 10240,
+      algorithm: 'brotliCompress',
+      ext: '.br',
     }),
   ],
   css: {

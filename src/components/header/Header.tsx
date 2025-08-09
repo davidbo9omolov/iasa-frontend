@@ -40,7 +40,7 @@ const Header = () => {
         <CustomLink className={'text-xl z-50'} withArrow={false} link={LinkRoutes.Home}>
           <Logo />
         </CustomLink>
-        <nav>
+        <nav aria-label={'Primary'}>
           <ul className={'hidden lg:flex'}>
             <HeaderRoutes translatedRoutes={translatedRoutes} />
           </ul>
