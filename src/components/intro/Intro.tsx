@@ -137,21 +137,48 @@ const Intro = () => {
   }, [fullScreen, midiumScreenResolution])
 
   useEffect(() => {
-    const video = document.getElementById('screen') as HTMLVideoElement | null
-    const onFsChange = () => {
+    const video = document.getElementById('screen') as
+      | (HTMLVideoElement & {
+          webkitEnterFullscreen?: () => void
+        })
+      | null
+
+    const onStdFsChange = () => {
       if (!document.fullscreenElement) {
         setFullScreen(false)
         setClose(false)
       }
     }
 
-    if (midiumScreenResolution && fullScreen && video?.requestFullscreen) {
-      video.requestFullscreen().catch(() => {})
+    const onWebkitEndFs = () => {
+      setFullScreen(false)
+      setClose(false)
     }
 
-    document.addEventListener('fullscreenchange', onFsChange)
+    if (midiumScreenResolution && fullScreen && video) {
+      // Ensure playback starts on user interaction
+      video.play().catch(() => {})
+      if (typeof video.webkitEnterFullscreen === 'function') {
+        try {
+          video.webkitEnterFullscreen()
+        } catch (e) {
+          /* ignore */
+        }
+      } else if (video.requestFullscreen) {
+        video.requestFullscreen().catch(() => {})
+      }
+    }
+
+    document.addEventListener('fullscreenchange', onStdFsChange)
+    // iOS Safari fullscreen end event on the video element
+    video?.addEventListener('webkitendfullscreen' as unknown as keyof HTMLVideoElement, onWebkitEndFs as EventListener)
+
     return () => {
-      document.removeEventListener('fullscreenchange', onFsChange)
+      document.removeEventListener('fullscreenchange', onStdFsChange)
+      video?.removeEventListener(
+        'webkitendfullscreen' as unknown as keyof HTMLVideoElement,
+        onWebkitEndFs as EventListener,
+      )
     }
   }, [midiumScreenResolution, fullScreen])
 
@@ -205,6 +232,7 @@ const Intro = () => {
                 ]
           }
           ariaLabel={t('intro.play')}
+          autopauseOffscreen={!fullScreen}
         />
         <button
           className={`absolute  z-20 mt-48 backdrop-blur-[10px] bg-cursor p-3 px-5 rounded-full lg:hidden`}
