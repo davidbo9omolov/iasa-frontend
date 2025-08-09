@@ -90,7 +90,7 @@ const ContactTelegram = () => {
                       </Link>
                       <div
                         className={
-                          'hidden lg:group-hover:flex absolute top-full mt-[20px] p-1 justify-center items-center bg-quaternary text-secondary w-max rounded duration-300 z-50'
+                          'hidden lg:group-hover:flex absolute top-full mt-[12px] p-1 justify-center items-center bg-quaternary text-secondary w-max rounded duration-300 z-50'
                         }
                       >
                         {t(`subText.${item.subText}`)}
@@ -110,7 +110,7 @@ const ContactTelegram = () => {
                       </Link>
                       <div
                         className={
-                          'hidden duration-300 p-1 justify-center items-center absolute mt-[20px] bg-quaternary text-secondary w-max rounded lg:group-hover:flex'
+                          'hidden duration-300 p-1 justify-center items-center absolute mt-[12px] bg-quaternary text-secondary w-max rounded lg:group-hover:flex'
                         }
                       >
                         {t(`subText.${item.subText}`)}

@@ -55,7 +55,12 @@ const Footer = () => {
                   classButton={'mb-1 hover:text-tertiary'}
                   classDropDown={'top-0 left-[150px] bg-quaternaryDark'}
                 />
-                <CustomLink item={item} navLink className={'mb-1 hover:text-tertiary'} />
+                <CustomLink
+                  item={item}
+                  navLink
+                  target={item.withArrow ? '_blank' : undefined}
+                  className={'mb-1 hover:text-tertiary'}
+                />
               </React.Fragment>
             ))}
           </div>
