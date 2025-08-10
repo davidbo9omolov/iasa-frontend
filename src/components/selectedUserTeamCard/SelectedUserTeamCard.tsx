@@ -85,9 +85,9 @@ const SelectedUserTeamCard = () => {
             </p>
           </div>
           <div className={'overflow-y-auto mt-2'}>
+            <p className={'my-3 text-gray'}>{t(`members.${teamCard.position}.position`)}</p>
             {teamCard?.email ? (
               <>
-                <p className={'my-3 text-gray'}>{t(`members.${teamCard.position}.position`)}</p>
                 <p className={'my-3 text-gray'}>{t('email')}</p>
                 <p className={'underline'}>{teamCard.email}</p>
               </>
