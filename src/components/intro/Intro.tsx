@@ -119,31 +119,27 @@ const Intro = () => {
   }
 
   useEffect(() => {
-    if (fullScreen && !midiumScreenResolution) {
+    if (fullScreen) {
       document.body.style.overflow = 'hidden'
-      document.documentElement.style.overflow = 'hidden'
     } else {
       document.body.style.overflow = 'auto'
-      document.documentElement.style.overflow = 'auto'
     }
-  }, [fullScreen, midiumScreenResolution])
+  }, [fullScreen])
 
   useEffect(() => {
-    const video = document.getElementById('screen') as HTMLVideoElement | null
-    const onFsChange = () => {
-      if (!document.fullscreenElement) {
-        setFullScreen(false)
+    const video = document.getElementById('screen')
+    if (midiumScreenResolution && fullScreen && video?.requestFullscreen) {
+      video.requestFullscreen()
+
+      if (video) {
+        video.addEventListener('fullscreenchange', () => {
+          if (!document.fullscreenElement) {
+            setFullScreen(false)
+            document.exitFullscreen()
+          }
+        })
       }
     }
-    if (!midiumScreenResolution && fullScreen && video?.requestFullscreen) {
-      // Desktop overlay: open browser fullscreen for the video element
-      video.requestFullscreen().catch(() => {})
-    } else if (midiumScreenResolution && fullScreen) {
-      // Mobile: just ensure playback; avoid forcing fullscreen which can be buggy
-      video?.play().catch(() => {})
-    }
-    document.addEventListener('fullscreenchange', onFsChange)
-    return () => document.removeEventListener('fullscreenchange', onFsChange)
   }, [midiumScreenResolution, fullScreen])
 
   return (
@@ -171,13 +167,12 @@ const Intro = () => {
       >
         <VideoComponent src={fullScreen ? videoFull1 : videoShort1} />
         <button
-          type="button"
           className={`absolute  z-20 mt-48 backdrop-blur-[10px] bg-cursor p-3 px-5 rounded-full lg:hidden`}
           onClick={onClick}
         >
           <span className="text-md">{cursorText}</span>
         </button>
-        <div className={'absolute top-0 bg-blackGradient w-full h-full pointer-events-none'}></div>
+        <div className={'absolute top-0 bg-blackGradient w-full h-full'}></div>
       </div>
       {fullScreen && <div className={'absolute  top-0  w-full h-full bg-primary'}></div>}
     </section>
