@@ -6,7 +6,6 @@ import videoShort1 from '@/assets/short_mp4.mp4'
 import { useTranslation } from 'react-i18next'
 import useMouse from '@react-hook/mouse-position'
 import { motion, Variants } from 'framer-motion'
-import { isFullscreenSupported } from '@/lib/utils.ts'
 
 const Intro = () => {
   const { t } = useTranslation('home')
@@ -168,14 +167,12 @@ const Intro = () => {
         onMouseLeave={projectLeave}
       >
         <VideoComponent ref={videoRef} src={fullScreen ? videoFull1 : videoShort1} />
-        {isFullscreenSupported() && (
-          <button
-            className={`absolute  z-20 mt-48 backdrop-blur-[10px] bg-cursor p-3 px-5 rounded-full lg:hidden`}
-            onClick={onClick}
-          >
-            <span className="text-md">{cursorText}</span>
-          </button>
-        )}
+        <button
+          className={`absolute  z-20 mt-48 backdrop-blur-[10px] bg-cursor p-3 px-5 rounded-full lg:hidden`}
+          onClick={onClick}
+        >
+          <span className="text-md">{cursorText}</span>
+        </button>
         <div className={'absolute top-0 bg-blackGradient w-full h-full'}></div>
       </div>
       {fullScreen && <div className={'absolute  top-0  w-full h-full bg-primary'}></div>}
