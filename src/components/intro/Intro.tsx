@@ -16,6 +16,7 @@ const Intro = () => {
   const [cursorVariant, setCursorVariant] = useState('default')
   const [lastMouseX, setLastMouseX] = useState(window?.innerWidth / 2)
   const [lastMouseY, setLastMouseY] = useState(window?.innerHeight / 2)
+  const videoRef = useRef<HTMLVideoElement | null>(null)
   const customBlockRef = useRef<HTMLDivElement | null>(null)
 
   const mediumScreenResolution = window?.innerWidth < 1024
@@ -127,9 +128,9 @@ const Intro = () => {
   }, [fullScreen, mediumScreenResolution])
 
   useEffect(() => {
-    const video = document.getElementById('screen')
-    if (mediumScreenResolution && fullScreen && video?.requestFullscreen) {
-      video.requestFullscreen()
+    const video = videoRef.current
+    if (mediumScreenResolution && fullScreen) {
+      video?.requestFullscreen()
 
       if (video) {
         video.addEventListener('fullscreenchange', () => {
@@ -165,7 +166,7 @@ const Intro = () => {
         onMouseEnter={projectEnter}
         onMouseLeave={projectLeave}
       >
-        <VideoComponent src={fullScreen ? videoFull1 : videoShort1} />
+        <VideoComponent ref={videoRef} src={fullScreen ? videoFull1 : videoShort1} />
         <button
           className={`absolute  z-20 mt-48 backdrop-blur-[10px] bg-cursor p-3 px-5 rounded-full lg:hidden`}
           onClick={onClick}
