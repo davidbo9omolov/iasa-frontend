@@ -129,36 +129,22 @@ const Intro = () => {
 
   useEffect(() => {
     const video = videoRef.current
-    if (!video) return
 
-    const handleFsChange = () => {
+    const handleFullscreenChange = () => {
       if (!document.fullscreenElement) {
         setFullScreen(false)
+        document.exitFullscreen()
       }
     }
 
-    const handleVisibility = () => {
-      if (document.visibilityState === 'visible' && !document.fullscreenElement) {
-        setFullScreen(false)
-      }
+    if (mediumScreenResolution && fullScreen && video?.requestFullscreen) {
+      video.requestFullscreen()
     }
 
-    if (mediumScreenResolution && fullScreen && video.requestFullscreen) {
-      video.requestFullscreen().catch(() => {})
-    }
-
-    document.addEventListener('fullscreenchange', handleFsChange)
-    document.addEventListener('webkitfullscreenchange', handleFsChange)
-    document.addEventListener('visibilitychange', handleVisibility)
-    window.addEventListener('pagehide', handleVisibility)
-    window.addEventListener('blur', handleVisibility)
+    document.addEventListener('fullscreenchange', handleFullscreenChange)
 
     return () => {
-      document.removeEventListener('fullscreenchange', handleFsChange)
-      document.removeEventListener('webkitfullscreenchange', handleFsChange)
-      document.removeEventListener('visibilitychange', handleVisibility)
-      window.removeEventListener('pagehide', handleVisibility)
-      window.removeEventListener('blur', handleVisibility)
+      document.removeEventListener('fullscreenchange', handleFullscreenChange)
     }
   }, [mediumScreenResolution, fullScreen])
 
