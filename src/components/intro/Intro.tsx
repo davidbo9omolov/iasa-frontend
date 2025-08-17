@@ -141,7 +141,7 @@ const Intro = () => {
         })
       }
     }
-  }, [mediumScreenResolution, fullScreen])
+  }, [mediumScreenResolution, fullScreen, !document.fullscreenElement])
 
   return (
     <section
