@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  iasa-frontend:
+    container_name: iasa-frontend
+    restart: unless-stopped
+    tty: true
+    build:
+      context: .
+      dockerfile_inline: |
+        FROM node:18-alpine
+        WORKDIR /app
+        COPY package.json yarn.lock ./
+        RUN yarn install --frozen-lockfile && npm install -g serve
+        COPY . .
+        RUN yarn build
+        RUN addgroup -g 1001 -S nodejs && adduser -S nextjs -u 1001
+        USER nextjs 
+        CMD ["sh", "-c", "serve -s dist -l $${PORT:-3000}"]
+    ports:
+      - "${PORT:-3000}:${PORT:-3000}"
+    environment:
+      - PORT=${PORT:-3000}
+    env_file:
+      - .env
