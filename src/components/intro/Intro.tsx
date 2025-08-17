@@ -14,11 +14,11 @@ const Intro = () => {
 
   const [cursorText, setCursorText] = useState('')
   const [cursorVariant, setCursorVariant] = useState('default')
-  const [lastMouseX, setLastMouseX] = useState(window.innerWidth / 2)
-  const [lastMouseY, setLastMouseY] = useState(window.innerHeight / 2)
+  const [lastMouseX, setLastMouseX] = useState(window?.innerWidth / 2)
+  const [lastMouseY, setLastMouseY] = useState(window?.innerHeight / 2)
   const customBlockRef = useRef<HTMLDivElement | null>(null)
 
-  const midiumScreenResolution = window.innerWidth < 1024
+  const mediumScreenResolution = window?.innerWidth < 1024
   const mouse = useMouse(customBlockRef, {
     enterDelay: 100,
     leaveDelay: 100,
@@ -41,7 +41,7 @@ const Intro = () => {
           setCursorText(t('intro.play'))
           setCursorVariant('screen')
         } else {
-          if (!midiumScreenResolution) {
+          if (!mediumScreenResolution) {
             setCursorText('')
             setCursorVariant('default')
           }
@@ -53,14 +53,14 @@ const Intro = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [customBlockRef, t, midiumScreenResolution])
+  }, [customBlockRef, t, mediumScreenResolution])
 
   useEffect(() => {
-    if (midiumScreenResolution) {
+    if (mediumScreenResolution) {
       setCursorText(t('intro.play'))
       setCursorVariant('screen')
     }
-  }, [midiumScreenResolution])
+  }, [mediumScreenResolution])
 
   const variants: Variants = {
     default: {
@@ -94,14 +94,14 @@ const Intro = () => {
   }
 
   function projectEnter() {
-    if (!midiumScreenResolution) {
+    if (!mediumScreenResolution) {
       setCursorText(t('intro.play'))
       setCursorVariant('screen')
     }
   }
 
   function projectLeave() {
-    if (!midiumScreenResolution) {
+    if (!mediumScreenResolution) {
       setCursorText('')
       setCursorVariant('default')
     }
@@ -119,16 +119,16 @@ const Intro = () => {
   }
 
   useEffect(() => {
-    if (fullScreen) {
+    if (fullScreen && !mediumScreenResolution) {
       document.body.style.overflow = 'hidden'
     } else {
       document.body.style.overflow = 'auto'
     }
-  }, [fullScreen])
+  }, [fullScreen, mediumScreenResolution])
 
   useEffect(() => {
     const video = document.getElementById('screen')
-    if (midiumScreenResolution && fullScreen && video?.requestFullscreen) {
+    if (mediumScreenResolution && fullScreen && video?.requestFullscreen) {
       video.requestFullscreen()
 
       if (video) {
@@ -140,12 +140,12 @@ const Intro = () => {
         })
       }
     }
-  }, [midiumScreenResolution, fullScreen])
+  }, [mediumScreenResolution, fullScreen])
 
   return (
     <section
       ref={customBlockRef}
-      className={`min-h-[400px] flex justify-center mb-14 md:mb-36 cursor-none  duration-700 z-50 ${fullScreen && !midiumScreenResolution ? 'translate-y-[-90px] fixed  w-full h-full' : ''}`}
+      className={`min-h-[400px] flex justify-center mb-14 md:mb-36 cursor-none  duration-700 z-50 ${fullScreen && !mediumScreenResolution ? 'translate-y-[-90px] fixed  w-full h-full' : ''}`}
     >
       <motion.div
         variants={variants}
@@ -161,7 +161,7 @@ const Intro = () => {
       </motion.div>
       <div
         className={`${fullScreen ? 'w-[100%] h-[100vh]' : 'w-[95%] h-[85vh]'} relative z-10 flex justify-center items-center`}
-        onClick={midiumScreenResolution ? undefined : onClick}
+        onClick={mediumScreenResolution ? undefined : onClick}
         onMouseEnter={projectEnter}
         onMouseLeave={projectLeave}
       >
