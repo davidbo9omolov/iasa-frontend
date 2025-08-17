@@ -6,6 +6,7 @@ import videoShort1 from '@/assets/short_mp4.mp4'
 import { useTranslation } from 'react-i18next'
 import useMouse from '@react-hook/mouse-position'
 import { motion, Variants } from 'framer-motion'
+import { useMediaQuery } from 'react-responsive'
 
 const Intro = () => {
   const { t } = useTranslation('home')
@@ -19,7 +20,10 @@ const Intro = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const customBlockRef = useRef<HTMLDivElement | null>(null)
 
-  const mediumScreenResolution = window?.innerWidth < 1024
+  const mediumScreenResolution = useMediaQuery({
+    query: '(max-width: 1024px)',
+  })
+
   const mouse = useMouse(customBlockRef, {
     enterDelay: 100,
     leaveDelay: 100,
@@ -129,28 +133,17 @@ const Intro = () => {
 
   useEffect(() => {
     const video = videoRef.current
-
-    const handleFullscreenChange = () => {
-      console.log('Fullscreen change detected:', document.fullscreenElement)
-      if (!document.fullscreenElement) {
-        setFullScreen(false)
-      }
-    }
-
     if (mediumScreenResolution && fullScreen && video?.requestFullscreen) {
       video.requestFullscreen()
-    }
 
-    document.addEventListener('fullscreenchange', handleFullscreenChange)
-    document.addEventListener('webkitfullscreenchange', handleFullscreenChange) // Safari
-    document.addEventListener('mozfullscreenchange', handleFullscreenChange) // Firefox
-    document.addEventListener('MSFullscreenChange', handleFullscreenChange) // IE/Edge
-
-    return () => {
-      document.removeEventListener('fullscreenchange', handleFullscreenChange)
-      document.removeEventListener('webkitfullscreenchange', handleFullscreenChange)
-      document.removeEventListener('mozfullscreenchange', handleFullscreenChange)
-      document.removeEventListener('MSFullscreenChange', handleFullscreenChange)
+      if (video) {
+        video.addEventListener('fullscreenchange', () => {
+          if (!document.fullscreenElement) {
+            setFullScreen(false)
+            document.exitFullscreen()
+          }
+        })
+      }
     }
   }, [mediumScreenResolution, fullScreen])
 
@@ -177,14 +170,12 @@ const Intro = () => {
         onMouseEnter={projectEnter}
         onMouseLeave={projectLeave}
       >
-        <VideoComponent ref={videoRef} src={fullScreen ? videoFull1 : videoShort1} />
-        <button
-          className={`absolute  z-20 mt-48 backdrop-blur-[10px] bg-cursor p-3 px-5 rounded-full lg:hidden`}
-          onClick={onClick}
-        >
-          <span className="text-md">{cursorText}</span>
-        </button>
-        <div className={'absolute top-0 bg-blackGradient w-full h-full'}></div>
+        <VideoComponent
+          ref={videoRef}
+          controls={!mediumScreenResolution}
+          src={!mediumScreenResolution ? (fullScreen ? videoFull1 : videoShort1) : videoFull1}
+        />
+        {!mediumScreenResolution && <div className={'absolute top-0 bg-blackGradient w-full h-full'}></div>}
       </div>
       {fullScreen && <div className={'absolute  top-0  w-full h-full bg-primary'}></div>}
     </section>
