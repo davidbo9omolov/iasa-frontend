@@ -131,9 +131,9 @@ const Intro = () => {
     const video = videoRef.current
 
     const handleFullscreenChange = () => {
+      console.log('Fullscreen change detected:', document.fullscreenElement)
       if (!document.fullscreenElement) {
         setFullScreen(false)
-        document.exitFullscreen()
       }
     }
 
@@ -142,9 +142,15 @@ const Intro = () => {
     }
 
     document.addEventListener('fullscreenchange', handleFullscreenChange)
+    document.addEventListener('webkitfullscreenchange', handleFullscreenChange) // Safari
+    document.addEventListener('mozfullscreenchange', handleFullscreenChange) // Firefox
+    document.addEventListener('MSFullscreenChange', handleFullscreenChange) // IE/Edge
 
     return () => {
       document.removeEventListener('fullscreenchange', handleFullscreenChange)
+      document.removeEventListener('webkitfullscreenchange', handleFullscreenChange)
+      document.removeEventListener('mozfullscreenchange', handleFullscreenChange)
+      document.removeEventListener('MSFullscreenChange', handleFullscreenChange)
     }
   }, [mediumScreenResolution, fullScreen])
 
