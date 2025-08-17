@@ -6,13 +6,12 @@ import videoShort1 from '@/assets/short_mp4.mp4'
 import { useTranslation } from 'react-i18next'
 import useMouse from '@react-hook/mouse-position'
 import { motion, Variants } from 'framer-motion'
-import { isFullScreenSupported } from '@/lib/utils'
+import { isFullscreenAvailable } from '@/lib/utils.ts'
 
 const Intro = () => {
   const { t } = useTranslation('home')
   const [fullScreen, setFullScreen] = useState(false)
   const [close, setClose] = useState(false)
-  const [isSupported, setIsSupported] = useState(false)
 
   const [cursorText, setCursorText] = useState('')
   const [cursorVariant, setCursorVariant] = useState('default')
@@ -26,12 +25,6 @@ const Intro = () => {
     enterDelay: 100,
     leaveDelay: 100,
   })
-
-  useEffect(() => {
-    if (isFullScreenSupported(videoRef)) {
-      setIsSupported(true)
-    }
-  }, [])
 
   useEffect(() => {
     if (mouse.x !== null && mouse.x !== undefined) {
@@ -175,9 +168,9 @@ const Intro = () => {
         onMouseLeave={projectLeave}
       >
         <VideoComponent ref={videoRef} src={fullScreen ? videoFull1 : videoShort1} />
-        {isSupported && (
+        {isFullscreenAvailable() && (
           <button
-            className={`absolute z-20 mt-48 backdrop-blur-[10px] bg-cursor p-3 px-5 rounded-full lg:hidden`}
+            className={`absolute  z-20 mt-48 backdrop-blur-[10px] bg-cursor p-3 px-5 rounded-full lg:hidden`}
             onClick={onClick}
           >
             <span className="text-md">{cursorText}</span>
