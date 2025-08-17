@@ -8,5 +8,5 @@ Disallow: /*/resources*
 Disallow: /*/activities*
 Disallow: /*/entry*
 
-Host: https://iasa.sc.kpi.ua
-Sitemap: https://iasa.sc.kpi.ua/sitemap.xml
+Host: https://sc.iasa.kpi.ua
+Sitemap: https://sc.iasa.kpi.ua/sitemap.xml

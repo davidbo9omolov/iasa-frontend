@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://iasa.sc.kpi.ua'
+export const BASE_URL = 'https://sc.iasa.kpi.ua'
 
 export const DEFAULT_OG_IMAGE = `${BASE_URL}/iasaLogo.svg`
 
