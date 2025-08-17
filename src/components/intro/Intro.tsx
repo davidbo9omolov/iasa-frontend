@@ -129,19 +129,38 @@ const Intro = () => {
 
   useEffect(() => {
     const video = videoRef.current
-    if (mediumScreenResolution && fullScreen && video?.requestFullscreen) {
-      video.requestFullscreen()
+    if (!video) return
 
-      if (video) {
-        video.addEventListener('fullscreenchange', () => {
-          if (!document.fullscreenElement) {
-            setFullScreen(false)
-            document.exitFullscreen()
-          }
-        })
+    const handleFsChange = () => {
+      if (!document.fullscreenElement) {
+        setFullScreen(false)
       }
     }
-  }, [mediumScreenResolution, fullScreen, !document.fullscreenElement])
+
+    const handleVisibility = () => {
+      if (document.visibilityState === 'visible' && !document.fullscreenElement) {
+        setFullScreen(false)
+      }
+    }
+
+    if (mediumScreenResolution && fullScreen && video.requestFullscreen) {
+      video.requestFullscreen().catch(() => {})
+    }
+
+    document.addEventListener('fullscreenchange', handleFsChange)
+    document.addEventListener('webkitfullscreenchange', handleFsChange)
+    document.addEventListener('visibilitychange', handleVisibility)
+    window.addEventListener('pagehide', handleVisibility)
+    window.addEventListener('blur', handleVisibility)
+
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFsChange)
+      document.removeEventListener('webkitfullscreenchange', handleFsChange)
+      document.removeEventListener('visibilitychange', handleVisibility)
+      window.removeEventListener('pagehide', handleVisibility)
+      window.removeEventListener('blur', handleVisibility)
+    }
+  }, [mediumScreenResolution, fullScreen])
 
   return (
     <section
