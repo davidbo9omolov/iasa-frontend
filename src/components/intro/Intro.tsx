@@ -129,8 +129,8 @@ const Intro = () => {
 
   useEffect(() => {
     const video = videoRef.current
-    if (mediumScreenResolution && fullScreen) {
-      video?.requestFullscreen()
+    if (mediumScreenResolution && fullScreen && video?.requestFullscreen) {
+      video.requestFullscreen()
 
       if (video) {
         video.addEventListener('fullscreenchange', () => {
